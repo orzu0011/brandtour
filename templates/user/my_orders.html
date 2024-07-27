@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block body %}
+           <main id="content" class="site-main">
+            <section class="inner-page-wrap">
+               <!-- ***Inner Banner html start form here*** -->
+               <div class="inner-banner-wrap">
+                  <div class="inner-baner-container" style="background-image: url(assets/images/img7.jpg);">
+                     <div class="container">
+                        <div class="inner-banner-content">
+                           <h1 class="page-title">{% trans "My Orders" %}</h1>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- ***Inner Banner html end here*** -->
+               <!-- ***package section html start form here*** -->
+               <div class="package-item-wrap">
+                  <div class="container" style="width: 65em;">
+                     {% for my_order in my_orders %}
+                     <div class="package-item" style="grid-template-columns: 60% 40% 26.9%;">
+                        <div class="package-content">
+                           <h3>
+                              <a href="#">
+                                # {{my_order.id}}
+                              </a>
+                           </h3>
+                           <div class="package-meta">
+                              <ul>
+                                 <li>
+                                    <i class="fas fa-clock"></i>
+                                    {{my_order.create_at.date}}
+                                 </li>
+                                 <li>
+                                    <i class="fas fa-user-friends"></i>
+                                    {{ my_order.user.first_name }}
+                                 </li>
+                                 <li>
+                                    <i class='bx bxs-credit-card' style="color: #3A78C9; font-weight: bolder; font-size: 13px;"></i>
+                                    {% trans "Paid" %}
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="package-price" style="margin-left: auto;">
+                           <h6 class="price-list">
+                              <span>${{my_order.total}}</span>
+                           </h6>
+                        </div>
+                     </div>
+                     {% endfor %}
+                  </div>
+               </div>
+            </section>
+         </main>
+{% endblock body %}

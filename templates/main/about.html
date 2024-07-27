@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block css %}
+   <style>
+         .rating {
+         display: flex;
+         flex-direction: row-reverse;
+         justify-content: start;
+         }
+         .rating > label {
+            margin-right: 0.25em;
+         }
+         .rating > input{ display:none;}
+         .rating > label {
+         position: relative;
+         width: 0.5em;
+         font-size: 3vw;
+         color: #FFD700;
+         cursor: pointer;
+         }
+         .rating > label::before{
+         content: "\2605";
+         position: absolute;
+         opacity: 0;
+         }
+         .rating > label:hover:before,
+         .rating > label:hover ~ label:before {
+         opacity: 1 !important;
+         }
+         .rating > input:checked ~ label:before{
+         opacity:1;
+         }
+         .rating:hover > input:checked ~ label:before{ opacity: 0.4; }
+   </style>
+{% endblock %}
+
+{% block body %}
+
+         <!-- ***site header html end*** -->
+         <main id="content" class="site-main">
+            <section class="inner-page-wrap">
+               <!-- ***Inner Banner html start form here*** -->
+               <div class="inner-banner-wrap">
+                  <div class="inner-baner-container" style="background-image: url(assets/images/img7.jpg);">
+                     <div class="container">
+                        <div class="inner-banner-content">
+                           <h1 class="page-title">{% trans "About Us" %}</h1>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- ***Inner Banner html end here*** -->
+               <!-- ***about section html start form here*** -->
+               <div class="inner-about-wrap">
+                  <div class="container">
+                     <div class="row">
+                        <div class="col-lg-8">
+                           <div class="about-content">
+                              <figure class="about-image">
+                                 <img src="assets/images/img27.jpg" alt="">
+                                 <div class="about-image-content">
+                                    <h3>{% trans "WE ARE BEST FOR TOURS & TRAVEL SINCE 2023 !" %}</h3>
+                                 </div>
+                              </figure>
+                              <h2>{% trans "HOW WE ARE BEST FOR TRAVEL !" %}</h2>
+                              <p>{% trans "WE ARE LEGEND" %}</p>
+                           </div>
+                           <div class="client-slider white-bg">
+                              <figure class="client-item">
+                                 <img src="{% static 'images\photo_2023-12-09_18-05-56.jpg' %}" alt="">
+                              </figure>
+                              <figure class="client-item">
+                                 <img src="{% static 'images\photo_2023-12-09_18-07-05.jpg'%}" alt="">
+                              </figure>
+                              <figure class="client-item">
+                                 <img src="{% static 'images\photo_2023-12-09_18-07-05.jpg' %}" alt="">
+                              </figure>
+                              <figure class="client-item">
+                                 <img src="{% static 'images\photo_2023-12-09_18-07-13.jpg'%}" alt="">
+                              </figure>
+                              <figure class="client-item">
+                                 <img src="{% static 'images\photo_2023-12-09_18-07-18.jpg'%}" alt="">
+                              </figure>
+                           </div>
+                        </div>
+                        <div class="col-lg-4">
+                           <div class="icon-box">
+                              <div class="box-icon">
+                                 <i aria-hidden="true" class="fas fa-umbrella-beach"></i>
+                              </div>
+                              <div class="icon-box-content">
+                                 <h3>{% trans "AFFORDABLE TOURS" %}</h3>
+                                 <p>{% trans "WE ARE LEGEND" %}</p>
+                              </div>
+                           </div>
+                           <div class="icon-box">
+                              <div class="box-icon">
+                                 <i aria-hidden="true" class="fas fa-user-tag"></i>
+                              </div>
+                              <div class="icon-box-content">
+                                 <h3>{% trans "BEST TOUR GUIDES" %}</h3>
+                                 <p>{% trans "WE ARE LEGEND" %}</p>
+                              </div>
+                           </div>
+                           <div class="icon-box">
+                              <div class="box-icon">
+                                 <i aria-hidden="true" class="fas fa-headset"></i>
+                              </div>
+                              <div class="icon-box-content">
+                                 <h3>{% trans "AFFORDABLE TOURS" %}</h3>
+                                 <p>{% trans "WE ARE LEGEND" %}</p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-6">
+                           <h3 class="comment-title ms-5">{% trans "Tell us what You think about us" %}</h3>
+                           {% if request.user.is_authenticated %}
+                              <div class="contact-from-wrap primary-bg">
+                                 <form method="POST" action="{% url 'main_about' %}">
+                                    {% csrf_token %}
+                                    <div class="rating">
+                                       <input type="radio" class="mx-5" name="stars" value="100" id="5"><label for="5">☆</label>
+                                       <input type="radio" name="stars" value="80" id="4"><label for="4">☆</label>
+                                       <input type="radio" class="mx-5" name="stars" value="60" id="3"><label for="3">☆</label>
+                                       <input type="radio" name="stars" value="40" id="2"><label for="2">☆</label>
+                                       <input type="radio" class="mx-5" name="stars" value="20" id="1"><label for="1">☆</label>
+                                     </div>
+                                       <p>
+                                          <textarea required rows="8" name="text" placeholder="Your Message*"></textarea>
+                                       </p>
+                                       <button class="btn btn-outline-light rounded-pill" type="submit">{% trans "SUBMIT MESSAGE" %}</button>
+                                 </form>
+                              </div>
+                           {% else %}
+                              <p>{% trans "You must be logged in to leave a testimonial" %}</p>
+                           {% endif %}
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               
+               <!-- ***about section html start form here*** -->
+               <!-- ***callback section html start form here*** -->
+               <div class="bg-img-fullcallback" style="background-image: url({% static 'images/img7.jpg' %});">
+                  <div class="overlay"></div>
+                  <div class="container">
+                     <div class="row">
+                        <div class="col-lg-8 offset-lg-2 text-center">
+                           <div class="callback-content">
+                              <div class="video-button">
+                                 <a  id="video-container" data-fancybox="video-gallery" href="https://www.youtube.com/watch?v=2OYar8OHEOU">
+                                    <i class="fas fa-play"></i>
+                                 </a>
+                              </div>
+                              <h2 class="section-title">{% trans "ARE YOU READY TO TRAVEL? REMEMBER US !!" %}</h2>
+                              <p>{% trans "WE ARE LEGEND" %}</p>
+                              <div class="callback-btn">
+                                 <a href="#" class="round-btn">{% trans "View Packages" %}</a>
+                                 <a href="#" class="outline-btn outline-btn-white">{% trans "Learn More" %}</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- ***callback section html end here*** -->
+            </section>
+         </main>
+{% endblock %}

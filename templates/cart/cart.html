@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block body %}
+
+         <main id="content" class="site-main">
+            <section class="booking-inner-page">
+               <!-- ***Inner Banner html start form here*** -->
+               <div class="inner-banner-wrap">
+                  <div class="inner-baner-container" style="background-image: url(assets/images/img7.jpg);">
+                     <div class="container">
+                        <div class="inner-banner-content">
+                           <h1 class="page-title">{% trans "Cart" %}</h1>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- ***Inner Banner html end here*** -->
+               <div class="cart-list-inner">
+                  <div class="container">
+                        <div class="table-responsive">
+                           <table class="table">
+                              <thead>
+                                 <tr>
+                                   <th></th>
+                                   <th>{% trans "Product Name" %}</th>
+                                   <th>{% trans "Price" %}</th>
+                                   <th>{% trans "Quantity" %}</th>
+                                   <th>{% trans "Sub Total" %}</th>
+                                 </tr>
+                              </thead>
+                              
+                              {% for f in cart_items %}
+                              <tr>
+                                 <td class="">
+                                    <span class="cartImage"><img
+                                       {% if f.tour.get_first_img %} 
+                                       src="{{ f.tour.get_first_img }}" 
+                                       {% else %}
+                                          src="{% static 'images/img8.jpg' %}"
+                                    {% endif %}   alt="image"></span>
+                                 </td>
+                                 <td data-column="Product Name">{{f.tour}}</td>
+                                 <td data-column="Price">
+                                    ${{f.tour.calc_disc}} / {% trans "per person" %}
+                                 </td>
+                                 <td data-column="Quantity" class="count-input">
+                                    <div>
+                                       <form action="{% url 'cart_user_cart' %}" method="POST">
+                                          {% csrf_token %}
+                                          <input type="hidden" name="cart_action" value="-">
+                                          <input type="hidden" name="cart_item_id" value="{{f.id}}">
+                                          <input type="hidden" name="cart_id" value="{{f.cart.id}}">
+                                          <button class="btn btn-small btn-outline-light rounded-circle border" type="submit"><i class="fa fa-minus text-dark"></i></button>
+                                       </form>
+
+                                       <input class="quantity" type="text" value={{f.count}}>
+                                       
+                                       <form action="{% url 'cart_user_cart' %}" method="POST">
+                                          {% csrf_token %}
+                                          <input type="hidden" name="cart_action" value="+">
+                                          <input type="hidden" name="cart_item_id" value="{{f.id}}">
+                                          <input type="hidden" name="cart_id" value="{{f.cart.id}}">
+                                          <button class="btn btn-small btn-outline-light rounded-circle border" type="submit"><i class="fa fa-plus text-dark"></i></button>
+                                       </form>
+                                    </div>
+                                 </td>
+                                 <td id ="subtotal" data-column="Sub Total">
+                                    $ {{ f.total }}
+                                 </td>
+                              </tr>
+                              {% endfor %}
+                          </table>
+                        </div>
+                        {% if cart_items %}
+                        <div class="totalAmountArea">
+                           <ul class="list-unstyled">
+                              <li><strong>{% trans "Total" %}</strong> <span class="grandTotal">${{cart.total}}</span></li>
+                           </ul>
+                        </div>
+                        <div class="checkBtnArea text-right">
+                          <a href="{% url 'payment' %}" class="round-btn">{% trans "Go to payment" %}</a>
+                        </div>
+                        {% endif %}
+                  </div>
+               </div>
+            </section>
+         </main>
+
+   <script>
+      $(document).ready(function(){
+      })
+   </script>
+{% endblock %}

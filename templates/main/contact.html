@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block css %}
+  
+{% endblock css %}
+
+{% block body %}
+  
+
+         <main id="content" class="site-main">
+            <section class="contact-inner-page">
+               <!-- ***Inner Banner html start form here*** -->
+               <div class="inner-banner-wrap">
+                  <div class="inner-baner-container" style="background-image: url(assets/images/img7.jpg);">
+                     <div class="container">
+                        <div class="inner-banner-content">
+                           <h1 class="page-title">{% trans "Contact US" %}</h1>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- ***Inner Banner html end here*** -->
+               <!-- ***contact section html start form here*** -->
+               <div class="inner-contact-wrap">
+                  <div class="container">
+                     <div class="row">
+                        <div class="col-lg-6">
+                           <div class="section-heading">
+                              <h5 class="sub-title">{% trans "GET IN TOUCH" %}</h5>
+                              <h2 class="section-title">{% trans "REACH & CONTACT US!" %}</h2>
+                              <p>{% trans "we can help you by contacting us" %}</p>
+                              <div class="social-icon">
+                                 <ul>
+                                    <li>
+                                       <a href="https://www.facebook.com" target="_blank">
+                                          <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                                       </a>
+                                    </li>
+                                    <li>
+                                       <a href="https://www.twitter.com" target="_blank">
+                                          <i class="fab fa-twitter" aria-hidden="true"></i>
+                                       </a>
+                                    </li>
+                                    <li>
+                                       <a href="https://www.youtube.com" target="_blank">
+                                          <i class="fab fa-youtube" aria-hidden="true"></i>
+                                       </a>
+                                    </li>
+                                    <li>
+                                       <a href="https://www.instagram.com" target="_blank">
+                                          <i class="fab fa-instagram" aria-hidden="true"></i>
+                                       </a>
+                                    </li>
+                                    <li>
+                                       <a href="https://www.pinterest.com" target="_blank">
+                                          <i class="fab fa-pinterest" aria-hidden="true"></i>
+                                       </a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                           <div class="contact-map">
+                              <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d767.6732652932288!2d66.93844707763476!3d39.67911857042617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMznCsDQwJzQ0LjYiTiA2NsKwNTYnMjAuMSJF!5e0!3m2!1sen!2s!4v1701959782134!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                           </div>
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="contact-from-wrap primary-bg">
+                              <form method="post" class="contact-from">
+                                {% csrf_token %}
+                                    <p>
+                                        <label>{% trans "First Name" %}..</label>
+                                        <input type="text" name="first_name" placeholder="Your Name*" required>
+                                    </p>
+                                    <p>
+                                        <label>{% trans "Phone" %}</label>
+                                        <input type="text" name="phone_number" placeholder="Your Phone*" required>
+                                    </p>
+                                    <p>
+                                        <label>{% trans "Comments / Questions" %}</label>
+                                        <textarea rows="8" name="comment" placeholder="Your Message*" required></textarea>
+                                    </p>
+                                 <p>
+                                    <input type="submit" name="submit" value="SUBMIT MESSAGE">
+                                 </p>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- ***contact section html start form here*** -->
+               <!-- ***iconbox section html start form here*** -->
+               <div class="contact-details-section bg-light-grey">
+                  <div class="container">
+                     <div class="row align-items-center">
+                        <div class="col-lg-4">
+                           <div class="icon-box border-icon-box">
+                              <div class="box-icon">
+                                 <i aria-hidden="true" class="fas fa-envelope-open-text"></i>
+                              </div>
+                              <div class="icon-box-content">
+                                 <h4>{% trans "EMAIL ADDRESS" %}</h4>
+                                 <ul>
+                                    <li>
+                                       <a href="mailto:khasan.davlatov707@mail.ru">khasan.davlatov707@mail.ru</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4">
+                           <div class="icon-box border-icon-box">
+                              <div class="box-icon">
+                                 <i aria-hidden="true" class="fas fa-phone-alt"></i>
+                              </div>
+                              <div class="icon-box-content">
+                                 <h4>{% trans "PHONE NUMBER" %}</h4>
+                                 <ul>
+                                    <li>
+                                       <a href="tell:+998976317070">+998 (97) 631 70 70</a>
+                                    </li>
+                                    <li>
+                                       <a href="callto:01977259912">+998 (97) 578 96 68</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4">
+                           <div class="icon-box border-icon-box">
+                              <div class="box-icon">
+                                 <i aria-hidden="true" class="fas fa-map-marker-alt"></i>
+                              </div>
+                              <div class="icon-box-content">
+                                 <h4>{% trans "ADDRESS LOCATION" %}</h4>
+                                 <ul>
+                                    <li>
+                                        Oltin Asr MFY
+                                    </li>
+                                    <li>
+                                       A.Rudakiy ko'chasi
+                                    </li>
+                                    <li>
+                                       138-uy, 18-xonadon
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- ***iconbox section html end here*** -->
+            </section>
+         </main>
+{% endblock body %}
+
+{% block js %}
+  
+{% endblock js %}

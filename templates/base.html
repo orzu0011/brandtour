@@ -1,0 +1,351 @@
+{% load i18n %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- favicon -->
+      <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="{% static 'vendors/bootstrap/css/bootstrap.min.css' %}" media="all">
+      <!-- jquery-ui css -->
+      <link rel="stylesheet" type="text/css" href="{% static 'vendors/jquery-ui/jquery-ui.min.css' %}">
+      <!-- fancybox box css -->
+      <link rel="stylesheet" type="text/css" href="{% static 'vendors/fancybox/dist/jquery.fancybox.min.css' %}">
+      <!-- Fonts Awesome CSS -->
+      <link rel="stylesheet" type="text/css" href="{% static 'vendors/fontawesome/css/all.min.css' %}">
+      <!-- Elmentkit Icon CSS -->
+      <link rel="stylesheet" type="text/css" href="{% static 'vendors/elementskit-icon-pack/assets/css/ekiticons.css' %}">
+      <!-- slick slider css -->
+      <link rel="stylesheet" type="text/css" href="{% static 'vendors/slick/slick.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'vendors/slick/slick-theme.css' %}">
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+      <!-- google fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+      <!-- Custom CSS -->
+      <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+      {% block css %}
+        {% endblock %}
+      <title>Brand Tour</title>
+   </head>
+   <body class="home">
+      <div id="siteLoader" class="site-loader">
+         <div class="preloader-content">
+            <img src="{% static 'images/loader1.gif' %}" alt="">
+         </div>
+      </div>
+      <div id="page" class="page">
+         <!-- site header html start  -->
+         <header id="masthead" class="site-header">
+            <!-- header html start -->
+            <div class="top-header">
+               <div class="container">
+                  <div class="top-header-inner">
+                     <div class="header-contact text-left">
+                        <a href="tel:+01977259912">
+                           <i aria-hidden="true" class="icon icon-phone-call2"></i>
+                           <div class="header-contact-details">
+                              <span class="contact-label">For Further Inquires :</span>
+                              <h5 class="header-contact-no">+998976317070</h5>
+                           </div>
+                        </a>
+                     </div>
+                     <div class="site-logo text-center">
+                        <h1 class="site-title">
+                           <a href="#">
+                              <img src="{% static 'images/img/logo-no-background.png' %}" alt="Logo">
+                           </a>
+                        </h1>
+                     </div>
+                     <div class="header-icon text-right">
+                        {% if request.user.is_authenticated %}
+                           <div class="header-logout-icon d-inline-block text-light">
+                              <a href="{% url 'logout' %}" style="font-size: 1.5em;">
+                                 <i class='bx bx-log-out mt-1 me-1'></i>
+                              </a>
+                           </div>
+                        {% endif %}
+                        <div class="header-search-icon d-inline-block">
+                           <a href="#">
+                              <i aria-hidden="true" class="fas fa-search"></i>
+                           </a>
+                        </div>
+                           
+                           <div class="navigation-container d-inline-block">
+                              {% get_current_language as current_language %}
+                              {% get_available_languages as aviable_languages %}
+                              {% get_language_info_list for aviable_languages as langs %}
+                              <ul id="navigation" class="navigation">
+                                 <li class="menu-item-has-children">
+                                    <a href="#">{{ current_language }}</a>
+                                    <ul>
+                                       {% for i in langs %}
+                                       <li>
+                                          <a href="/{{i.code}}">{{i.name_local}}</a>
+                                       </li>
+                                       {% endfor %}
+                                       <!-- <li>
+                                          <a href="http://{{ current_site_url }}/ru/">Russian</a>
+                                       </li>
+                                       <li>
+                                          <a href="http://{{ current_site_url }}/uz/">Uzbek</a>
+                                       </li> -->
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="bottom-header">
+               <div class="container">
+                  <div class="bottom-header-inner d-flex justify-content-between align-items-center">
+                     <div class="header-social social-icon">
+                        <ul>
+                           <li>
+                              <a href="https://www.facebook.com" target="_blank">
+                                 <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="https://t.me/Brandtour_uz" target="_blank">
+                                 <i class="fab fa-telegram" aria-hidden="true"></i>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="https://www.youtube.com" target="_blank">
+                                 <i class="fab fa-youtube" aria-hidden="true"></i>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="navigation-container d-none d-lg-block">
+                        <nav id="navigation" class="navigation">
+                           <ul>
+                              <li {% if "" == request.path|slice:":-1" %} class="menu-active" {% endif %}>
+                                 <a href="{% url 'main_home_view' %}">{% trans "home" %}</a>
+                              </li>
+                              <li {% if "about-us" in request.path %} class="menu-active" {% endif %}>
+                                 <a href="{% url 'main_about' %}">{% trans "about us" %}</a>
+                              </li>
+                              <li {% if "destination" in request.path %} class="menu-active" {% endif %}>
+                                 <a href="{% url 'main_destination' %}">{% trans "destination" %}</a>
+                              </li>
+                              <li {% if "contact-us" in request.path %} class="menu-active" {% endif %}>
+                                 <a href="{% url 'main_contact' %}">{% trans "contact us" %}</a>
+                              </li>
+                              {% if request.user.is_authenticated %}
+                              <li {% if "my-orders" in request.path %} class="menu-active" {% endif %}>
+                                 <a href="{% url 'my_orders' %}">{% trans "my orders" %}</a>
+                              </li>
+                              {% endif %}
+                           </ul>
+                        </nav>
+                     </div>
+                     {% if not request.user.is_authenticated %}
+                     <div class="header-btn">
+                        <a href="{% url 'register' %}" class="round-btn">{% trans "Login or Sign Up" %}</a>
+                     </div>
+                        {% else %}
+                        <div class="row header-cart-btn bg-primary rounded-pill" style="position: relative;">
+                           <div class="align-items-center">
+                              <a href="{% url 'cart_user_cart' %}" style="font-size: 1.5em;" 
+                                 class="px-1">
+                                 <i class='bx bx-cart-alt text-light'></i>
+                              </a>
+                              <small class="bg-light rounded-circle text-danger mb-5 px-1"
+                                 style="position: absolute; right: 0.5em; font-weight: bolder;">
+                                 {{ request.user.count_cart_items }}
+                              </small>
+                           </div>
+                        </div>
+                        <div class="header-btn">
+                           <a href="{% url 'tour_all_tours' %}" class="round-btn">{% trans "Book now" %}</a>
+                        </div>
+                     {% endif %}
+                  </div>
+               </div>
+            </div>
+            
+         </header>
+         <!-- site header html end  -->
+         {% block body %}
+         {% endblock %}
+         <!-- ***site footer html start form here*** -->
+         <footer id="colophon" class="site-footer footer-primary">
+            <div class="top-footer">
+               <div class="container">
+                  <div class="upper-footer">
+                     <div class="row">
+                        <div class="col-lg-3 col-sm-6">
+                           <aside class="widget widget_text">
+                              <div class="footer-logo">
+                                 <a href="/"><img src="{% static 'images/img/logo-no-background.png' %}" alt=""></a>
+                              </div>
+                           </aside>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                           <aside class="widget widget_text">
+                              <h3 class="widget-title">{% trans "CONTACT US" %}</h3>
+                              <div class="textwidget widget-text">
+                                 <p>{% trans "Feel free to contact and" %}<br/>{% trans "reach us !!" %}</p>
+                                 <ul>
+                                    <li>
+                                       <a href="tel:+01988256203">
+                                          <i aria-hidden="true" class="icon icon-phone1"></i>
+                                          +998975789668
+                                       </a>
+                                    </li>
+                                    <li>
+                                       <a href="mailtop:info@domain.com">
+                                          <i aria-hidden="true" class="icon icon-envelope1"></i>
+                                          khasan.davlatov707@mail.ru
+                                       </a>
+                                    </li>
+                                    <li>
+                                       <i aria-hidden="true" class="icon icon-map-marker1"></i>
+                                       A.Rudakiy ko'chasi, 138-uy, 18-xonadon
+                                    </li>
+                                 </ul>
+                              </div>
+                           </aside>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                           <aside class="widget">
+                              <h3 class="widget-title">{% trans "Gallery" %}</h3>
+                              <div class="gallery gallery-colum-3">
+                                 <figure class="gallery-item">
+                                    <a href="#" data-fancybox="gallery-1">
+                                       <img src="https://wowiwalkers.com/wp-content/uploads/2020/11/tranganboattourheader2.jpg" alt="">
+                                    </a>
+                                 </figure>
+                                 <figure class="gallery-item">
+                                    <a href="#" data-fancybox="gallery-1">
+                                       <img src="https://media.architecturaldigest.com/photos/56747f087fd9a58978b7bca6/master/pass/tour-one-of-americas-most-expensive-homes-a-beautiful-159-million-mansion-01.jpg" alt="">
+                                    </a>
+                                 </figure>
+                                 <figure class="gallery-item">
+                                    <a href="#" data-fancybox="gallery-1">
+                                       <img src="https://www.italyperfect.com/blog/wp-content/uploads/2022/02/italy-perfect-panoramic-view-of-florence-walking-tour.jpg" alt="">
+                                    </a>
+                                 </figure>
+                                 <figure class="gallery-item">
+                                    <a href="#" data-fancybox="gallery-1">
+                                       <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/12/18/5e/e3.jpg" alt="">
+                                    </a>
+                                 </figure>
+                                 <figure class="gallery-item">
+                                    <a href="#" data-fancybox="gallery-1">
+                                       <img src="https://news.cgtn.com/news/2020-09-21/Amazing-landscapes-along-the-2020-Tour-de-France-route--TXLsCVpalW/img/501e74c8b26e43c99644c00fc66076ae/501e74c8b26e43c99644c00fc66076ae.jpeg" alt="">
+                                    </a>
+                                 </figure>
+                                 <figure class="gallery-item">
+                                    <a href="#" data-fancybox="gallery-1">
+                                       <img src="https://www.gujarattourism.com/content/gujrattourism/en/tours/customized-tour-offered-by-tcgl/saurashtra-darshan-tour/_jcr_content/root/responsivegrid/tourbanner.coreimg.jpeg/1594791662496/dwarka-rukmini-temple-1.jpeg" alt="">
+                                    </a>
+                                 </figure>
+                              </div>
+                           </aside>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="lower-footer">
+                     <div class="row align-items-center">
+                        <div class="col-lg-6">
+                           <div class="footer-newsletter">
+                              <p>{% trans "Subscribe our newsletter for more update & news !!" %}</p>
+                              <form class="newsletter">
+                                 <input type="email" name="email" placeholder="Enter Your Email">
+                                 <a href="{% url 'register' %}" class="outline-btn outline-btn-white">{% trans "Subscribe" %}</a>
+                              </form>
+                           </div>
+                        </div>
+                        <div class="col-lg-6 text-right">
+                           <div class="social-icon">
+                              <ul>
+                                 <li>
+                                    <a href="https://www.facebook.com/" target="_blank">
+                                       <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="https://t.me/Brandtour_uz" target="_blank">
+                                       <i class="fab fa-telegram" aria-hidden="true"></i>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="https://www.youtube.com/" target="_blank">
+                                       <i class="fab fa-youtube" aria-hidden="true"></i>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="https://instagram.com/brand_touruz?igshid=OGQ5ZDc2ODk2ZA==" target="_blank">
+                                       <i class="fab fa-instagram" aria-hidden="true"></i>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="footer-menu">
+                              <ul>
+                                 <li>
+                                    <a href="#">{% trans "Privacy Policy" %}</a>
+                                 </li>
+                                 <li>
+                                    <a href="#">{% trans "Term & Condition" %}</a>
+                                 </li>
+                                 <li>
+                                    <a href="#">{% trans "FAQ" %}</a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="bottom-footer">
+               <div class="container">
+                  <div class="copy-right text-center">{% trans "Copyright" %} &copy; {% trans "2023 Brand Tour. All rights reserved." %}</div>
+               </div>
+            </div>
+         </footer>
+         <!-- ***site footer html end*** -->
+         <a id="backTotop" href="#" class="to-top-icon">
+            <i class="fas fa-chevron-up"></i>
+         </a>
+         <!-- ***custom search field html*** -->
+         <div class="header-search-form">
+            <div class="container">
+               <div class="header-search-container">
+                  <form class="search-form" role="search" method="get" >
+                     <input type="text" name="s" placeholder="Enter your text...">
+                  </form>
+                  <a href="#" class="search-close">
+                     <i class="fas fa-times"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+         <!-- ***custom search field html*** -->
+      </div>
+
+      <!-- JavaScript -->
+      <script src="{% static 'vendors/jquery/jquery.js' %}"></script>
+      <script src="{% static 'vendors/waypoint/waypoints.js' %}"></script>
+      <script src="{% static 'vendors/bootstrap/js/bootstrap.min.js' %}"></script>
+      <script src="{% static 'vendors/jquery-ui/jquery-ui.min.js' %}"></script>
+      <script src="{% static 'vendors/countdown-date-loop-counter/loopcounter.js' %}"></script>
+      <script src="{% static 'vendors/counterup/jquery.counterup.min.js' %}"></script>
+      <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+      <script src="{% static 'vendors/masonry/masonry.pkgd.min.js' %}"></script>
+      <script src="{% static 'vendors/slick/slick.min.js' %}"></script>
+      <script src="{% static 'vendors/fancybox/dist/jquery.fancybox.min.js' %}"></script>
+      <script src="{% static 'vendors/slick-nav/jquery.slicknav.js' %}"></script>
+      <script src="{% static 'js/custom.min.js' %}"></script>
+      {% block js %}
+      {% endblock %}
+   </body>
+</html>

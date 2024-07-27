@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block css %}
+  
+{% endblock %}
+
+{% block body %}
+   <main id="content" class="site-main">
+      <!-- ***Inner Banner html start form here*** -->
+      <div class="inner-banner-wrap">
+         <div class="inner-baner-container" style="background-image: url(assets/images/img7.jpg);">
+            <div class="container">
+               <div class="inner-banner-content">
+                  <h1 class="page-title">{{post.title}}</h1>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- ***Inner Banner html end here*** -->
+      <div class="single-post-section">
+         <div class="single-post-inner">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-8 primary right-sidebar">
+                     <!-- single blog post html start -->
+                     <figure class="feature-image">
+                        <img src="{{ post.photo.url }}" alt="">
+                     </figure>
+                     <div class="entry-meta">
+                        <span class="byline">
+                           <a href="#">{% trans "Demoteam" %}</a>
+                        </span>
+                        <span class="posted-on">
+                           <a href="#">{{ post.created_at.date }}</a>
+                        </span>
+                        {% if post.comment_count %}
+                           <span class="comments-link">
+                              <a href="#commentArea">{{post.comment_count}}</a>
+                           </span>
+                        {% else %}
+                           <span class="comments-link">
+                              <a href="#commentArea">{% trans "No Comments" %}</a>
+                           </span>
+                        {% endif %}
+                     </div>
+                     <article class="single-content-wrap">
+                        <blockquote>
+                           <p>{{post.title}}</p>
+                        </blockquote>
+                        <p>{{post.body}}</p>
+                     </article>
+                     <div class="meta-wrap">
+                        <div class="tag-links">
+                           <a href="#">{% trans "Destination" %}</a>,
+                           <a href="#">{% trans "hiking" %}</a>,
+                           <a href="#">{% trans "Travel Dairies" %}</a>,
+                           <a href="#">{% trans "Travelling" %}</a>,
+                           <a href="#">{% trans "Trekking" %}</a>
+                        </div>
+                     </div>
+                     <!-- <div class="author-wrap">
+                        <div class="author-thumb">
+                           <img src="assets/images/user-img.png" alt="">
+                        </div>
+                        <div class="author-content">
+                           <h3 class="author-name">Demoteam</h3>
+                           <p>Anim eligendi error magnis. Pretium fugiat cubilia ullamcorper adipisci, lobortis repellendus sit culpa maiores!</p>
+                           <a href="blog-archive.html" class="button-text">View All Posts > </a>
+                        </div>
+                     </div> -->
+                     <!-- post comment html -->
+                     <div id="commentArea" class="comment-area">
+                        <h3 class="comment-title">{{post.comment_count}} {% trans "Comments" %}</h3>
+                        <div class="comment-area-inner">
+                           <ol>
+                              {% for comment in comments %}
+                                 <li>
+                                    <figure class="comment-thumb">
+                                       <img src="{{ request.user.photo.url }}" alt="User photo">
+                                    </figure>
+                                    <div class="comment-content">
+                                       <div class="comment-header">
+                                          <h5 class="author-name">{{comment.user}}</h5>
+                                          <span class="post-on">{{comment.created_at.date}}</span>
+                                       </div>
+                                       <p>{{comment.text}}</p>
+                                       
+                                    </div>
+                                 </li>
+                              {% endfor %}
+                           </ol>
+                        </div>
+                        <div id="replyForm" class="comment-form-wrap">
+                           {% if request.user.is_authenticated %}
+                           <form class="comment-form" method="post">{% csrf_token %}
+                                 <p class="full-width">
+                                    <label>{% trans "Comment" %}</label>
+                                    <textarea rows="9" name="text" required></textarea>
+                                 </p>
+                              
+                              <p class="full-width">
+                                 <input type="submit" name="submit" value="{% trans 'Post comment' %}">
+                              </p>
+                           </form>
+                              {% else %}
+                              <h3 class="comment-title">{% trans "Leave a Reply" %}</h3>
+                              <p>{% trans "You must be logged in to leave a comment" %}</p>
+                           {% endif %}
+                        </div>
+                     </div>
+                     <!-- blog post item html end -->
+                  </div>
+                  <div class="col-lg-4 secondary">
+                     <div class="sidebar">
+                        <aside class="widget widget_latest_post widget-post-thumb">
+                           <h3 class="widget-title">{% trans "Recent Post" %}</h3>
+                           <ul>
+                              {% for recent_post in recent_posts %}
+                                 <li>
+                                    <figure class="post-thumb">
+                                       <a href="{% url 'detail_post' recent_post.pk %}"><img src="{{recent_post.photo.url}}" alt=""></a>
+                                    </figure>
+                                    <div class="post-content">
+                                       <h5>
+                                          <a href="{% url 'detail_post' recent_post.pk %}">BEST JOURNEY TO PEACEFUL PLACES</a>
+                                       </h5>
+                                       <div class="entry-meta">
+                                          <span class="posted-on">
+                                             <a href="{% url 'detail_post' recent_post.pk %}">{{recent_post.created_at.date}}</a>
+                                          </span>
+                                          {% if recent_post.comment_count %}
+                                             <span class="comments-link">
+                                                <a href="{% url 'detail_post' recent_post.pk %}">{{recent_post.comment_count}}</a>
+                                             </span>
+                                          {% else %}
+                                             <span class="comments-link">
+                                                <a href="{% url 'detail_post' recent_post.pk %}">No Comments</a>
+                                             </span>
+                                          {% endif %}
+                                       </div>
+                                    </div>
+                                 </li>
+                              {% endfor %}
+                           </ul>
+                        </aside>
+                        <aside class="widget widget_adds">
+                           <figure>
+                              <img src="{% static 'images/add-banner.jpg' %}">
+                           </figure>
+                        </aside>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </main>
+   <!-- ***site footer html end*** -->
+   <a id="backTotop" href="#" class="to-top-icon">
+      <i class="fas fa-chevron-up"></i>
+   </a>
+   <!-- ***custom search field html*** -->
+   <div class="header-search-form">
+      <div class="container">
+         <div class="header-search-container">
+            <form class="search-form" role="search" method="get" >
+               <input type="text" name="s" placeholder="Enter your text...">
+            </form>
+            <a href="#" class="search-close">
+               <i class="fas fa-times"></i>
+            </a>
+         </div>
+      </div>
+   </div>
+  
+{% endblock body %} 
+{% block js %}
+  
+{% endblock %}

@@ -1,0 +1,544 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block css %}
+<style>
+   .tour_p {
+      overflow: hidden;
+      width:100%;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+  }
+</style>
+{% endblock %}
+
+{% block body %}
+      <div id="page" class="page">
+         <main id="content" class="site-main">
+            <!-- ***home banner html start form here*** -->
+            <section class="home-banner-section home-banner-slider">
+               <div class="home-banner d-flex flex-wrap align-items-center" style="background-image: url({% static 'images/banner-img1.jpg' %});">
+                  <div class="overlay"></div>
+                  <div class="container">
+                     <div class="banner-content text-center">
+                        <div class="row">
+                           <div class="col-lg-8 offset-lg-2">
+                              <h2 class="banner-title">{% trans "JOURNEY TO EXPLORE WORLD" %}</h2>
+                              <p>{% trans "You can travel to any country in the world through our tour company" %}</p>
+                              <div class="banner-btn">
+                                 <a href="{% url 'main_about' %}" class="round-btn">{% trans "LEARN MORE" %}</a>
+                                 <a href="{% url 'tour_all_tours' %}" class="outline-btn outline-btn-white">{% trans "BOOK NOW" %}</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="home-banner d-flex flex-wrap align-items-center" 
+               style="background-image: url(https://assets-news.housing.com/news/wp-content/uploads/2022/06/28101013/15-worlds-best-places-to-visit-18.jpg);">
+                  <div class="overlay"></div>
+                  <div class="container">
+                     <div class="banner-content text-center">
+                        <div class="row">
+                           <div class="col-lg-8 offset-lg-2">
+                              <h2 class="banner-title">{% trans "BEAUTIFUL PLACE TO VISIT" %}</h2>
+                              <p>{% trans "You can travel to any country in the world through our tour company" %}</p>
+                              <div class="banner-btn">
+                                 <a href="{% url 'main_about' %}" class="round-btn">{% trans "LEARN MORE" %}</a>
+                                 <a href="{% url 'tour_all_tours' %}" class="outline-btn outline-btn-white">{% trans "BOOK NOW" %}</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- ***home banner html end here*** -->
+            <!-- ***Home search field html start from here*** -->
+            <div class="home-trip-search primary-bg">
+               <div class="container">
+                  <form method="get" class="trip-search-inner d-flex">
+                     <div class="group-input">
+                        <label>{% trans "Search Destination* " %}</label>
+                        <input type="text" name="s" placeholder="{% trans 'Enter Destination' %}">
+                     </div>
+                     <div class="group-input">
+                        <label>{% trans "" %}Pax Number* </label>
+                        <input type="text" name="s" placeholder="{% trans 'No.of People' %}">
+                     </div>
+                     <div class="group-input width-col-3">
+                        <label>{% trans "Checkin Date* " %} </label>
+                        <i class="far fa-calendar"></i>
+                        <input class="input-date-picker" type="text" name="s" placeholder="{% trans 'MM / DD / YY' %}" autocomplete="off" readonly="readonly">
+                     </div>
+                     <div class="group-input width-col-3">
+                        <label>{% trans "Checkout Date* " %}</label>
+                        <i class="far fa-calendar"></i>
+                        <input class="input-date-picker" type="text" name="s" placeholder="{% trans 'MM / DD / YY' %}" autocomplete="off" readonly="readonly">
+                     </div>
+                     <div class="group-input width-col-3">
+                        <input type="submit" name="travel-search" value="{% trans 'INQUIRE NOW' %}">
+                     </div>
+                  </form>
+               </div>
+            </div>
+            <!-- ***search search field html end here*** -->
+            <!-- ***Home destination html start from here*** -->
+            <section class="home-destination">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-8 offset-lg-2 text-sm-center">
+                        <div class="section-heading">
+                           <h5 class="sub-title">{% trans "UNCOVER PLACE" %}</h5>
+                           <h2 class="section-title">{% trans "POPULAR DESTINATION" %}</h2>
+                           <!-- <p>Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium. Sit ornare mollitia tenetur, aptent.</p> -->
+                        </div>
+                     </div>
+                  </div>
+                  <div class="destination-section">
+                     <div class="row">
+                        {% for dest in last_three_dests %}
+                        <div class="col-lg-4 col-md-6">
+                           <article class="destination-item" style="background-image: url({{ dest.photo.url }});">
+                              <div class="destination-content">
+                                 <div class="rating-start-wrap">
+                                    <div class="rating-start">
+                                       <span style="width: 100%"></span>
+                                    </div>
+                                 </div>
+                                 <span class="cat-link">
+                                    <a href="#">{{ dest.country.name }}</a>
+                                 </span>
+                                 <h3>
+                                    <a href="#">{{ dest.city }}</a>
+                                 </h3>
+                                 <p>{{ dest.about }}</p>
+                              </div>
+                           </article>
+                        </div>
+                        {% endfor %}
+                     </div>
+                     <div class="section-btn-wrap text-center">
+                        <a href="{% url 'main_destination' %}" class="round-btn">{% trans "More Destination" %}</a>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- ***Home destination html end here*** -->
+            <!-- ***Home package html start from here*** -->
+            <section class="home-package">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-8 offset-lg-2 text-sm-center">
+                        <div class="section-heading">
+                           <h5 class="sub-title">{% trans "POPULAR TOURS" %}</h5>
+                           <h2 class="section-title">{% trans "CHECKOUT OUR TOURS" %}</h2>
+                           <p>{% trans "The best Tours are in Brand Tour" %}</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="package-section">
+                     {% for tour in last_three_tours %}
+                     <article class="package-item">
+                        <figure class="package-image" style="background-image: url({{ tour.get_first_img }});"></figure>
+                        <div class="package-content">
+                           <h3>
+                              <a href="{% url 'tour_tour_detail' tour.id %}">
+                                 {{ tour.title }}
+                              </a>
+                           </h3>
+                           <p class="tour_p">{{ tour.overview }}</p>
+                           <div class="package-meta">
+                              <ul>
+                                 <li>
+                                    <i class="fas fa-clock"></i>
+                                    {{ tour.duration }}
+                                 </li>
+                                 <li>
+                                    <i class="fas fa-user-friends"></i>
+                                    {% trans "pax: " %}{{ tour.person_count }}
+                                 </li>
+                                 <li>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    {{ tour.country }}
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="package-price">
+                           <div class="review-area">
+                              <span class="review-text">({{tour.id}}{% trans "reviews" %})</span>
+                              <div class="rating-start-wrap d-inline-block">
+                                 <div class="rating-start">
+                                    <span style="width: 100%"></span>
+                                 </div>
+                              </div>
+                           </div>
+                           <h6 class="price-list">
+                              <span>${{ tour.calc_disc }}</span>
+                              {% trans "per person" %}/ 
+                           </h6>
+                           <a href="{% url 'cart_add_to_cart' tour.id %}" class="outline-btn outline-btn-white">{% trans "Add to cart" %}</a>
+                        </div>
+                     </article>
+                     {% endfor %}
+                     <div class="section-btn-wrap text-center">
+                        <a href="{% url 'tour_all_tours' %}" class="round-btn">{% trans "VIEW ALL TOURS" %}</a>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- ***Home package html end here*** -->
+            <!-- ***Home callback html start from here*** -->
+            <section class="home-callback bg-img-fullcallback" style="background-image: url({% static 'images/img7.jpg' %});">
+               <div class="overlay"></div>
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-8 offset-lg-2 text-center">
+                        <div class="callback-content">
+                           <div class="video-button">
+                              <a  id="video-container" data-fancybox="video-gallery" href="https://www.youtube.com/watch?v=2OYar8OHEOU">
+                                 <i class="fas fa-play"></i>
+                              </a>
+                           </div>
+                           <h2 class="section-title">{% trans "ARE YOU READY TO TRAVEL? REMEMBER US !!" %}</h2>
+                           <p>{% trans "By choosing our tour company, you will get comfortable quality and affordable prices" %}</p>
+                           <div class="callback-btn">
+                              <a href="#" class="round-btn">{% trans "View Packages" %}</a>
+                              <a href="#" class="outline-btn outline-btn-white">{% trans "Learn More" %}</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- ***Home callback html end here*** -->
+            <!-- ***Home counter html start from here*** -->
+            <div class="home-counter">
+               <div class="container">
+                  <div class="counter-wrap">
+                     <div class="counter-item">
+                        <span class="counter-no">
+                           <span class="counter">80</span>K+
+                        </span>
+                        <span class="counter-desc">
+                           {% trans "SATISFIED CUSTOMER" %}
+                        </span>
+                     </div>
+                     <div class="counter-item">
+                        <span class="counter-no">
+                           <span class="counter">18</span>+
+                        </span>
+                        <span class="counter-desc">
+                           {% trans "ACTIVE MEMBERS" %}
+                        </span>
+                     </div>
+                     <div class="counter-item">
+                        <span class="counter-no">
+                           <span class="counter">220</span>+
+                        </span>
+                        <span class="counter-desc">
+                           {% trans "TOUR DESTINATION" %}
+                        </span>
+                     </div>
+                     <div class="counter-item">
+                        <span class="counter-no">
+                           <span class="counter">75</span>+
+                        </span>
+                        <span class="counter-desc">
+                           {% trans "TRAVEL GUIDES" %}
+                        </span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- ***Home counter html end here*** -->
+            <!-- ***Home offer html start from here*** -->
+            <section class="home-offer">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-8 offset-lg-2 text-sm-center">
+                        <div class="section-heading">
+                           <h5 class="sub-title">{% trans "OFFER & DISCOUNT" %}</h5>
+                           <h2 class="section-title">{% trans "OUR SPECIAL PACKAGES" %}</h2>
+                           <p>{% trans "We have made special Tours for You" %}</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="offer-section">
+                     <div class="row">
+                        {% for tour_disc in last_three_tours_disc %}
+                        <div class="col-md-6">
+                           <article class="offer-item" 
+                           {% if recent_tour.get_first_img %} 
+                                    style="background-image: url({{tour_disc.get_fist_img}});"
+                                    {% else %}
+                                    style="background-image: url({% static 'images/img8.jpg' %});"
+                                 {% endif %}>
+                              <div class="offer-badge">
+                                 <span>{{ tour_disc.discount }}%</span>{% trans "off" %}
+                              </div>
+                              <div class="offer-content">
+                                 <div class="package-meta">
+                                    <ul>
+                                       <li>
+                                          <i class="fas fa-clock"></i>
+                                          {{ tour_disc.duration }}
+                                       </li>
+                                       <li>
+                                          <i class="fas fa-user-friends"></i>
+                                          {% trans "pax" %}: {{ tour_disc.person_count }}
+                                       </li>
+                                       <li>
+                                          <i class="fas fa-map-marker-alt"></i>
+                                          {{ tour_disc.country }}
+                                       </li>
+                                    </ul>
+                                 </div>
+                                 <h3>
+                                    <a href="{% url 'tour_tour_detail' tour_disc.id %}">{{ tour_disc.title }}</a>
+                                 </h3>
+                                 <p class="tour_p">{{ tour_disc.overview }}</p>
+                                 <div class="price-list">
+                                    {% trans "price" %}: 
+                                    <del>${{ tour_disc.price }} </del>
+                                    <ins>${{ tour_disc.calc_disc }}</ins>
+                                 </div>
+                                 <a href="{% url 'cart_add_to_cart' tour_disc.id %}" class="round-btn">{% trans "Add to Cart" %}</a>
+                              </div>
+                           </article>
+                        </div>
+                        {% endfor %}
+                     </div>
+                     <div class="section-btn-wrap text-center">
+                        <a href="{% url 'tour_special_tours' %}" class="round-btn">{% trans "VIEW ALL Tours" %}</a>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- ***Home offer html end here*** -->
+            <!-- ***Home gallery html start from here*** -->
+            <section class="home-gallery">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-8 offset-lg-2 text-sm-center">
+                        <div class="section-heading">
+                           <h5 class="sub-title">{% trans "PHOTO GALLERY" %}</h5>
+                           <h2 class="section-title">{% trans "PHOTO'S FROM TRAVELLERS" %}</h2>
+                           <p>{% trans "Satisfied customers with our quality services" %}</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="gallery-section">
+                     <div class="gallery-container grid">
+                        <div class="single-gallery grid-item">
+                           <figure class="gallery-img">
+                              <a href="#" data-fancybox="gallery">
+                                 <img src="data:image/jpeg;base64,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" alt="">
+                              </a>
+                           </figure>
+                        </div>
+                        <div class="single-gallery grid-item">
+                           <figure class="gallery-img">
+                              <a href="#" data-fancybox="gallery">
+                                 <img src="data:image/jpeg;base64,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" alt="">
+                              </a>
+                           </figure>
+                        </div>
+                        <div class="single-gallery grid-item">
+                           <figure class="gallery-img">
+                              <a href="#" data-fancybox="gallery">
+                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp2KrJGw-TNTl5djnxSoJEPfFDR0w4WCoctA&usqp=CAU" alt="">
+                              </a>
+                           </figure>
+                        </div>
+                        <div class="single-gallery grid-item">
+                           <figure class="gallery-img">
+                              <a href="#" data-fancybox="gallery">
+                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRNDZ_sUEX5XEjsSGf0nFclDeW35ksgIys3Q&usqp=CAU" alt="">
+                              </a>
+                           </figure>
+                        </div>
+                        <div class="single-gallery grid-item">
+                           <figure class="gallery-img">
+                              <a href="#" data-fancybox="gallery">
+                                 <img src="https://images.unsplash.com/photo-1522878129833-838a904a0e9e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHx8fA%3D%3D" alt="">
+                              </a>
+                           </figure>
+                        </div>
+                        <div class="single-gallery grid-item">
+                           <figure class="gallery-img">
+                              <a href="#" data-fancybox="gallery">
+                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrYlepyOxzv8_0s1u5yIbNwbMUf9r2Np8srA&usqp=CAU" alt="">
+                              </a>
+                           </figure>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- ***Home gallery html end here*** -->
+            <!-- ***Home client html start from here*** -->
+            <section class="home-client client-section" style="background-image: url({% static 'images/banner-img1.jpg' %});">
+               <div class="container">
+                  <div class="row align-items-center">
+                     <div class="col-lg-6">
+                        <div class="client-content">
+                           <h5 class="sub-title">{% trans "DISCOUNT OFFER" %}</h5>
+                           <h2 class="section-title">{% trans "GET SPECIAL DISCOUNT ON SIGN UP" %} !</h2>
+                           
+                           <a href="{% url 'register' %}" class="round-btn">{% trans "Sign Up Now" %}</a>
+                        </div>
+                     </div>
+                     <div class="col-lg-6">
+                        <div class="client-logo">
+                           <ul>
+                              <li>
+                                 <img src="{% static 'images\photo_2023-12-09_18-05-56-removebg-preview.png' %}" alt="">
+                              </li>
+                              <li>
+                                 <img src="{% static 'images\photo_2023-12-09_18-07-05-removebg-preview.png' %}" alt="">
+                              </li>
+                              <li>
+                                 <img src="{% static 'images\photo_2023-12-09_18-07-09-removebg-preview.png' %}" alt="">
+                              </li>
+                              <li>
+                                 <img src="{% static 'images\photo_2023-12-09_18-07-13-removebg-preview.png' %}" alt="">
+                              </li>
+                              <li>
+                                 <img src="{% static 'images\photo_2023-12-09_18-07-18-removebg-preview.png' %}" alt="">
+                              </li>
+                              <li>
+                                 <img src="{% static 'images\photo_2023-12-09_18-07-22-removebg-preview.png' %}" alt="">
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="overlay"></div>
+            </section>
+            <!-- ***Home client html end here*** -->
+            <!-- ***Home blog html start from here*** -->
+            <section class="home-blog">
+               <div class="container">
+                  <div class="section-heading d-sm-flex align-items-center justify-content-between">
+                     <div class="heading-group">
+                        <h5 class="sub-title">{% trans "LATEST BLOG" %}</h5>
+                        <h2 class="section-title">{% trans "OUR RECENT POSTS" %}</h2>
+                     </div>
+                     <div class="heading-btn">
+                        <a href="{% url 'post_post_list' %}" class="round-btn">{% trans "View All Blog" %}</a>
+                     </div>
+                  </div>
+                  <div class="blog-section">
+                     <div class="row gx-4">
+                        {% for post in last_two_posts %}
+                           <div class="col-lg-6">
+                              <article class="post">
+                                 <figure class="featured-post" style="background-image: url({{post.photo.url}});"></figure>
+                                 <div class="post-content">
+                                    <div class="cat-meta">
+                                       <a href="{% url 'detail_post' post.pk %}">{% trans "TOUR" %}</a>
+                                    </div>
+                                    <h3><a href="{% url 'detail_post' post.pk %}">{{ post.title }}</a></h3>
+                                    <p>{{post.body}}</p>
+                                    <div class="post-footer d-flex justify-content-between align-items-center">
+                                       <div class="post-btn">
+                                          <a href="{% url 'detail_post' post.pk %}" class="round-btn">{% trans "Read More" %}</a>
+                                       </div>
+                                       <div class="meta-comment">
+                                          <a href="{% url 'detail_post' post.pk %}">
+                                             <i aria-hidden="true" class="fas fa-comment"></i>
+                                             <span>{{post.comment_count}}</span>
+                                          </a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </article>
+                           </div>
+                        {% endfor %}
+                        
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- ***Home blog html end here*** -->
+            <!-- ***Home testimonial html start from here*** -->
+            <section class="home-testimonial">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-8 offset-lg-2 text-center">
+                        <div class="section-heading">
+                           <h5 class="sub-title">{% trans "CLIENT'S REVIEWS" %}</h5>
+                           <h2 class="section-title">{% trans "TRAVELLER'S TESTIMONIAL" %}</h2>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="testimonial-section testimonial-slider">
+                     {% for tes in last_five_testimonials %}
+                        <div class="testimonial-item">
+                           <div class="testimonial-content">
+                              <div class="rating-start-wrap">
+                                 <div class="rating-start">
+                                    <span style="width: {{ tes.stars }}%"></span>
+                                 </div>
+                              </div>
+                              <p>{{tes.text}}</p>
+                              <div class="author-content">
+                                 <figure class="testimonial-img">
+                                    <img src="{% static 'images/img/default.jpg' %}" alt="user photo">
+                                 </figure>
+                                 <div class="author-name">
+                                    <h5>{{tes.user}}</h5>
+                                 </div>
+                              </div>
+                              <div class="testimonial-icon">
+                                 <i aria-hidden="true" class="fas fa-quote-left"></i>
+                              </div>
+                           </div>
+                        </div>
+                     {% endfor %}
+                  </div>
+               </div>
+            </section>
+            <!-- ***Home testimonial html end here*** -->
+            <!-- ***Home callback html start from here*** -->
+            <section class="home-callback bg-color-callback primary-bg">
+               <div class="container">
+                  <div class="row align-items-center">
+                     <div class="col-md-8">
+                        <h5 class="sub-title">{% trans "CALL TO ACTION" %}</h5>
+                        <h2 class="section-title">{% trans "READY FOR UNFORGATABLE TRAVEL. REMEMBER US!" %}</h2>
+                        <!-- <p>Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium. Sit ornare mollitia tenetur, aptent.</p> -->
+                     </div>
+                     <div class="col-md-4 text-md-end">
+                        <a href="{% url 'main_contact' %}" class="outline-btn outline-btn-white">{% trans "Contact Us !" %}</a>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- ***Home callback html end here*** -->
+         </main>
+         <a id="backTotop" href="#" class="to-top-icon">
+            <i class="fas fa-chevron-up"></i>
+         </a>
+         <div class="header-search-form">
+            <div class="container">
+               <div class="header-search-container">
+                  <form class="search-form" role="search" method="get" >
+                     <input type="text" name="s" placeholder="Enter your text...">
+                  </form>
+                  <a href="#" class="search-close">
+                     <i class="fas fa-times"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+{% endblock %}
+
+{% block js %}
+{% endblock %}
