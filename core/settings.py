@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 from environs import Env
 from pathlib import Path
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import    gettext_lazy as _
 import os
 
 env = Env()
@@ -123,11 +123,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = "ru"
+LANGUAGE_CODE = "uz"
 
 TIME_ZONE = "Asia/Tashkent"
 
 USE_I18N = True
+
+USE_L10N = True
 
 USE_TZ = True
 
@@ -141,7 +143,7 @@ LANGUAGES = (
 # MODELTRANSLATION_LANGUAGES = ('ru', 'uz')
 
 LOCALE_PATHS = [
-    BASE_DIR / 'locale',
+    BASE_DIR / 'locale/',
 ]
 
 # Static files (CSS, JavaScript, Images)

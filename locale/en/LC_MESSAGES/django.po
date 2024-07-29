@@ -1,0 +1,706 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#: .\templates\index.html:68
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-08 18:37+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\core\settings.py:130
+msgid "English"
+msgstr ""
+
+#: .\core\settings.py:131
+msgid "Russian"
+msgstr ""
+
+#: .\core\settings.py:132
+msgid "Uzbek"
+msgstr ""
+
+#: .\templates\base.html:142
+msgid "home"
+msgstr ""
+
+#: .\templates\base.html:145
+msgid "about us"
+msgstr ""
+
+#: .\templates\base.html:148
+msgid "destination"
+msgstr ""
+
+#: .\templates\base.html:151
+msgid "contact us"
+msgstr ""
+
+#: .\templates\base.html:155
+msgid "my orders"
+msgstr ""
+
+#: .\templates\base.html:163
+msgid "Login or Sign Up"
+msgstr ""
+
+#: .\templates\base.html:179
+msgid "Book now"
+msgstr ""
+
+#: .\templates\base.html:205
+msgid "CONTACT US"
+msgstr ""
+
+#: .\templates\base.html:207
+msgid "Feel free to contact and"
+msgstr ""
+
+#: .\templates\base.html:207
+msgid "reach us !!"
+msgstr ""
+
+#: .\templates\base.html:231
+msgid "Gallery"
+msgstr ""
+
+#: .\templates\base.html:272
+msgid "Subscribe our newsletter for more update & news !!"
+msgstr ""
+
+#: .\templates\base.html:275
+msgid "Subscribe"
+msgstr ""
+
+#: .\templates\base.html:307
+msgid "Privacy Policy"
+msgstr ""
+
+#: .\templates\base.html:310
+msgid "Term & Condition"
+msgstr ""
+
+#: .\templates\base.html:313
+msgid "FAQ"
+msgstr ""
+
+#: .\templates\base.html:324
+msgid "Copyright"
+msgstr ""
+
+#: .\templates\base.html:324
+msgid "2023 Brand Tour. All rights reserved."
+msgstr ""
+
+#: .\templates\cart\booking.html:13
+msgid "Booking"
+msgstr ""
+
+#: .\templates\cart\booking.html:29
+msgid "Your Details"
+msgstr ""
+
+#: .\templates\cart\booking.html:34
+msgid "First name"
+msgstr ""
+
+#: .\templates\cart\booking.html:40
+msgid "Last name"
+msgstr ""
+
+#: .\templates\cart\booking.html:46 .\templates\user\login.html:121
+#: .\templates\user\signup.html:127
+msgid "Email"
+msgstr ""
+
+#: .\templates\cart\booking.html:52 .\templates\main\contact.html:75
+msgid "Phone"
+msgstr ""
+
+#: .\templates\cart\booking.html:61
+msgid "Payment Information"
+msgstr ""
+
+#: .\templates\cart\booking.html:66
+msgid "Name on card"
+msgstr ""
+
+#: .\templates\cart\booking.html:74
+msgid "Card number"
+msgstr ""
+
+#: .\templates\cart\booking.html:87
+msgid "Expiration date"
+msgstr ""
+
+#: .\templates\cart\booking.html:90
+msgid "MM"
+msgstr ""
+
+#: .\templates\cart\booking.html:93
+msgid "Year"
+msgstr ""
+
+#: .\templates\cart\booking.html:100
+msgid "Security code"
+msgstr ""
+
+#: .\templates\cart\booking.html:108
+msgid "Last 3 digits"
+msgstr ""
+
+#: .\templates\cart\booking.html:117
+msgid "Or checkout with Paypal"
+msgstr ""
+
+#: .\templates\cart\booking.html:125
+msgid "Pay Now"
+msgstr ""
+
+#: .\templates\cart\booking.html:133
+msgid "Summary"
+msgstr ""
+
+#: .\templates\cart\booking.html:139
+msgid "Total cost"
+msgstr ""
+
+#: .\templates\cart\booking.html:153
+msgid "HELP AND SUPPORT"
+msgstr ""
+
+#: .\templates\cart\booking.html:155
+msgid "Monday to Friday 9.00am - 7.30pm"
+msgstr ""
+
+#: .\templates\cart\cart.html:14
+msgid "Cart"
+msgstr ""
+
+#: .\templates\cart\cart.html:27
+msgid "Product Name"
+msgstr ""
+
+#: .\templates\cart\cart.html:28
+msgid "Price"
+msgstr ""
+
+#: .\templates\cart\cart.html:29
+msgid "Quantity"
+msgstr ""
+
+#: .\templates\cart\cart.html:30
+msgid "Sub Total"
+msgstr ""
+
+#: .\templates\cart\cart.html:46 .\templates\index.html:181
+#: .\templates\main\package_detail.html:40
+#: .\templates\main\package_list.html:66
+msgid "per person"
+msgstr ""
+
+#: .\templates\cart\cart.html:79
+msgid "Total"
+msgstr ""
+
+#: .\templates\cart\cart.html:83
+msgid "Go to payment"
+msgstr ""
+
+#: .\templates\index.html:28
+msgid "JOURNEY TO EXPLORE WORLD"
+msgstr ""
+
+#: .\templates\index.html:29 .\templates\index.html:47
+msgid "You can travel to any country in the world through our tour company"
+msgstr ""
+
+#: .\templates\index.html:31 .\templates\index.html:49
+msgid "LEARN MORE"
+msgstr ""
+
+#: .\templates\index.html:32 .\templates\index.html:50
+msgid "BOOK NOW"
+msgstr ""
+
+#: .\templates\index.html:46
+msgid "BEAUTIFUL PLACE TO VISIT"
+msgstr ""
+
+#: .\templates\index.html:64
+msgid "Search Destination* "
+msgstr ""
+
+#: .\templates\index.html:65
+msgid "Enter Destination"
+msgstr ""
+
+#: .\templates\index.html:69
+msgid "No.of People"
+msgstr ""
+
+#: .\templates\index.html:72
+msgid "Checkin Date* "
+msgstr ""
+
+#: .\templates\index.html:74 .\templates\index.html:79
+msgid "MM / DD / YY"
+msgstr ""
+
+#: .\templates\index.html:77
+msgid "Checkout Date* "
+msgstr ""
+
+#: .\templates\index.html:82
+msgid "INQUIRE NOW"
+msgstr ""
+
+#: .\templates\index.html:94
+msgid "UNCOVER PLACE"
+msgstr ""
+
+#: .\templates\index.html:95
+msgid "POPULAR DESTINATION"
+msgstr ""
+
+#: .\templates\index.html:124
+msgid "More Destination"
+msgstr ""
+
+#: .\templates\index.html:136
+msgid "POPULAR TOURS"
+msgstr ""
+
+#: .\templates\index.html:137
+msgid "CHECKOUT OUR TOURS"
+msgstr ""
+
+#: .\templates\index.html:138
+msgid "The best Tours are in Brand Tour"
+msgstr ""
+
+#: .\templates\index.html:161
+msgid "pax: "
+msgstr ""
+
+#: .\templates\index.html:172
+msgid "reviews"
+msgstr ""
+
+#: .\templates\index.html:183 .\templates\main\package_list.html:68
+#: .\templates\main\special_package.html:66
+msgid "Add to cart"
+msgstr ""
+
+#: .\templates\index.html:188
+msgid "VIEW ALL TOURS"
+msgstr ""
+
+#: .\templates\index.html:206 .\templates\main\about.html:157
+msgid "ARE YOU READY TO TRAVEL? REMEMBER US !!"
+msgstr ""
+
+#: .\templates\index.html:207
+msgid ""
+"By choosing our tour company, you will get comfortable quality and "
+"affordable prices"
+msgstr ""
+
+#: .\templates\index.html:209 .\templates\main\about.html:160
+#: .\templates\main\special_package.html:90
+msgid "View Packages"
+msgstr ""
+
+#: .\templates\index.html:210 .\templates\main\about.html:161
+#: .\templates\main\special_package.html:91
+msgid "Learn More"
+msgstr ""
+
+#: .\templates\index.html:227 .\templates\main\destinations.html:58
+msgid "SATISFIED CUSTOMER"
+msgstr ""
+
+#: .\templates\index.html:235 .\templates\main\destinations.html:66
+msgid "ACTIVE MEMBERS"
+msgstr ""
+
+#: .\templates\index.html:243 .\templates\main\destinations.html:74
+msgid "TOUR DESTINATION"
+msgstr ""
+
+#: .\templates\index.html:251 .\templates\main\destinations.html:82
+msgid "TRAVEL GUIDES"
+msgstr ""
+
+#: .\templates\index.html:264
+msgid "OFFER & DISCOUNT"
+msgstr ""
+
+#: .\templates\index.html:265
+msgid "OUR SPECIAL PACKAGES"
+msgstr ""
+
+#: .\templates\index.html:266
+msgid "We have made special Tours for You"
+msgstr ""
+
+#: .\templates\index.html:281 .\templates\main\special_package.html:36
+msgid "off"
+msgstr ""
+
+#: .\templates\index.html:292 .\templates\main\package_detail.html:52
+msgid "pax"
+msgstr ""
+
+#: .\templates\index.html:305 .\templates\main\special_package.html:62
+msgid "price"
+msgstr ""
+
+#: .\templates\index.html:309 .\templates\main\package_detail.html:105
+#: .\templates\main\package_detail.html:107
+msgid "Add to Cart"
+msgstr ""
+
+#: .\templates\index.html:316
+msgid "VIEW ALL Tours"
+msgstr ""
+
+#: .\templates\index.html:328
+msgid "PHOTO GALLERY"
+msgstr ""
+
+#: .\templates\index.html:329
+msgid "PHOTO'S FROM TRAVELLERS"
+msgstr ""
+
+#: .\templates\index.html:330
+msgid "Satisfied customers with our quality services"
+msgstr ""
+
+#: .\templates\index.html:389 .\templates\main\package_list.html:82
+msgid "DISCOUNT OFFER"
+msgstr ""
+
+#: .\templates\index.html:390 .\templates\main\package_list.html:83
+msgid "GET SPECIAL DISCOUNT ON SIGN UP"
+msgstr ""
+
+#: .\templates\index.html:392 .\templates\main\package_list.html:85
+msgid "Sign Up Now"
+msgstr ""
+
+#: .\templates\index.html:429
+msgid "LATEST BLOG"
+msgstr ""
+
+#: .\templates\index.html:430
+msgid "OUR RECENT POSTS"
+msgstr ""
+
+#: .\templates\index.html:433
+msgid "View All Blog"
+msgstr ""
+
+#: .\templates\index.html:444
+msgid "TOUR"
+msgstr ""
+
+#: .\templates\index.html:450 .\templates\post\blog-archive.html:40
+msgid "Read More"
+msgstr ""
+
+#: .\templates\index.html:475
+msgid "CLIENT'S REVIEWS"
+msgstr ""
+
+#: .\templates\index.html:476
+msgid "TRAVELLER'S TESTIMONIAL"
+msgstr ""
+
+#: .\templates\index.html:513 .\templates\main\destinations.html:94
+msgid "CALL TO ACTION"
+msgstr ""
+
+#: .\templates\index.html:514
+msgid "READY FOR UNFORGATABLE TRAVEL. REMEMBER US!"
+msgstr ""
+
+#: .\templates\index.html:518
+msgid "Contact Us !"
+msgstr ""
+
+#: .\templates\main\about.html:49
+msgid "About Us"
+msgstr ""
+
+#: .\templates\main\about.html:64
+msgid "WE ARE BEST FOR TOURS & TRAVEL SINCE 2023 !"
+msgstr ""
+
+#: .\templates\main\about.html:67
+msgid "HOW WE ARE BEST FOR TRAVEL !"
+msgstr ""
+
+#: .\templates\main\about.html:68 .\templates\main\about.html:95
+#: .\templates\main\about.html:104 .\templates\main\about.html:113
+#: .\templates\main\about.html:158
+msgid "WE ARE LEGEND"
+msgstr ""
+
+#: .\templates\main\about.html:94 .\templates\main\about.html:112
+msgid "AFFORDABLE TOURS"
+msgstr ""
+
+#: .\templates\main\about.html:103
+msgid "BEST TOUR GUIDES"
+msgstr ""
+
+#: .\templates\main\about.html:118
+msgid "Tell us what You think about us"
+msgstr ""
+
+#: .\templates\main\about.html:133
+msgid "SUBMIT MESSAGE"
+msgstr ""
+
+#: .\templates\main\about.html:137
+msgid "You must be logged in to leave a testimonial"
+msgstr ""
+
+#: .\templates\main\contact.html:17
+msgid "Contact US"
+msgstr ""
+
+#: .\templates\main\contact.html:29
+msgid "GET IN TOUCH"
+msgstr ""
+
+#: .\templates\main\contact.html:30
+msgid "REACH & CONTACT US!"
+msgstr ""
+
+#: .\templates\main\contact.html:31
+msgid "we can help you by contacting us"
+msgstr ""
+
+#: .\templates\main\contact.html:71 .\templates\user\signup.html:119
+msgid "First Name"
+msgstr ""
+
+#: .\templates\main\contact.html:79
+msgid "Comments / Questions"
+msgstr ""
+
+#: .\templates\main\contact.html:102
+msgid "EMAIL ADDRESS"
+msgstr ""
+
+#: .\templates\main\contact.html:117
+msgid "PHONE NUMBER"
+msgstr ""
+
+#: .\templates\main\contact.html:135
+msgid "ADDRESS LOCATION"
+msgstr ""
+
+#: .\templates\main\destinations.html:15 .\templates\post\blog-single.html:55
+msgid "Destination"
+msgstr ""
+
+#: .\templates\main\destinations.html:95
+msgid "READY FOR UNFORGETTABLE TRAVEL. REMEMBER US!"
+msgstr ""
+
+#: .\templates\main\destinations.html:97
+msgid "Contact Us "
+msgstr ""
+
+#: .\templates\main\package_detail.html:16
+msgid "Tour Deatil"
+msgstr ""
+
+#: .\templates\main\package_detail.html:71
+msgid "OVERVIEW"
+msgstr ""
+
+#: .\templates\main\package_detail.html:75
+msgid "INCLUDE & EXCLUDE"
+msgstr ""
+
+#: .\templates\main\package_detail.html:94
+msgid "ITINERARY "
+msgstr ""
+
+#: .\templates\main\package_detail.html:112
+msgid "RELATED IMAGES"
+msgstr ""
+
+#: .\templates\main\package_detail.html:113
+msgid "Enjoy best moments of Your Tours"
+msgstr ""
+
+#: .\templates\main\package_detail.html:126
+msgid "Recent Tours"
+msgstr ""
+
+#: .\templates\main\package_list.html:19
+msgid "Tour Packages"
+msgstr ""
+
+#: .\templates\main\special_package.html:17
+msgid "Package Offer"
+msgstr ""
+
+#: .\templates\main\special_package.html:87
+msgid "ARE YOU READY TO TRAVEL? REMEMBER US "
+msgstr ""
+
+#: .\templates\post\blog-archive.html:17
+msgid "Blog List"
+msgstr ""
+
+#: .\templates\post\blog-single.html:32
+msgid "Demoteam"
+msgstr ""
+
+#: .\templates\post\blog-single.html:43
+msgid "No Comments"
+msgstr ""
+
+#: .\templates\post\blog-single.html:56
+msgid "hiking"
+msgstr ""
+
+#: .\templates\post\blog-single.html:57
+msgid "Travel Dairies"
+msgstr ""
+
+#: .\templates\post\blog-single.html:58
+msgid "Travelling"
+msgstr ""
+
+#: .\templates\post\blog-single.html:59
+msgid "Trekking"
+msgstr ""
+
+#: .\templates\post\blog-single.html:74
+msgid "Comments"
+msgstr ""
+
+#: .\templates\post\blog-single.html:98
+msgid "Comment"
+msgstr ""
+
+#: .\templates\post\blog-single.html:103
+msgid "Post comment"
+msgstr ""
+
+#: .\templates\post\blog-single.html:107
+msgid "Leave a Reply"
+msgstr ""
+
+#: .\templates\post\blog-single.html:108
+msgid "You must be logged in to leave a comment"
+msgstr ""
+
+#: .\templates\post\blog-single.html:117
+msgid "Recent Post"
+msgstr ""
+
+#: .\templates\user\login.html:125 .\templates\user\signup.html:131
+msgid "Password"
+msgstr ""
+
+#: .\templates\user\login.html:127
+msgid "Fill in Email field"
+msgstr ""
+
+#: .\templates\user\login.html:128
+#: .\templates\user\reset_password_form.html:127
+#: .\templates\user\signup.html:137
+msgid "Fill in all fields"
+msgstr ""
+
+#: .\templates\user\login.html:129
+msgid "Login or Password is incorrect"
+msgstr ""
+
+#: .\templates\user\login.html:130 .\templates\user\signup.html:145
+msgid "Login"
+msgstr ""
+
+#: .\templates\user\login.html:133
+msgid "Forget password?"
+msgstr ""
+
+#: .\templates\user\login.html:133
+msgid "or"
+msgstr ""
+
+#: .\templates\user\login.html:133 .\templates\user\signup.html:142
+msgid "Register"
+msgstr ""
+
+#: .\templates\user\my_orders.html:11
+msgid "My Orders"
+msgstr ""
+
+#: .\templates\user\my_orders.html:40
+msgid "Paid"
+msgstr ""
+
+#: .\templates\user\reset_password_form.html:115
+msgid "Create a new password"
+msgstr ""
+
+#: .\templates\user\reset_password_form.html:128
+#: .\templates\user\signup.html:138
+msgid "Passwords did not match"
+msgstr ""
+
+#: .\templates\user\reset_password_form.html:129
+msgid "Reset"
+msgstr ""
+
+#: .\templates\user\signup.html:123
+msgid "Last Name"
+msgstr ""
+
+#: .\templates\user\signup.html:135
+msgid "Password Confirm"
+msgstr ""
+
+#: .\user\models.py:11
+msgid "first name"
+msgstr ""
+
+#: .\user\models.py:12
+msgid "last name"
+msgstr ""
+
+#: .\user\models.py:13
+msgid "email address"
+msgstr ""
+
+#: .\user\models.py:16
+msgid "username"
+msgstr ""
+
+#: .\user\models.py:20
+msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+msgstr ""
+
+#: .\user\models.py:24
+msgid "A user with that username already exists."
+msgstr ""

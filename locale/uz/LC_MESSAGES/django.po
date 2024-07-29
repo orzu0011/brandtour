@@ -1,0 +1,713 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#: .\templates\index.html:68
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-08 18:37+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\core\settings.py:130
+msgid "English"
+msgstr "English"
+
+#: .\core\settings.py:131
+msgid "Russian"
+msgstr "Russian"
+
+#: .\core\settings.py:132
+msgid "Uzbek"
+msgstr "Uzbek"
+
+#: .\templates\base.html:142
+msgid "home"
+msgstr "bosh sahifa"
+
+#: .\templates\base.html:145
+msgid "about us"
+msgstr "biz haqimizda"
+
+#: .\templates\base.html:148
+msgid "destination"
+msgstr "manzil"
+
+#: .\templates\base.html:151
+msgid "contact us"
+msgstr "aloqa"
+
+#: .\templates\base.html:155
+msgid "my orders"
+msgstr "mening buyurtmalarim"
+
+#: .\templates\base.html:163
+msgid "Login or Sign Up"
+msgstr "kirish yoki ro'yxatdan o'tish"
+
+#: .\templates\base.html:179
+msgid "Book now"
+msgstr "Hoziroq buyurtma bering"
+
+#: .\templates\base.html:205
+msgid "CONTACT US"
+msgstr "ALOQA"
+
+#: .\templates\base.html:207
+msgid "Feel free to contact and"
+msgstr "Bizning manzillarimizga"
+
+#: .\templates\base.html:207
+msgid "reach us !!"
+msgstr "murojaat qiling"
+
+#: .\templates\base.html:231
+msgid "Gallery"
+msgstr "Galereya"
+
+#: .\templates\base.html:272
+msgid "Subscribe our newsletter for more update & news !!"
+msgstr ""
+"Ko'proq yangiliklardan xabardor bo'lish uchun bizning axborot "
+"byulletenimizga obuna bo'ling !!"
+
+#: .\templates\base.html:275
+msgid "Subscribe"
+msgstr "A'zo bo'lish"
+
+#: .\templates\base.html:307
+msgid "Privacy Policy"
+msgstr "Maxviylik siyosati"
+
+#: .\templates\base.html:310
+msgid "Term & Condition"
+msgstr "Muddat va shartlar"
+
+#: .\templates\base.html:313
+msgid "FAQ"
+msgstr "FAQ"
+
+#: .\templates\base.html:324
+msgid "Copyright"
+msgstr "Mualliflik huquqi"
+
+#: .\templates\base.html:324
+msgid "2023 Brand Tour. All rights reserved."
+msgstr "2023 Brand Tour. Barcha huquqlar himoyalangan"
+
+#: .\templates\cart\booking.html:13
+msgid "Booking"
+msgstr "Buyurtma qilish"
+
+#: .\templates\cart\booking.html:29
+msgid "Your Details"
+msgstr "Sizning ma'lumotlaringiz"
+
+#: .\templates\cart\booking.html:34
+msgid "First name"
+msgstr "Ism"
+
+#: .\templates\cart\booking.html:40
+msgid "Last name"
+msgstr "Familiya"
+
+#: .\templates\cart\booking.html:46 .\templates\user\login.html:121
+#: .\templates\user\signup.html:127
+msgid "Email"
+msgstr "Email"
+
+#: .\templates\cart\booking.html:52 .\templates\main\contact.html:75
+msgid "Phone"
+msgstr "Telefon"
+
+#: .\templates\cart\booking.html:61
+msgid "Payment Information"
+msgstr "To'lov ma'lumotlari"
+
+#: .\templates\cart\booking.html:66
+msgid "Name on card"
+msgstr "Karta nomi"
+
+#: .\templates\cart\booking.html:74
+msgid "Card number"
+msgstr "Karta raqami"
+
+#: .\templates\cart\booking.html:87
+msgid "Expiration date"
+msgstr "Amal qilish muddati"
+
+#: .\templates\cart\booking.html:90
+msgid "MM"
+msgstr "Oy"
+
+#: .\templates\cart\booking.html:93
+msgid "Year"
+msgstr "Yil"
+
+#: .\templates\cart\booking.html:100
+msgid "Security code"
+msgstr "Xavfsizlik kodi"
+
+#: .\templates\cart\booking.html:108
+msgid "Last 3 digits"
+msgstr "So'nggi 3ta raqami"
+
+#: .\templates\cart\booking.html:117
+msgid "Or checkout with Paypal"
+msgstr "Yoki Paypal bilan to'lov qiling"
+
+#: .\templates\cart\booking.html:125
+msgid "Pay Now"
+msgstr "Hoziroq to'lash"
+
+#: .\templates\cart\booking.html:133
+msgid "Summary"
+msgstr "Xulosa"
+
+#: .\templates\cart\booking.html:139
+msgid "Total cost"
+msgstr "Umumiy narx"
+
+#: .\templates\cart\booking.html:153
+msgid "HELP AND SUPPORT"
+msgstr "YORDAM VA QO'LLAB-QUVVATLASH"
+
+#: .\templates\cart\booking.html:155
+msgid "Monday to Friday 9.00am - 7.30pm"
+msgstr "Dushanbadan Jumagacha 9.00dan - 7.30gacha"
+
+#: .\templates\cart\cart.html:14
+msgid "Cart"
+msgstr "Karta"
+
+#: .\templates\cart\cart.html:27
+msgid "Product Name"
+msgstr "Mahsulot Nomi"
+
+#: .\templates\cart\cart.html:28
+msgid "Price"
+msgstr "Narxi"
+
+#: .\templates\cart\cart.html:29
+msgid "Quantity"
+msgstr "Soni"
+
+#: .\templates\cart\cart.html:30
+msgid "Sub Total"
+msgstr "Jami"
+
+#: .\templates\cart\cart.html:46 .\templates\index.html:181
+#: .\templates\main\package_detail.html:40
+#: .\templates\main\package_list.html:66
+msgid "per person"
+msgstr "kishi boshiga"
+
+#: .\templates\cart\cart.html:79
+msgid "Total"
+msgstr "Umumiy narx"
+
+#: .\templates\cart\cart.html:83
+msgid "Go to payment"
+msgstr "To'lovga o'tish"
+
+#: .\templates\index.html:28
+msgid "JOURNEY TO EXPLORE WORLD"
+msgstr "DUNYONI TANISH UCHUN SAYOHAT"
+
+#: .\templates\index.html:29 .\templates\index.html:47
+msgid "You can travel to any country in the world through our tour company"
+msgstr ""
+"Siz bizning tur kompaniyamiz orqali dunyoning istalgan davlatiga sayohat "
+"qilishingiz mumkin"
+
+#: .\templates\index.html:31 .\templates\index.html:49
+msgid "LEARN MORE"
+msgstr "KOPROQ"
+
+#: .\templates\index.html:32 .\templates\index.html:50
+msgid "BOOK NOW"
+msgstr "HOZIROQ BUYURTMA QILING"
+
+#: .\templates\index.html:46
+msgid "BEAUTIFUL PLACE TO VISIT"
+msgstr "TASHRIF BUYURISH UCHUN SO'LIM JOYLAR"
+
+#: .\templates\index.html:64
+msgid "Search Destination* "
+msgstr "Manzilni qidirish*"
+
+#: .\templates\index.html:65
+msgid "Enter Destination"
+msgstr "Manzilni kiriting"
+
+#: .\templates\index.html:69
+msgid "No.of People"
+msgstr "Odam soni"
+
+#: .\templates\index.html:72
+msgid "Checkin Date* "
+msgstr "Ro'yxatdan o'tish sanasi*"
+
+#: .\templates\index.html:74 .\templates\index.html:79
+msgid "MM / DD / YY"
+msgstr "OO / KK / YY"
+
+#: .\templates\index.html:77
+msgid "Checkout Date* "
+msgstr "Tugash sanasi*"
+
+#: .\templates\index.html:82
+msgid "INQUIRE NOW"
+msgstr "HOZIROQ SO'RANG"
+
+#: .\templates\index.html:94
+msgid "UNCOVER PLACE"
+msgstr "JOYNI OCHISH"
+
+#: .\templates\index.html:95
+msgid "POPULAR DESTINATION"
+msgstr "MASHHUR MANZILLAR"
+
+#: .\templates\index.html:124
+msgid "More Destination"
+msgstr "Ko'proq manzillar"
+
+#: .\templates\index.html:136
+msgid "POPULAR TOURS"
+msgstr "MASHHUR TURLAR"
+
+#: .\templates\index.html:137
+msgid "CHECKOUT OUR TOURS"
+msgstr "TURLARIMIZNI KO'RING"
+
+#: .\templates\index.html:138
+msgid "The best Tours are in Brand Tour"
+msgstr "Eng yaxshi sayohatlar Brand Tour-da"
+
+#: .\templates\index.html:161
+msgid "pax: "
+msgstr "soni"
+
+#: .\templates\index.html:172
+msgid "reviews"
+msgstr "sharhlar"
+
+#: .\templates\index.html:183 .\templates\main\package_list.html:68
+#: .\templates\main\special_package.html:66
+msgid "Add to cart"
+msgstr "Savatga qo'shish"
+
+#: .\templates\index.html:188
+msgid "VIEW ALL TOURS"
+msgstr "BARCHA TURLARNI KO'RISH"
+
+#: .\templates\index.html:206 .\templates\main\about.html:157
+msgid "ARE YOU READY TO TRAVEL? REMEMBER US !!"
+msgstr "SAYOHAT QILISHGA TAYYORMISIZ? ESDA SAQLANG"
+
+#: .\templates\index.html:207
+msgid ""
+"By choosing our tour company, you will get comfortable quality and "
+"affordable prices"
+msgstr ""
+"Bizning sayyohlik kompaniyamizni tanlab, siz qulay sifat va hamyonbop "
+"narxlarga ega bo'lasiz"
+
+#: .\templates\index.html:209 .\templates\main\about.html:160
+#: .\templates\main\special_package.html:90
+msgid "View Packages"
+msgstr "Turlarni ko'rish"
+
+#: .\templates\index.html:210 .\templates\main\about.html:161
+#: .\templates\main\special_package.html:91
+msgid "Learn More"
+msgstr "Ko'proq"
+
+#: .\templates\index.html:227 .\templates\main\destinations.html:58
+msgid "SATISFIED CUSTOMER"
+msgstr "XURSAND MIJOZLAR"
+
+#: .\templates\index.html:235 .\templates\main\destinations.html:66
+msgid "ACTIVE MEMBERS"
+msgstr "AKTIV A'ZOLAR"
+
+#: .\templates\index.html:243 .\templates\main\destinations.html:74
+msgid "TOUR DESTINATION"
+msgstr "TUR MANZILI"
+
+#: .\templates\index.html:251 .\templates\main\destinations.html:82
+msgid "TRAVEL GUIDES"
+msgstr "SAYOHAT UCHUN GIDLAR"
+
+#: .\templates\index.html:264
+msgid "OFFER & DISCOUNT"
+msgstr "TAKLIF & CHEGIRMA"
+
+#: .\templates\index.html:265
+msgid "OUR SPECIAL PACKAGES"
+msgstr "BIZNING MAXSUS TURLARIMIZ"
+
+#: .\templates\index.html:266
+msgid "We have made special Tours for You"
+msgstr "Biz siz uchun maxsus sayohatlar tashkil qildik"
+
+#: .\templates\index.html:281 .\templates\main\special_package.html:36
+msgid "off"
+msgstr "dan"
+
+#: .\templates\index.html:292 .\templates\main\package_detail.html:52
+msgid "pax"
+msgstr "soni"
+
+#: .\templates\index.html:305 .\templates\main\special_package.html:62
+msgid "price"
+msgstr "narxi"
+
+#: .\templates\index.html:309 .\templates\main\package_detail.html:105
+#: .\templates\main\package_detail.html:107
+msgid "Add to Cart"
+msgstr "Savatga qo'shish"
+
+#: .\templates\index.html:316
+msgid "VIEW ALL Tours"
+msgstr "BARCHA TURLARNI KO'RISH"
+
+#: .\templates\index.html:328
+msgid "PHOTO GALLERY"
+msgstr "GALEREYA"
+
+#: .\templates\index.html:329
+msgid "PHOTO'S FROM TRAVELLERS"
+msgstr "SAYOHATCHILARNING RASMLARI"
+
+#: .\templates\index.html:330
+msgid "Satisfied customers with our quality services"
+msgstr "Sifatli xizmatlarimizdan mamnun mijozlar"
+
+#: .\templates\index.html:389 .\templates\main\package_list.html:82
+msgid "DISCOUNT OFFER"
+msgstr "CHEGIRMA TAKLIF"
+
+#: .\templates\index.html:390 .\templates\main\package_list.html:83
+msgid "GET SPECIAL DISCOUNT ON SIGN UP"
+msgstr "RO'YXATDAN O'TISH ORQALI MAXSUS CHEGIRMALARIMIZGA EGA BO'LING"
+
+#: .\templates\index.html:392 .\templates\main\package_list.html:85
+msgid "Sign Up Now"
+msgstr "Hoziroq ro'yxatdan o'ting"
+
+#: .\templates\index.html:429
+msgid "LATEST BLOG"
+msgstr "SO'NGGI POSTLAR"
+
+#: .\templates\index.html:430
+msgid "OUR RECENT POSTS"
+msgstr "BIZNING SO'NGGI POSTLARIMIZ"
+
+#: .\templates\index.html:433
+msgid "View All Blog"
+msgstr "Barcha postlarni ko'rish"
+
+#: .\templates\index.html:444
+msgid "TOUR"
+msgstr "TUR"
+
+#: .\templates\index.html:450 .\templates\post\blog-archive.html:40
+msgid "Read More"
+msgstr "Ko'proq"
+
+#: .\templates\index.html:475
+msgid "CLIENT'S REVIEWS"
+msgstr "Mijozlarning sharhlari"
+
+#: .\templates\index.html:476
+msgid "TRAVELLER'S TESTIMONIAL"
+msgstr "MIJOZLARNING TAASUROTLARI"
+
+#: .\templates\index.html:513 .\templates\main\destinations.html:94
+msgid "CALL TO ACTION"
+msgstr "CALL TO ACTION"
+
+#: .\templates\index.html:514
+msgid "READY FOR UNFORGATABLE TRAVEL. REMEMBER US!"
+msgstr "UNUTILMAS SAYOHATGA TAYYORMISIZ!"
+
+#: .\templates\index.html:518
+msgid "Contact Us !"
+msgstr "aloqa"
+
+#: .\templates\main\about.html:49
+msgid "About Us"
+msgstr "biz haqimizda"
+
+#: .\templates\main\about.html:64
+msgid "WE ARE BEST FOR TOURS & TRAVEL SINCE 2023 !"
+msgstr "BIZ TUR FIRMALRI ORASIDA ENG ZO'RIMIZ % 2023-YILDAN BUYON"
+
+#: .\templates\main\about.html:67
+msgid "HOW WE ARE BEST FOR TRAVEL !"
+msgstr "NEGA AYNAN BIZ SAYOHAT UCHUN ENG ZO'RIMIZ"
+
+#: .\templates\main\about.html:68 .\templates\main\about.html:95
+#: .\templates\main\about.html:104 .\templates\main\about.html:113
+#: .\templates\main\about.html:158
+msgid "WE ARE LEGEND"
+msgstr "BIZ ENG ZO'RIMIZ"
+
+#: .\templates\main\about.html:94 .\templates\main\about.html:112
+msgid "AFFORDABLE TOURS"
+msgstr "AFFORDABLE TOURS"
+
+#: .\templates\main\about.html:103
+msgid "BEST TOUR GUIDES"
+msgstr "ENG ZO'R TUR GIDLAR"
+
+#: .\templates\main\about.html:118
+msgid "Tell us what You think about us"
+msgstr "Biz haqimizda fikringizni ayting"
+
+#: .\templates\main\about.html:133
+msgid "SUBMIT MESSAGE"
+msgstr "XABAR JO'NATISH"
+
+#: .\templates\main\about.html:137
+msgid "You must be logged in to leave a testimonial"
+msgstr "Sharh qoldirish uchun siz avval tizimga kirgan bo'lishingiz kerak"
+
+#: .\templates\main\contact.html:17
+msgid "Contact US"
+msgstr "BIZ BILAN BOG'LANISH"
+
+#: .\templates\main\contact.html:29
+msgid "GET IN TOUCH"
+msgstr ""
+
+#: .\templates\main\contact.html:30
+msgid "REACH & CONTACT US!"
+msgstr "BO'GLANISH"
+
+#: .\templates\main\contact.html:31
+msgid "we can help you by contacting us"
+msgstr "biz bilan bog'lanish orqali sizga yordam bera olamiz"
+
+#: .\templates\main\contact.html:71 .\templates\user\signup.html:119
+msgid "First Name"
+msgstr "Ism"
+
+#: .\templates\main\contact.html:79
+msgid "Comments / Questions"
+msgstr "Izohlar / Savollar"
+
+#: .\templates\main\contact.html:102
+msgid "EMAIL ADDRESS"
+msgstr "EMAIL"
+
+#: .\templates\main\contact.html:117
+msgid "PHONE NUMBER"
+msgstr "TELEFON"
+
+#: .\templates\main\contact.html:135
+msgid "ADDRESS LOCATION"
+msgstr "MANZIl"
+
+#: .\templates\main\destinations.html:15 .\templates\post\blog-single.html:55
+msgid "Destination"
+msgstr "Manzil"
+
+#: .\templates\main\destinations.html:95
+msgid "READY FOR UNFORGETTABLE TRAVEL. REMEMBER US!"
+msgstr "UNUTILMAS SAYOHATGA TAYYORMISIZ!"
+
+#: .\templates\main\destinations.html:97
+msgid "Contact Us "
+msgstr "Biz bilan bog'lanish"
+
+#: .\templates\main\package_detail.html:16
+msgid "Tour Deatil"
+msgstr "Tur haqida batafsil"
+
+#: .\templates\main\package_detail.html:71
+msgid "OVERVIEW"
+msgstr "UMUMIY"
+
+#: .\templates\main\package_detail.html:75
+msgid "INCLUDE & EXCLUDE"
+msgstr "MAVJUD & MAVJUD EMAS"
+
+#: .\templates\main\package_detail.html:94
+msgid "ITINERARY "
+msgstr "YO'NALISH"
+
+#: .\templates\main\package_detail.html:112
+msgid "RELATED IMAGES"
+msgstr "ALOQADOR RASMLAR"
+
+#: .\templates\main\package_detail.html:113
+msgid "Enjoy best moments of Your Tours"
+msgstr "Sayohatlaringizning eng yaxshi daqiqalaridan rohatlaning"
+
+#: .\templates\main\package_detail.html:126
+msgid "Recent Tours"
+msgstr "Oxirgi sayohatlar"
+
+#: .\templates\main\package_list.html:19
+msgid "Tour Packages"
+msgstr "Tur paketlari"
+
+#: .\templates\main\special_package.html:17
+msgid "Package Offer"
+msgstr "Paket taklifi"
+
+#: .\templates\main\special_package.html:87
+msgid "ARE YOU READY TO TRAVEL? REMEMBER US "
+msgstr "SIZ SAYOXGA TAYYORMISIZMI? BIZNI ESLA OLING"
+
+#: .\templates\post\blog-archive.html:17
+msgid "Blog List"
+msgstr "Postlar Ro'yxati"
+
+#: .\templates\post\blog-single.html:32
+msgid "Demoteam"
+msgstr "Demoteam"
+
+#: .\templates\post\blog-single.html:43
+msgid "No Comments"
+msgstr "Izohlar yo'q"
+
+#: .\templates\post\blog-single.html:56
+msgid "hiking"
+msgstr ""
+
+#: .\templates\post\blog-single.html:57
+msgid "Travel Dairies"
+msgstr "Travel Dairies"
+
+#: .\templates\post\blog-single.html:58
+msgid "Travelling"
+msgstr "Sayohat"
+
+#: .\templates\post\blog-single.html:59
+msgid "Trekking"
+msgstr "Trekking"
+
+#: .\templates\post\blog-single.html:74
+msgid "Comments"
+msgstr "Izohlar"
+
+#: .\templates\post\blog-single.html:98
+msgid "Comment"
+msgstr "Izoh"
+
+#: .\templates\post\blog-single.html:103
+msgid "Post comment"
+msgstr "Izoh qoldirish"
+
+#: .\templates\post\blog-single.html:107
+msgid "Leave a Reply"
+msgstr "Javob qoldirish"
+
+#: .\templates\post\blog-single.html:108
+msgid "You must be logged in to leave a comment"
+msgstr "Fikr qoldirish uchun tizimga kirgan bo'lishingiz kerak"
+
+#: .\templates\post\blog-single.html:117
+msgid "Recent Post"
+msgstr "So'nggi postlar"
+
+#: .\templates\user\login.html:125 .\templates\user\signup.html:131
+msgid "Password"
+msgstr "Parol"
+
+#: .\templates\user\login.html:127
+msgid "Fill in Email field"
+msgstr "Elektron pochta maydonini to'ldiring"
+
+#: .\templates\user\login.html:128
+#: .\templates\user\reset_password_form.html:127
+#: .\templates\user\signup.html:137
+msgid "Fill in all fields"
+msgstr "Barcha maydonlarni to'ldiring"
+
+#: .\templates\user\login.html:129
+msgid "Login or Password is incorrect"
+msgstr "Login yoki parol noto'g'ri"
+
+#: .\templates\user\login.html:130 .\templates\user\signup.html:145
+msgid "Login"
+msgstr "Kirish"
+
+#: .\templates\user\login.html:133
+msgid "Forget password?"
+msgstr "Parolni unutdingizmi?"
+
+#: .\templates\user\login.html:133
+msgid "or"
+msgstr "yoki"
+
+#: .\templates\user\login.html:133 .\templates\user\signup.html:142
+msgid "Register"
+msgstr "Roʻyxatdan oʻtish"
+
+#: .\templates\user\my_orders.html:11
+msgid "My Orders"
+msgstr "Mening Buyurtmalarim"
+
+#: .\templates\user\my_orders.html:40
+msgid "Paid"
+msgstr "To'langan"
+
+#: .\templates\user\reset_password_form.html:115
+msgid "Create a new password"
+msgstr "Yangi parol yarating"
+
+#: .\templates\user\reset_password_form.html:128
+#: .\templates\user\signup.html:138
+msgid "Passwords did not match"
+msgstr "Parollar mos kelmadi"
+
+#: .\templates\user\reset_password_form.html:129
+msgid "Reset"
+msgstr "Qayta ishlatish"
+
+#: .\templates\user\signup.html:123
+msgid "Last Name"
+msgstr "Familiya"
+
+#: .\templates\user\signup.html:135
+msgid "Password Confirm"
+msgstr "Parol tasdig'i"
+
+#: .\user\models.py:11
+msgid "first name"
+msgstr "ism"
+
+#: .\user\models.py:12
+msgid "last name"
+msgstr "familiya"
+
+#: .\user\models.py:13
+msgid "email address"
+msgstr "E-pochta manzili"
+
+#: .\user\models.py:16
+msgid "username"
+msgstr "foydalanuvchi nomi"
+
+#: .\user\models.py:20
+msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+msgstr ""
+"Majburiy. 150 yoki undan kam belgi. Faqat harflar, raqamlar va @/./+/-/_."
+
+#: .\user\models.py:24
+msgid "A user with that username already exists."
+msgstr "Bunday foydalanuvchi nomiga ega foydalanuvchi allaqachon mavjud."
