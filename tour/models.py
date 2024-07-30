@@ -35,7 +35,7 @@ class Tour(models.Model):
         ("archived", "в архиве"),
         ("discount", "скидка"),
     )
-
+    photo = models.ImageField(upload_to="tour/")
     title = models.CharField(max_length=256)
     price = models.DecimalField(max_digits=13, decimal_places=2)  # 15 000 000 000.00
     duration = models.CharField(max_length=256)
@@ -67,9 +67,3 @@ class Tour(models.Model):
         return None
 
 
-class TourImg(models.Model):
-    tour = models.ForeignKey("Tour", on_delete=models.PROTECT, related_name="tour_img")
-    photo = models.ImageField(upload_to="tour/")
-
-    def __str__(self) -> str:
-        return f"{self.tour}"

@@ -10,7 +10,7 @@ class TourDetailView(DetailView):
 
     def get_context_data(self, **kwargs: Any):
         context = super().get_context_data(**kwargs)
-        context['tour_imgs'] = TourImg.objects.filter(tour_id=self.kwargs['pk'])
+
         context['recent_tours'] = Tour.objects.filter(status__in=["available", "discount"]).exclude(
             id=self.kwargs['pk']).order_by("-created_at")[:3]
         return context
@@ -20,7 +20,7 @@ class TourListView(ListView):
     model = Tour
     template_name = "main/package_list.html"
 
-    def get_context_data(self, **kwargs: Any):
+    def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['tours'] = Tour.objects.filter(status__in=["available"]).order_by("-created_at")
         return context

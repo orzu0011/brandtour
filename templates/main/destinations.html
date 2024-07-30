@@ -1,128 +1,143 @@
 {% extends "base.html" %}
-{% load i18n %}
-{% block css %}
-  
-{% endblock css %}
+{% load static %}
 {% block body %}
-         <!-- ***site header html end*** -->
-         <main id="content" class="site-main">
-            <section class="destination-inner-page">
-               <!-- ***Inner Banner html start form here*** -->
-               <div class="inner-banner-wrap">
-                  <div class="inner-baner-container" style="background-image: url(https://media.cnn.com/api/v1/images/stellar/prod/170814175458-china-beautiful-places-wuyuan-flickr-carlos-adampol-galindo.jpg?q=w_1600,h_900,x_0,y_0,c_fill/h_618);">
-                     <div class="container">
-                        <div class="inner-banner-content">
-                           <h1 class="page-title">{% trans "Destination" %}</h1>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- ***Inner Banner html end here*** -->
-               <!-- ***destination section html start form here*** -->
-               <div class="destination-item-wrap">
-                  <div class="container">
-                     <div class="row gx-5">
-                        {% for dest in dests %}
-                        <div class="col-lg-4 col-md-6">
-                           <article class="destination-item" style="background-image: url({{dest.photo.url}});">
-                              <div class="destination-content">
-                                 <div class="rating-start-wrap">
-                                    <div class="rating-start">
-                                       <span style="width: 100%"></span>
-                                    </div>
-                                 </div>
-                                 <span class="cat-link">
-                                    <a href="#">{{ dest.country }}</a>
-                                 </span>
-                                 <h3>
-                                    <a href="#">{{ dest.city }}</a>
-                                 </h3>
-                                 <p>{{ dest.about }}</p>
-                              </div>
-                           </article>
-                        </div>
-                        {% endfor %}
-                     </div>
-                  </div>
-               </div>
-               <!-- ***destination section html start form here*** -->
-               <!-- ***counter section html start form here*** -->
-               <div class="inner-counter">
-                  <div class="container">
-                     <div class="counter-wrap">
-                        <div class="counter-item">
-                           <span class="counter-no">
-                              <span class="counter">81</span>K+
-                           </span>
-                           <span class="counter-desc">
-                              {% trans "SATISFIED CUSTOMER" %}
-                           </span>
-                        </div>
-                        <div class="counter-item">
-                           <span class="counter-no">
-                              <span class="counter">18</span>+
-                           </span>
-                           <span class="counter-desc">
-                              {% trans "ACTIVE MEMBERS" %}
-                           </span>
-                        </div>
-                        <div class="counter-item">
-                           <span class="counter-no">
-                              <span class="counter">220</span>+
-                           </span>
-                           <span class="counter-desc">
-                              {% trans "TOUR DESTINATION" %}
-                           </span>
-                        </div>
-                        <div class="counter-item">
-                           <span class="counter-no">
-                              <span class="counter">75</span>+
-                           </span>
-                           <span class="counter-desc">
-                              {% trans "TRAVEL GUIDES" %}
-                           </span>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- ***counter section html end here*** -->
-               <!-- ***callback section html start form here*** -->
-               <div class="bg-color-callback primary-bg">
-                  <div class="container">
-                     <div class="row align-items-center">
-                        <div class="col-lg-8 offset-lg-2 text-center">
-                           <h5 class="sub-title">{% trans "CALL TO ACTION" %}</h5>
-                           <h2 class="section-title">{% trans "READY FOR UNFORGETTABLE TRAVEL. REMEMBER US!" %}</h2>
-                           
-                           <a href="{% url 'main_contact' %}" class="outline-btn outline-btn-white">{% trans "Contact Us " %}!</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- ***callback section html end here*** -->
-            </section>
-         </main>
-     
-         <!-- ***site footer html end*** -->
-         <a id="backTotop" href="#" class="to-top-icon">
-            <i class="fas fa-chevron-up"></i>
-         </a>
-         <!-- ***custom search field html*** -->
-         <div class="header-search-form">
-            <div class="container">
-               <div class="header-search-container">
-                  <form class="search-form" role="search" method="get" >
-                     <input type="text" name="s" placeholder="Enter your text...">
-                  </form>
-                  <a href="#" class="search-close">
-                     <i class="fas fa-times"></i>
-                  </a>
-               </div>
+
+    <!-- Menu Sidebar Section Start -->
+    <div class="menu-sidebar-area">
+        <div class="menu-sidebar-wrapper">
+            <div class="menu-sidebar-close">
+                <button class="menu-sidebar-close-btn" id="menu_sidebar_close_btn">
+                    <i class="fal fa-times"></i>
+                </button>
             </div>
-         </div>
-         <!-- ***custom search field html*** -->
-  
-{% endblock body %}
-{% block js %}
-  
-{% endblock js %}
+            <div class="menu-sidebar-content">
+                <div class="menu-sidebar-logo">
+                    <a href="index.html"><img src="{% static 'images/logo/nav-logo.png' %}" alt="logo"/></a>
+                </div>
+                <div class="mobile-nav-menu"></div>
+                <div class="menu-sidebar-content">
+                    <div class="menu-sidebar-single-widget">
+                        <h5 class="menu-sidebar-title">Contact Info</h5>
+                        <div class="header-contact-info">
+                            <span><i class="fa-solid fa-location-dot"></i>20, Bordeshi, New York, US</span>
+                            <span><a href="mailto:hello@transico.com"><i class="fa-solid fa-envelope"></i>hello@transico.com</a> </span>
+                            <span><a href="tel:+123-456-7890"><i class="fa-solid fa-phone"></i>+123-456-7890</a></span>
+                        </div>
+                        <div class="social-profile">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Menu Sidebar Section Start -->
+    <div class="body-overlay"></div>
+
+    <!-- Page Header Start !-->
+    <div class="page-breadcrumb-area page-bg" style="background-image: url('images/breadcrumb/destination.jpg')">
+        <!-- <div class="page-overlay"></div> -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcrumb-wrapper">
+                        <div class="page-heading">
+                            <h3 class="page-title">Destination</h3>
+                        </div>
+                        <div class="breadcrumb-list">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li class="active"><a href="#">Destination</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End !-->
+
+<!-- Location Area Start -->
+<div class="destination-page location-area style-4">
+    <div class="container">
+        <div class="section-title justify-content-start text-start">
+            <div class="sec-content">
+                <h2 class="title">Popular Destinations</h2>
+                <img class="bottom-shape" src="{% static 'images/shape/bottom-bar.png' %}" alt="Bottom Shape">
+            </div>
+        </div>
+        <div class="row gy-4">
+            {% for destination in dests %}
+                {% if forloop.counter0 == 0 %}
+                <!--- Single Location Start !-->
+                <div class="col-md-8 wow fadeInUp" data-wow-delay="0s">
+                    <div class="location-card-wrapper">
+                        <div class="location-card style-1">
+                            <div class="image-wrapper">
+                                <a href="{% url 'destination_detail' destination.id %}" class="image-inner">
+                                    <img src="{{ destination.photo.url }}" alt="Location Image" style="width: 851px; height: 404px;">
+                                </a>
+                                <div class="card-location">
+                                    <div class="location-inner">
+                                        <span><i class="fa-regular fa-location-dot"></i></span>
+                                        <span class="address">{{ destination.city }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--- Single Location End !-->
+                {% elif forloop.counter0 == 6 %}
+                <!--- Single Location Start !-->
+                <div class="col-md-8 wow fadeInUp" data-wow-delay="1.6s">
+                    <div class="location-card-wrapper">
+                        <div class="location-card style-1">
+                            <div class="image-wrapper">
+                                <a href="{% url 'destination_detail' destination.id %}" class="image-inner">
+                                    <img src="{{ destination.photo.url }}" alt="Location Image" style="width: 851px; height: 404px;">
+                                </a>
+                                <div class="card-location">
+                                    <div class="location-inner">
+                                        <span><i class="fa-regular fa-location-dot"></i></span>
+                                        <span class="address">{{ destination.city }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--- Single Location End !-->
+                {% else %}
+                <!--- Single Location Start !-->
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="{{ forloop.counter|divisibleby:2|yesno:'1.4s,0.4s' }}">
+                    <div class="location-card-wrapper">
+                        <div class="location-card style-1">
+                            <div class="image-wrapper">
+                                <a href="{% url 'destination_detail' destination.id %}" class="image-inner">
+                                    <img src="{{ destination.photo.url }}" alt="Location Image" style="width: 405px; height: 404px;">
+                                </a>
+                                <div class="card-location">
+                                    <div class="location-inner">
+                                        <span><i class="fa-regular fa-location-dot"></i></span>
+                                        <span class="address">{{ destination.city }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--- Single Location End !-->
+                {% endif %}
+            {% empty %}
+                <p>No destinations available.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Location Area End -->
+
+{% endblock body%}

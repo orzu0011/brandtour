@@ -1,171 +1,797 @@
-{% extends 'base.html' %}
-{% load i18n %}
+{% extends "base.html" %}
 {% load static %}
-
-{% block css %}
-   <style>
-         .rating {
-         display: flex;
-         flex-direction: row-reverse;
-         justify-content: start;
-         }
-         .rating > label {
-            margin-right: 0.25em;
-         }
-         .rating > input{ display:none;}
-         .rating > label {
-         position: relative;
-         width: 0.5em;
-         font-size: 3vw;
-         color: #FFD700;
-         cursor: pointer;
-         }
-         .rating > label::before{
-         content: "\2605";
-         position: absolute;
-         opacity: 0;
-         }
-         .rating > label:hover:before,
-         .rating > label:hover ~ label:before {
-         opacity: 1 !important;
-         }
-         .rating > input:checked ~ label:before{
-         opacity:1;
-         }
-         .rating:hover > input:checked ~ label:before{ opacity: 0.4; }
-   </style>
-{% endblock %}
-
 {% block body %}
+    <!-- Menu Sidebar Section Start -->
+    <div class="menu-sidebar-area">
+        <div class="menu-sidebar-wrapper">
+            <div class="menu-sidebar-close">
+                <button class="menu-sidebar-close-btn" id="menu_sidebar_close_btn">
+                    <i class="fal fa-times"></i>
+                </button>
+            </div>
+            <div class="menu-sidebar-content">
+                <div class="menu-sidebar-logo">
+                    <a href="index.html"><img src="{% static 'images/logo/nav-logo.png' %}" alt="logo"/></a>
+                </div>
+                <div class="mobile-nav-menu"></div>
+                <div class="menu-sidebar-content">
+                    <div class="menu-sidebar-single-widget">
+                        <h5 class="menu-sidebar-title">Contact Info</h5>
+                        <div class="header-contact-info">
+                            <span><i class="fa-solid fa-location-dot"></i>20, Bordeshi, New York, US</span>
+                            <span><a href="mailto:hello@transico.com"><i class="fa-solid fa-envelope"></i>hello@transico.com</a> </span>
+                            <span><a href="tel:+123-456-7890"><i class="fa-solid fa-phone"></i>+123-456-7890</a></span>
+                        </div>
+                        <div class="social-profile">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Menu Sidebar Section Start -->
+    <div class="body-overlay"></div>
 
-         <!-- ***site header html end*** -->
-         <main id="content" class="site-main">
-            <section class="inner-page-wrap">
-               <!-- ***Inner Banner html start form here*** -->
-               <div class="inner-banner-wrap">
-                  <div class="inner-baner-container" style="background-image: url(assets/images/img7.jpg);">
-                     <div class="container">
-                        <div class="inner-banner-content">
-                           <h1 class="page-title">{% trans "About Us" %}</h1>
+    <!-- Page Header Start !-->
+    <div class="page-breadcrumb-area page-bg" style="background-image: url('images/breadcrumb/about.jpg')">
+        <!-- <div class="page-overlay"></div> -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcrumb-wrapper">
+                        <div class="page-heading">
+                            <h3 class="page-title">Looking for joy?</h3>
                         </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- ***Inner Banner html end here*** -->
-               <!-- ***about section html start form here*** -->
-               <div class="inner-about-wrap">
-                  <div class="container">
-                     <div class="row">
-                        <div class="col-lg-8">
-                           <div class="about-content">
-                              <figure class="about-image">
-                                 <img src="assets/images/img27.jpg" alt="">
-                                 <div class="about-image-content">
-                                    <h3>{% trans "WE ARE BEST FOR TOURS & TRAVEL SINCE 2023 !" %}</h3>
-                                 </div>
-                              </figure>
-                              <h2>{% trans "HOW WE ARE BEST FOR TRAVEL !" %}</h2>
-                              <p>{% trans "WE ARE LEGEND" %}</p>
-                           </div>
-                           <div class="client-slider white-bg">
-                              <figure class="client-item">
-                                 <img src="{% static 'images\photo_2023-12-09_18-05-56.jpg' %}" alt="">
-                              </figure>
-                              <figure class="client-item">
-                                 <img src="{% static 'images\photo_2023-12-09_18-07-05.jpg'%}" alt="">
-                              </figure>
-                              <figure class="client-item">
-                                 <img src="{% static 'images\photo_2023-12-09_18-07-05.jpg' %}" alt="">
-                              </figure>
-                              <figure class="client-item">
-                                 <img src="{% static 'images\photo_2023-12-09_18-07-13.jpg'%}" alt="">
-                              </figure>
-                              <figure class="client-item">
-                                 <img src="{% static 'images\photo_2023-12-09_18-07-18.jpg'%}" alt="">
-                              </figure>
-                           </div>
+                        <div class="breadcrumb-list">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li class="active"><a href="#">About us</a></li>
+                            </ul>
                         </div>
-                        <div class="col-lg-4">
-                           <div class="icon-box">
-                              <div class="box-icon">
-                                 <i aria-hidden="true" class="fas fa-umbrella-beach"></i>
-                              </div>
-                              <div class="icon-box-content">
-                                 <h3>{% trans "AFFORDABLE TOURS" %}</h3>
-                                 <p>{% trans "WE ARE LEGEND" %}</p>
-                              </div>
-                           </div>
-                           <div class="icon-box">
-                              <div class="box-icon">
-                                 <i aria-hidden="true" class="fas fa-user-tag"></i>
-                              </div>
-                              <div class="icon-box-content">
-                                 <h3>{% trans "BEST TOUR GUIDES" %}</h3>
-                                 <p>{% trans "WE ARE LEGEND" %}</p>
-                              </div>
-                           </div>
-                           <div class="icon-box">
-                              <div class="box-icon">
-                                 <i aria-hidden="true" class="fas fa-headset"></i>
-                              </div>
-                              <div class="icon-box-content">
-                                 <h3>{% trans "AFFORDABLE TOURS" %}</h3>
-                                 <p>{% trans "WE ARE LEGEND" %}</p>
-                              </div>
-                           </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End !-->
+
+    <!-- About Us Area Start -->
+    <div class="about-us-area style-1" style="background-image: url('images/about-us-area/bg-1.png')">
+        <img class="shape-1 wow zoomInDown" src="{% static 'images/shape/dots.png' %}" alt="Shape">
+        <div class="container">
+            <div class="about-us-wrapper">
+                <div class="row">
+                    <div class="col-xl-5 order-xl-1 order-2 wow fadeInLeft" data-wow-delay=".4s">  
+                        <div class="about-us-content-wrapper-1">
+                            <div class="section-title">
+                                <div class="sec-content">
+                                    <span class="short-title">About us</span>
+                                    <h2 class="title">We create journeys for the excited traveler</h2>
+                                    <img class="bottom-shape" src="{% static 'images/shape/bottom-bar.png' %}" alt="Bottom Shape">
+                                </div>
+                            </div>
+                            <div class="info-card style-1">
+                                <div class="icon-wrapper">
+                                    <img src="{% static 'images/icon/folding-map.png' %}" alt="Icon">
+                                </div>
+                                <div class="content">
+                                    <h6 class="title">Best of hotel</h6>
+                                    <p class="desc">Ut enim ad minima veniam, quis nostrum exercitation em ullam corporis suscipit laboriosam, nisi ut al</p>
+                                </div>
+                            </div>
+                            <div class="info-card style-1">
+                                <div class="icon-wrapper">
+                                    <img src="{% static 'images/icon/ticket.png' %}" alt="Icon">
+                                </div>
+                                <div class="content">
+                                    <h6 class="title">World class travel</h6>
+                                    <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit asper natur aut oditut fugit seduia con senim ipsam tatem</p>
+                                </div>
+                            </div>
+                            <div class="meta-wrapper">
+                                <a href="about.html" class="theme-btn">Learn more</a>
+                                <div class="meta-user">
+                                    <a href="#" class="image-inner">
+                                        <img src="{% static 'images/meta-user/meta-user-1.jpg' %}" alt="User">
+                                    </a>
+                                    <a href="#" class="image-inner">
+                                        <img src="{% static 'images/meta-user/meta-user-2.jpg' %}" alt="User">
+                                    </a>
+                                    <a href="#" class="image-inner">
+                                        <img src="{% static 'images/meta-user/meta-user-3.jpg' %}" alt="User">
+                                    </a>
+                                    <a href="#" class="image-inner">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </a>
+                                </div>
+                                <div class="counter-wrapper">
+                                    <h6 class="counter-inner"><span class="counter">500</span>K+</h6>
+                                    <span class="customers">customers</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-lg-6">
-                           <h3 class="comment-title ms-5">{% trans "Tell us what You think about us" %}</h3>
-                           {% if request.user.is_authenticated %}
-                              <div class="contact-from-wrap primary-bg">
-                                 <form method="POST" action="{% url 'main_about' %}">
-                                    {% csrf_token %}
-                                    <div class="rating">
-                                       <input type="radio" class="mx-5" name="stars" value="100" id="5"><label for="5">☆</label>
-                                       <input type="radio" name="stars" value="80" id="4"><label for="4">☆</label>
-                                       <input type="radio" class="mx-5" name="stars" value="60" id="3"><label for="3">☆</label>
-                                       <input type="radio" name="stars" value="40" id="2"><label for="2">☆</label>
-                                       <input type="radio" class="mx-5" name="stars" value="20" id="1"><label for="1">☆</label>
-                                     </div>
-                                       <p>
-                                          <textarea required rows="8" name="text" placeholder="Your Message*"></textarea>
-                                       </p>
-                                       <button class="btn btn-outline-light rounded-pill" type="submit">{% trans "SUBMIT MESSAGE" %}</button>
-                                 </form>
-                              </div>
-                           {% else %}
-                              <p>{% trans "You must be logged in to leave a testimonial" %}</p>
-                           {% endif %}
+                    </div>
+                    <div class="col-xl-7 order-xl-2 order-1 wow fadeInRight" data-wow-delay=".4s">
+                        <div class="about-us-image-wrapper-1">
+                            <img class="bg-shape" src="{% static 'images/about-us-area/image-wrapper-bg-1.png' %}" alt="Shape">
+                            <div class="image-wrapper style-1">
+                                <img src="{% static 'images/about-us-area/img-1.jpg' %}" alt=" Vacation Image">
+                            </div>
+                            <div class="image-wrapper style-2">
+                                <img src="{% static 'images/about-us-area/img-2.jpg' %}" alt=" Vacation Image">
+                            </div>
+                            <div class="image-wrapper style-3">
+                                <img src="{% static 'images/about-us-area/img-3.jpg' %}" alt=" Vacation Image">
+                            </div>
                         </div>
-                     </div>
-                  </div>
-               </div>
-               
-               <!-- ***about section html start form here*** -->
-               <!-- ***callback section html start form here*** -->
-               <div class="bg-img-fullcallback" style="background-image: url({% static 'images/img7.jpg' %});">
-                  <div class="overlay"></div>
-                  <div class="container">
-                     <div class="row">
-                        <div class="col-lg-8 offset-lg-2 text-center">
-                           <div class="callback-content">
-                              <div class="video-button">
-                                 <a  id="video-container" data-fancybox="video-gallery" href="https://www.youtube.com/watch?v=2OYar8OHEOU">
-                                    <i class="fas fa-play"></i>
-                                 </a>
-                              </div>
-                              <h2 class="section-title">{% trans "ARE YOU READY TO TRAVEL? REMEMBER US !!" %}</h2>
-                              <p>{% trans "WE ARE LEGEND" %}</p>
-                              <div class="callback-btn">
-                                 <a href="#" class="round-btn">{% trans "View Packages" %}</a>
-                                 <a href="#" class="outline-btn outline-btn-white">{% trans "Learn More" %}</a>
-                              </div>
-                           </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Us Area Start -->
+
+    <!-- Process Step Area Start  -->
+    <div class="process-step-area style-1">
+        <div class="container">
+            <img class="bg-shape" src="{% static 'images/shape/elements.png' %}" alt="Shape">
+            <div class="section-title justify-content-center text-center">
+                <div class="sec-content">
+                    <span class="short-title">Our process</span>
+                    <h2 class="title">Revolutionising the ways we travel</h2>
+                    <img class="bottom-shape" src="{% static 'images/shape/bottom-bar.png' %}" alt="Bottom Shape">
+                </div>
+            </div>
+            <div class="row gy-4">
+                <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="0s">
+                    <div class="process-card style-1">
+                        <div class="img-wrapper wow">
+                            <img src="{% static 'images/process-step-area/image-1.png' %}" alt="Shape">
                         </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- ***callback section html end here*** -->
-            </section>
-         </main>
-{% endblock %}
+                        <div class="content-wrapper">
+                            <h4 class="title">Book & relax</h4>
+                            <p class="desc">Nemo enim ipsam voluptatem quia volup tas sit asper natur aut oditut fugit</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="process-card style-1">
+                        <div class="img-wrapper">
+                            <img src="{% static 'images/process-step-area/image-2.png' %}" alt="Shape">
+                        </div>
+                        <div class="content-wrapper">
+                            <h4 class="title">Smart checklist</h4>
+                            <p class="desc">Nemo enim ipsam voluptatem quia volup tas sit aspernatur aut odit aut fugit</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
+                    <div class="process-card style-1 ">
+                        <div class="img-wrapper">
+                            <img src="{% static 'images/process-step-area/image-3.png' %}" alt="Shape">
+                        </div>
+                        <div class="content-wrapper">
+                            <h4 class="title">Save more</h4>
+                            <p class="desc">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Process Step Area End  -->
+
+    <!-- Video Modal Area  Start -->
+    <div class="video-modal-area style-1">
+        <div class="container">
+            <div class="section-title">
+                <div class="sec-content wow fadeInLeft" data-wow-delay="0s">
+                    <span class="short-title">Destination</span>
+                    <h2 class="title">Experience the new adventure with us</h2>
+                    <img class="bottom-shape" src="{% static 'images/shape/bottom-bar.png' %}" alt="Bottom Shape">
+                </div>
+                <div class="btn-sec-inner wow fadeInRight" data-wow-delay=".2s">
+                    <div class="sec-desc">
+                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit asper natur aut oditut fugit seduia con senim ipsam volup.</p>
+                    </div>
+                    <div class="sec-btn">
+                        <a href="#" class="theme-btn">Discover more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="video-modal-card style-1 wow fadeInUp" data-wow-delay=".4s">
+                <div class="image-wrapper">
+                    <img src="{% static 'images/video-modal/bg-2.jpg' %}" alt="Video Modal">
+                </div>
+                <div class="popup-video-wrapper">
+                    <div class="video-btn">
+                        <a href="https://www.youtube.com/watch?v=7e90gBu4pas" class="mfp-iframe video-play">
+                            <i class="icon-play-button" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="counter-area">
+                <div class="single-counter wow fadeInRight" data-wow-delay="0s">
+                    <p class="counter-inner"><span class="counter">25</span>K+</p>
+                    <p class="title">New users per week</p>
+                </div>
+                <div class="single-counter wow fadeInRight" data-wow-delay=".4s">
+                    <p class="counter-inner"><span class="counter">100</span>M+</p>
+                    <p class="title">Monthly active user</p>
+                </div>
+                <div class="single-counter wow fadeInRight" data-wow-delay=".8s">
+                    <p class="counter-inner"><span class="counter">25</span>K+</p>
+                    <p class="title">New users per week</p>
+                </div>
+                <div class="single-counter wow fadeInRight" data-wow-delay=".9s">
+                    <p class="counter-inner"><span class="counter">100</span>M+</p>
+                    <p class="title">Monthly active user</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Video Modal Area  End -->
+
+     <!-- location Image Card Area Start -->
+    <div class="location-area style-2 bg-white">
+        <div class="container">
+            <div class="section-title  align-content-center justify-content-center text-center">
+                <div class="sec-content">
+                    <h2 class="title">Our amazing team</h2>
+                    <img class="bottom-shape" src="{% static 'images/shape/bottom-bar.png' %}" alt="Bottom Shape">
+                </div>
+            </div>
+            <div class="location-card-wrapper">
+                <div class="row gy-4">
+                    <!-- Single Card Start -->
+                    <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0s">
+                        <div class="location-image-card style-2">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/location-image-card/image-5.png' %}" alt="Place Image">
+                            </div>
+                            <div class="content-inner">
+                                <h6 class="city">Jenny Wilson</h6>
+                                <p class="duration">CEO & Founder</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Card End -->
+                    <!-- Single Card Start -->
+                    <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="location-image-card style-2">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/location-image-card/image-6.png' %}" alt="Place Image">
+                            </div>
+                            <div class="content-inner">
+                                <h6 class="city">Robert Mayar</h6>
+                                <p class="duration">Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Card End -->
+                    <!-- Single Card Start -->
+                    <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
+                        <div class="location-image-card style-2">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/location-image-card/image-7.png' %}" alt="Place Image">
+                            </div>
+                            <div class="content-inner">
+                                <h6 class="city">Annette Black</h6>
+                                <p class="duration">Tour Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Card End -->
+                    <!-- Single Card Start -->
+                    <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="1.2s">
+                        <div class="location-image-card style-2">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/location-image-card/image-8.png' %}" alt="Place Image">
+                            </div>
+                            <div class="content-inner">
+                                <h6 class="city">Bessie Cooper</h6>
+                                <p class="duration">Chief Agent</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Card End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- location Image Card Area End -->
+
+    <!-- Testimonial Slider Area Start -->
+    <div class="testimonial-slider-area style-2 background-light-gray">
+        <div class="container">
+            <div class="section-title">
+                <div class="sec-content">
+                    <span class="short-title">Testimonial</span>
+                    <h2 class="title">What traveler says</h2>
+                    <img class="bottom-shape" src="{% static 'images/shape/bottom-bar.png' %}" alt="Bottom Shape">
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-marquee-wrapper style-2">
+            <div class=" brand-marquee-wrapper first-marquee-wrapper">
+                <!-- Single Card Start --> 
+                <div class="testimonial-card-two">
+                    <div class="user-meta-info">
+                        <div class="user-info-inner">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/testiomonial-slider/user-1.png' %}" alt="User">
+                            </div>
+                            <div class="content">
+                                <h5 class="user-name">Sabrina Meyla</h5>
+                                <p class="title">Indonesian tourists</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="ratting-inner">
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>   
+                                <span class="counter">3.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc-inner">
+                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
+                    </div>
+                </div>
+                <!-- Single Card End -->
+                <!-- Single Card Start -->
+                <div class="testimonial-card-two">
+                    <div class="user-meta-info">
+                        <div class="user-info-inner">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/testiomonial-slider/user-2.png' %}" alt="User">
+                            </div>
+                            <div class="content">
+                                <h5 class="user-name">Darell Seward</h5>
+                                <p class="title">Indonesian tourists</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="ratting-inner">
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>   
+                                <span class="counter">3.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc-inner">
+                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
+                    </div>
+                </div>
+                <!-- Single Card End -->
+                <!-- Single Card Start -->
+                <div class="testimonial-card-two">
+                    <div class="user-meta-info">
+                        <div class="user-info-inner">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/testiomonial-slider/user-3.png' %}" alt="User">
+                            </div>
+                            <div class="content">
+                                <h5 class="user-name">Camron Will</h5>
+                                <p class="title">Indonesian tourists</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="ratting-inner">
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>   
+                                <span class="counter">3.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc-inner">
+                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
+                    </div>
+                </div>
+                <!-- Single Card End -->
+                <!-- Single Card Start -->
+                <div class="testimonial-card-two">
+                    <div class="user-meta-info">
+                        <div class="user-info-inner">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/testiomonial-slider/user-1.png' %}" alt="User">
+                            </div>
+                            <div class="content">
+                                <h5 class="user-name">Sabrina Meyla</h5>
+                                <p class="title">Indonesian tourists</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="ratting-inner">
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>   
+                                <span class="counter">3.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc-inner">
+                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
+                    </div>
+                </div>
+                <!-- Single Card End -->
+                <!-- Single Card Start -->
+                <div class="testimonial-card-two">
+                    <div class="user-meta-info">
+                        <div class="user-info-inner">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/testiomonial-slider/user-2.png' %}" alt="User">
+                            </div>
+                            <div class="content">
+                                <h5 class="user-name">Darell Seward</h5>
+                                <p class="title">Indonesian tourists</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="ratting-inner">
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>   
+                                <span class="counter">3.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc-inner">
+                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
+                    </div>
+                </div>
+                <!-- Single Card End -->
+                <!-- Single Card Start -->
+                <div class="testimonial-card-two">
+                    <div class="user-meta-info">
+                        <div class="user-info-inner">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/testiomonial-slider/user-3.png' %}" alt="User">
+                            </div>
+                            <div class="content">
+                                <h5 class="user-name">Camron Will</h5>
+                                <p class="title">Indonesian tourists</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="ratting-inner">
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>   
+                                <span class="counter">3.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc-inner">
+                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
+                    </div>
+                </div>
+                <!-- Single Card End -->
+                <!-- Single Card Start -->
+                <div class="testimonial-card-two">
+                    <div class="user-meta-info">
+                        <div class="user-info-inner">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/testiomonial-slider/user-1.png' %}" alt="User">
+                            </div>
+                            <div class="content">
+                                <h5 class="user-name">Sabrina Meyla</h5>
+                                <p class="title">Indonesian tourists</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="ratting-inner">
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>   
+                                <span class="counter">3.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc-inner">
+                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
+                    </div>
+                </div>
+                <!-- Single Card End -->
+                <!-- Single Card Start -->
+                <div class="testimonial-card-two">
+                    <div class="user-meta-info">
+                        <div class="user-info-inner">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/testiomonial-slider/user-2.png' %}" alt="User">
+                            </div>
+                            <div class="content">
+                                <h5 class="user-name">Darell Seward</h5>
+                                <p class="title">Indonesian tourists</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="ratting-inner">
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>   
+                                <span class="counter">3.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc-inner">
+                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
+                    </div>
+                </div>
+                <!-- Single Card End -->
+                <!-- Single Card Start -->
+                <div class="testimonial-card-two">
+                    <div class="user-meta-info">
+                        <div class="user-info-inner">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/testiomonial-slider/user-3.png' %}" alt="User">
+                            </div>
+                            <div class="content">
+                                <h5 class="user-name">Camron Will</h5>
+                                <p class="title">Indonesian tourists</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="ratting-inner">
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>   
+                                <span class="counter">3.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc-inner">
+                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
+                    </div>
+                </div>
+                <!-- Single Card End -->
+            </div>
+            <div class=" brand-marquee-wrapper second-marquee-wrapper">
+                <!-- Single Card Start -->
+                <div class="testimonial-card-two">
+                    <div class="user-meta-info">
+                        <div class="user-info-inner">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/testiomonial-slider/user-3.png' %}" alt="User">
+                            </div>
+                            <div class="content">
+                                <h5 class="user-name">Camron Will</h5>
+                                <p class="title">Indonesian tourists</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="ratting-inner">
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>   
+                                <span class="counter">3.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc-inner">
+                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
+                    </div>
+                </div>
+                <!-- Single Card End -->
+                <!-- Single Card Start -->
+                <div class="testimonial-card-two">
+                    <div class="user-meta-info">
+                        <div class="user-info-inner">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/testiomonial-slider/user-4.png' %}" alt="User">
+                            </div>
+                            <div class="content">
+                                <h5 class="user-name">Annette Black</h5>
+                                <p class="title">Indonesian tourists</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="ratting-inner">
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>   
+                                <span class="counter">3.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc-inner">
+                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
+                    </div>
+                </div>
+                <!-- Single Card End -->
+                <!-- Single Card Start -->
+                <div class="testimonial-card-two">
+                    <div class="user-meta-info">
+                        <div class="user-info-inner">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/testiomonial-slider/user-5.png' %}" alt="User">
+                            </div>
+                            <div class="content">
+                                <h5 class="user-name">Savan Nguyen</h5>
+                                <p class="title">Indonesian tourists</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="ratting-inner">
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>   
+                                <span class="counter">3.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc-inner">
+                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
+                    </div>
+                </div>
+                <!-- Single Card End -->
+                <!-- Single Card Start -->
+                <div class="testimonial-card-two">
+                    <div class="user-meta-info">
+                        <div class="user-info-inner">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/testiomonial-slider/user-3.png' %}" alt="User">
+                            </div>
+                            <div class="content">
+                                <h5 class="user-name">Camron Will</h5>
+                                <p class="title">Indonesian tourists</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="ratting-inner">
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>   
+                                <span class="counter">3.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc-inner">
+                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
+                    </div>
+                </div>
+                <!-- Single Card End -->
+                <!-- Single Card Start -->
+                <div class="testimonial-card-two">
+                    <div class="user-meta-info">
+                        <div class="user-info-inner">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/testiomonial-slider/user-4.png' %}" alt="User">
+                            </div>
+                            <div class="content">
+                                <h5 class="user-name">Annette Black</h5>
+                                <p class="title">Indonesian tourists</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="ratting-inner">
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>   
+                                <span class="counter">3.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc-inner">
+                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
+                    </div>
+                </div>
+                <!-- Single Card End -->
+                <!-- Single Card Start -->
+                <div class="testimonial-card-two">
+                    <div class="user-meta-info">
+                        <div class="user-info-inner">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/testiomonial-slider/user-5.png' %}" alt="User">
+                            </div>
+                            <div class="content">
+                                <h5 class="user-name">Savan Nguyen</h5>
+                                <p class="title">Indonesian tourists</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="ratting-inner">
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>   
+                                <span class="counter">3.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc-inner">
+                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
+                    </div>
+                </div>
+                <!-- Single Card End -->
+                <!-- Single Card Start -->
+                <div class="testimonial-card-two">
+                    <div class="user-meta-info">
+                        <div class="user-info-inner">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/testiomonial-slider/user-3.png' %}" alt="User">
+                            </div>
+                            <div class="content">
+                                <h5 class="user-name">Camron Will</h5>
+                                <p class="title">Indonesian tourists</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="ratting-inner">
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>   
+                                <span class="counter">3.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc-inner">
+                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
+                    </div>
+                </div>
+                <!-- Single Card End -->
+                <!-- Single Card Start -->
+                <div class="testimonial-card-two">
+                    <div class="user-meta-info">
+                        <div class="user-info-inner">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/testiomonial-slider/user-4.png' %}" alt="User">
+                            </div>
+                            <div class="content">
+                                <h5 class="user-name">Annette Black</h5>
+                                <p class="title">Indonesian tourists</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="ratting-inner">
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>   
+                                <span class="counter">3.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc-inner">
+                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
+                    </div>
+                </div>
+                <!-- Single Card End -->
+                <!-- Single Card Start -->
+                <div class="testimonial-card-two">
+                    <div class="user-meta-info">
+                        <div class="user-info-inner">
+                            <div class="img-wrapper">
+                                <img src="{% static 'images/testiomonial-slider/user-5.png' %}" alt="User">
+                            </div>
+                            <div class="content">
+                                <h5 class="user-name">Savan Nguyen</h5>
+                                <p class="title">Indonesian tourists</p>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="ratting-inner">
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>   
+                                <span class="counter">3.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc-inner">
+                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
+                    </div>
+                </div>
+                <!-- Single Card End -->
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial Slider Area End -->
+
+    {% endblock body %}

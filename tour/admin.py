@@ -8,11 +8,6 @@ class CountryAdminModel(TranslationAdmin, admin.ModelAdmin):
     pass
 
 
-@admin.register(TourImg)
-class TourImgAdminModel(admin.ModelAdmin):
-    pass
-
-
 @admin.register(IncludeExclude)
 class IncludeExcludeAdminModel(TranslationAdmin, admin.ModelAdmin):
     pass

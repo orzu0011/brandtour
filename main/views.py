@@ -9,14 +9,14 @@ from user.forms import TestimonialForm
 from django.views.generic import TemplateView
 from .forms import ContactForm
 from django.shortcuts import HttpResponse
-
+from django.views.generic import DetailView
 
 class HomeView(View):
     def get(self, request):
         last_two_posts = Post.objects.all().order_by("-created_at")[:2]
         last_three_tours_disc = Tour.objects.filter(status="discount").order_by("-created_at")[:2]
         last_three_tours = Tour.objects.filter(status="available").order_by("-created_at")[:3]
-        last_three_dests = Destination.objects.all().order_by("-created_at")[:3]
+        last_three_dests = Destination.objects.all().order_by("-created_at")[:5]
         last_five_testimonials = Testimonial.objects.all().order_by("-created_at")[:5]
         context = {
             "last_two_posts": last_two_posts,
@@ -36,6 +36,10 @@ class DestinationView(TemplateView):
         context['dests'] = Destination.objects.all()
         return context
 
+class DestinationDetailView(DetailView):
+    model = Destination
+    template_name = "main/destination_detail.html"
+    context_object_name = "destination"
 
 class AboutUsView(View):
     def get(self, request):
