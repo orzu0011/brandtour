@@ -1,160 +1,188 @@
 {% extends "base.html" %}
-{% load i18n %}
-{% block css %}
-  
-{% endblock css %}
+
+{% load static %}
 
 {% block body %}
-  
+    <!-- Menu Sidebar Section Start -->
+    <div class="menu-sidebar-area">
+        <div class="menu-sidebar-wrapper">
+            <div class="menu-sidebar-close">
+                <button class="menu-sidebar-close-btn" id="menu_sidebar_close_btn">
+                    <i class="fal fa-times"></i>
+                </button>
+            </div>
+            <div class="menu-sidebar-content">
+                <div class="menu-sidebar-logo">
+                    <a href="{% url 'main_home_view' %}">
+                        <img src="{% static 'images/logo/nav-logo.png' %}" alt="logo" />
+                    </a>
+                </div>
+                <div class="mobile-nav-menu"></div>
+                <div class="menu-sidebar-content">
+                    <div class="menu-sidebar-single-widget">
+                        <h5 class="menu-sidebar-title">Contact Info</h5>
+                        <div class="header-contact-info">
+                            <span><i class="fa-solid fa-location-dot"></i>20, Bordeshi, New York, US</span>
+                            <span><a href="mailto:hello@transico.com"><i class="fa-solid fa-envelope"></i>hello@transico.com</a> </span>
+                            <span><a href="tel:+123-456-7890"><i class="fa-solid fa-phone"></i>+123-456-7890</a></span>
+                        </div>
+                        <div class="social-profile">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Menu Sidebar Section Start -->
+    <div class="body-overlay"></div>
 
-         <main id="content" class="site-main">
-            <section class="contact-inner-page">
-               <!-- ***Inner Banner html start form here*** -->
-               <div class="inner-banner-wrap">
-                  <div class="inner-baner-container" style="background-image: url(assets/images/img7.jpg);">
-                     <div class="container">
-                        <div class="inner-banner-content">
-                           <h1 class="page-title">{% trans "Contact US" %}</h1>
+    <!-- Page Header Start !-->
+    <div class="page-breadcrumb-area page-bg" style="background-image: url('images/breadcrumb/image-1.jpg')">
+        <!-- <div class="page-overlay"></div> -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcrumb-wrapper">
+                        <div class="page-heading">
+                            <h3 class="page-title">Contact Us</h3>
                         </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- ***Inner Banner html end here*** -->
-               <!-- ***contact section html start form here*** -->
-               <div class="inner-contact-wrap">
-                  <div class="container">
-                     <div class="row">
-                        <div class="col-lg-6">
-                           <div class="section-heading">
-                              <h5 class="sub-title">{% trans "GET IN TOUCH" %}</h5>
-                              <h2 class="section-title">{% trans "REACH & CONTACT US!" %}</h2>
-                              <p>{% trans "we can help you by contacting us" %}</p>
-                              <div class="social-icon">
-                                 <ul>
-                                    <li>
-                                       <a href="https://www.facebook.com" target="_blank">
-                                          <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                                       </a>
-                                    </li>
-                                    <li>
-                                       <a href="https://www.twitter.com" target="_blank">
-                                          <i class="fab fa-twitter" aria-hidden="true"></i>
-                                       </a>
-                                    </li>
-                                    <li>
-                                       <a href="https://www.youtube.com" target="_blank">
-                                          <i class="fab fa-youtube" aria-hidden="true"></i>
-                                       </a>
-                                    </li>
-                                    <li>
-                                       <a href="https://www.instagram.com" target="_blank">
-                                          <i class="fab fa-instagram" aria-hidden="true"></i>
-                                       </a>
-                                    </li>
-                                    <li>
-                                       <a href="https://www.pinterest.com" target="_blank">
-                                          <i class="fab fa-pinterest" aria-hidden="true"></i>
-                                       </a>
-                                    </li>
-                                 </ul>
-                              </div>
-                           </div>
-                           <div class="contact-map">
-                              <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d767.6732652932288!2d66.93844707763476!3d39.67911857042617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMznCsDQwJzQ0LjYiTiA2NsKwNTYnMjAuMSJF!5e0!3m2!1sen!2s!4v1701959782134!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                           </div>
+                        <div class="breadcrumb-list">
+                            <ul>
+                                <li><a href="{% url 'main_home_view' %}">Home</a></li>
+                                <li class="active"><a href="#">Contact Us</a></li>
+                            </ul>
                         </div>
-                        <div class="col-lg-6">
-                           <div class="contact-from-wrap primary-bg">
-                              <form method="post" class="contact-from">
-                                {% csrf_token %}
-                                    <p>
-                                        <label>{% trans "First Name" %}..</label>
-                                        <input type="text" name="first_name" placeholder="Your Name*" required>
-                                    </p>
-                                    <p>
-                                        <label>{% trans "Phone" %}</label>
-                                        <input type="text" name="phone_number" placeholder="Your Phone*" required>
-                                    </p>
-                                    <p>
-                                        <label>{% trans "Comments / Questions" %}</label>
-                                        <textarea rows="8" name="comment" placeholder="Your Message*" required></textarea>
-                                    </p>
-                                 <p>
-                                    <input type="submit" name="submit" value="SUBMIT MESSAGE">
-                                 </p>
-                              </form>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- ***contact section html start form here*** -->
-               <!-- ***iconbox section html start form here*** -->
-               <div class="contact-details-section bg-light-grey">
-                  <div class="container">
-                     <div class="row align-items-center">
-                        <div class="col-lg-4">
-                           <div class="icon-box border-icon-box">
-                              <div class="box-icon">
-                                 <i aria-hidden="true" class="fas fa-envelope-open-text"></i>
-                              </div>
-                              <div class="icon-box-content">
-                                 <h4>{% trans "EMAIL ADDRESS" %}</h4>
-                                 <ul>
-                                    <li>
-                                       <a href="mailto:khasan.davlatov707@mail.ru">khasan.davlatov707@mail.ru</a>
-                                    </li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-lg-4">
-                           <div class="icon-box border-icon-box">
-                              <div class="box-icon">
-                                 <i aria-hidden="true" class="fas fa-phone-alt"></i>
-                              </div>
-                              <div class="icon-box-content">
-                                 <h4>{% trans "PHONE NUMBER" %}</h4>
-                                 <ul>
-                                    <li>
-                                       <a href="tell:+998976317070">+998 (97) 631 70 70</a>
-                                    </li>
-                                    <li>
-                                       <a href="callto:01977259912">+998 (97) 578 96 68</a>
-                                    </li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-lg-4">
-                           <div class="icon-box border-icon-box">
-                              <div class="box-icon">
-                                 <i aria-hidden="true" class="fas fa-map-marker-alt"></i>
-                              </div>
-                              <div class="icon-box-content">
-                                 <h4>{% trans "ADDRESS LOCATION" %}</h4>
-                                 <ul>
-                                    <li>
-                                        Oltin Asr MFY
-                                    </li>
-                                    <li>
-                                       A.Rudakiy ko'chasi
-                                    </li>
-                                    <li>
-                                       138-uy, 18-xonadon
-                                    </li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- ***iconbox section html end here*** -->
-            </section>
-         </main>
-{% endblock body %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End !-->
 
-{% block js %}
-  
-{% endblock js %}
+    <!-- Contact-info Section Start !-->
+    <div class="contact-info-area">
+        <div class="container">
+            <div class="row gx-xl-5 gy-4">
+                <div class="col-xl-4 col-md-6">
+                    <div class="icon-card style-2">
+                        <div class="icon">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+                        <div class="content">
+                            <h2 class="title">Contact number</h2>
+                            <div class="info">
+                                <a href="tel:+998902333313" class="desc">+998 90 233 33 13</a>
+                                <a href="tel:+998987005552" class="desc">+998 98 700 55 52</a>
+                                <a href="tel:+998902825552" class="desc">+998 90 282 55 52</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="icon-card style-2">
+                        <div class="icon">
+                            <i class="fa-solid fa-calendar"></i>
+                        </div>
+                        <div class="content">
+                            <h2 class="title">Mail address</h2>
+                            <div class="info">
+                                <a href="mailto:info@marakand.uk" class="desc">info@marakand.uk</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="icon-card style-2">
+                        <div class="icon">
+                            <i class="fa-solid fa-message"></i>
+                        </div>
+                        <div class="content">
+                            <h2 class="title">Office address</h2>
+                            <div class="info">
+                                <span class="address-desc">SAMARQAND SHAHRI, TEMUR MALIK KO'CHASI , 18-UY<br>SAMARQAND VILOYATI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact-info Section End -->
+
+    <!-- Contact Form Section Start -->
+    <div class="contact-form-area">
+        <!-- Submit form Start -->
+        <div class="container">
+            <div class=" row gy-5">
+                <div class="col-lg-5 justify-content-center">
+                    <div class="video-modal-card style-1">
+                        <div class="image-wrapper">
+                            <img src="{% static 'images/Contact-page/image-1.jpg' %}" alt="Video Modal">
+                        </div>
+                        <div class="popup-video-wrapper">
+                            <div class="video-btn">
+                                <a href="https://www.youtube.com/watch?v=7e90gBu4pas" class="mfp-iframe video-play">
+                                    <i class="icon-play-button" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                  <!-- Comment Form Start -->
+                  <div class="comment-respond">
+                      <form action="{% url 'main_contact' %}" method="post" class="comment-form">
+                          {% csrf_token %}
+                          <div class="row g-4">
+                              <div class="col-xl-6">
+                                  <div class="contacts-name">
+                                      <label for="id_first_name">First Name</label>
+                                      <input type="text" name="first_name" id="id_first_name" placeholder="Enter your first name" value="{{ form.first_name.value|default_if_none:'' }}" required>
+                                  </div>
+                              </div>
+                              <div class="col-xl-6">
+                                  <div class="contacts-name">
+                                      <label for="id_last_name">Last Name</label>
+                                      <input type="text" name="last_name" id="id_last_name" placeholder="Enter your last name" value="{{ form.last_name.value|default_if_none:'' }}" required>
+                                  </div>
+                              </div>
+                              <div class="col-xl-6">
+                                  <div class="contacts-phone">
+                                      <label for="id_phone_number">Phone Number</label>
+                                      <input type="text" name="phone_number" id="id_phone_number" placeholder="Enter your phone number" value="{{ form.phone_number.value|default_if_none:'' }}" required>
+                                  </div>
+                              </div>
+                              <div class="col-xl-6">
+                                  <div class="contacts-email">
+                                      <label for="id_email">Email</label>
+                                      <input type="email" name="email" id="id_email" placeholder="Enter your email address" value="{{ form.email.value|default_if_none:'' }}" required>
+                                  </div>
+                              </div>
+                              <div class="col-xl-12">
+                                  <div class="contacts-message">
+                                      <label for="id_comment">Your Comment</label>
+                                      <textarea name="comment" id="id_comment" cols="20" rows="3" placeholder="Enter your comments" required>{{ form.comment.value|default_if_none:'' }}</textarea>
+                                  </div>
+                              </div>
+                              <div class="col-12">
+                                  <button class="theme-btn" type="submit">Submit Now</button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+                  <!-- Comment Form End -->
+              </div>
+              
+              </div>
+              
+                </div>
+            </div>
+        </div>
+        <!-- Submit form End -->
+    </div>
+    <!-- Contact Form Section End -->
+    {% endblock body %}

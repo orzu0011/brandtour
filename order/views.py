@@ -70,3 +70,8 @@ class PaymentView(View):
             'cart': cart,
         }
         return render(request, 'cart/booking.html', context)
+    
+    
+    
+    
+    

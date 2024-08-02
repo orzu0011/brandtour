@@ -1,4 +1,5 @@
 from typing import Any
+from django.views.generic import ListView
 from django.shortcuts import redirect, render
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -9,14 +10,15 @@ from user.forms import TestimonialForm
 from django.views.generic import TemplateView
 from .forms import ContactForm
 from django.shortcuts import HttpResponse
-
+from django.views.generic import DetailView
+from datetime import datetime
 
 class HomeView(View):
     def get(self, request):
         last_two_posts = Post.objects.all().order_by("-created_at")[:2]
         last_three_tours_disc = Tour.objects.filter(status="discount").order_by("-created_at")[:2]
         last_three_tours = Tour.objects.filter(status="available").order_by("-created_at")[:3]
-        last_three_dests = Destination.objects.all().order_by("-created_at")[:3]
+        last_three_dests = Destination.objects.all().order_by("-created_at")[:5]
         last_five_testimonials = Testimonial.objects.all().order_by("-created_at")[:5]
         context = {
             "last_two_posts": last_two_posts,
@@ -36,10 +38,16 @@ class DestinationView(TemplateView):
         context['dests'] = Destination.objects.all()
         return context
 
-
+class DestinationDetailView(DetailView):
+    model = Destination
+    template_name = "main/destination_detail.html"
+    context_object_name = "destination"
+    
+    
 class AboutUsView(View):
     def get(self, request):
-        return render(request, 'main/about.html')
+        testimonials = Testimonial.objects.all()
+        return render(request, 'main/about.html', {'testimonials': testimonials})
 
     def post(self, request):
         form = TestimonialForm(request.POST)
@@ -49,8 +57,8 @@ class AboutUsView(View):
             f.save()
             return redirect('main_about')
         return HttpResponse('ERROR!')
-
-
+    
+    
 class ContactView(View):
     def get(self, request):
         return render(request, 'main/contact.html')
@@ -62,3 +70,24 @@ class ContactView(View):
             return redirect('main_contact')
         return HttpResponse('Error!')
 
+
+# class FilterTourView(View):
+#     def get(self, request):
+#         country = request.GET.get('country')
+#         date = request.GET.get('date')
+#         min_price = request.GET.get('min', 0)
+#         max_price = request.GET.get('max', 10000)
+        
+#         filtered_tours = Tour.objects.all()
+        
+#         if country:
+#             filtered_tours = filtered_tours.filter(country__name__icontains=country)
+        
+#         if min_price and max_price:
+#             filtered_tours = filtered_tours.filter(price__gte=min_price, price__lte=max_price)
+        
+#         context = {
+#             "filtered_tours": filtered_tours,
+#         }
+        
+#         return render(request, "search.html", context)
