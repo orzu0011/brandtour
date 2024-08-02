@@ -1,107 +1,147 @@
 {% load i18n %}
 {% load static %}
 
-
 <style>
     /* Importing fonts from Google */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-/* Reseting */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    background: #ecf0f3;
-}
-
-.wrapper {
-    max-width: 350px;
-    min-height: 500px;
-    margin: 80px auto;
-    padding: 40px 30px 30px 30px;
-    background-color: #ecf0f3;
-    border-radius: 15px;
-    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
-}
-
-.logo img {
-    width: 13em;
-    height: 3em;
-    /*object-fit: cover;
-    border-radius: 50%; 
-    box-shadow: 0px 0px 3px #5f5f5f,
-        0px 0px 0px 5px #ecf0f3,
-        8px 8px 15px #a7aaa7,
-        -8px -8px 15px #fff;*/
-}
-
-.wrapper .name {
-    font-weight: 600;
-    font-size: 1.4rem;
-    letter-spacing: 1.3px;
-    padding-left: 10px;
-    color: #555;
-}
-
-.wrapper .form-field input {
-    width: 100%;
-    display: block;
-    border: none;
-    outline: none;
-    background: none;
-    font-size: 1.2rem;
-    color: #666;
-    padding: 10px 15px 10px 10px;
-    /* border: 1px solid red; */
-}
-
-.wrapper .form-field {
-    padding-left: 10px;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
-}
-
-.wrapper .form-field .fas {
-    color: #555;
-}
-
-.wrapper .btn {
-    box-shadow: none;
-    width: 100%;
-    height: 40px;
-    background-color: #03A9F4;
-    color: #fff;
-    border-radius: 25px;
-    box-shadow: 3px 3px 3px #b1b1b1,
-        -3px -3px 3px #fff;
-    letter-spacing: 1.3px;
-}
-
-.wrapper .btn:hover {
-    background-color: #039BE5;
-}
-
-.wrapper a {
-    text-decoration: none;
-    font-size: 0.8rem;
-    color: #03A9F4;
-}
-
-.wrapper a:hover {
-    color: #039BE5;
-}
-
-@media(max-width: 380px) {
-    .wrapper {
-        margin: 30px 20px;
-        padding: 40px 15px 15px 15px;
+    /* Resetting */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
     }
-}
+
+    body {
+        background: #ecf0f3;
+    }
+
+    .wrapper {
+        max-width: 350px;
+        min-height: 500px;
+        margin: 80px auto;
+        padding: 40px 30px 30px 30px;
+        background-color: #ecf0f3;
+        border-radius: 15px;
+        box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+    }
+
+    .logo img {
+        width: 13em;
+        height: 3em;
+    }
+
+    .wrapper .name {
+        font-weight: 600;
+        font-size: 1.4rem;
+        letter-spacing: 1.3px;
+        padding-left: 10px;
+        color: #555;
+    }
+
+    .wrapper .form-field input {
+        width: 100%;
+        display: block;
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 1.2rem;
+        color: #666;
+        padding: 10px 15px 10px 10px;
+    }
+
+    .wrapper .form-field {
+        padding-left: 10px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+    }
+
+    .wrapper .form-field .fas {
+        color: #555;
+    }
+
+    .wrapper .btn {
+        box-shadow: none;
+        width: 100%;
+        height: 40px;
+        background-color: #03A9F4;
+        color: #fff;
+        border-radius: 25px;
+        box-shadow: 3px 3px 3px #b1b1b1, -3px -3px 3px #fff;
+        letter-spacing: 1.3px;
+    }
+
+    .wrapper .btn:hover {
+        background-color: #039BE5;
+    }
+
+    .wrapper a {
+        text-decoration: none;
+        font-size: 0.8rem;
+        color: #03A9F4;
+    }
+
+    .wrapper a:hover {
+        color: #039BE5;
+    }
+
+    /* Mobile View Adjustments */
+    @media(max-width: 768px) {
+        .wrapper {
+            max-width: 90%;
+            min-height: auto;
+            margin: 20px auto;
+            padding: 30px 20px;
+        }
+
+        .logo img {
+            width: 80%;
+            height: auto;
+        }
+
+        .form-field input {
+            font-size: 1.2rem;
+            padding: 12px;
+        }
+
+        .btn {
+            height: 45px;
+            font-size: 1rem;
+        }
+
+        .wrapper a {
+            font-size: 0.9rem;
+        }
+    }
+
+    /* Extra Small Mobile View Adjustments */
+    @media(max-width: 380px) {
+        .wrapper {
+            max-width: 95%;
+            padding: 20px 15px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        .form-field input {
+            font-size: 1.4rem;
+            padding: 15px;
+        }
+
+        .btn {
+            height: 50px;
+            font-size: 1.1rem;
+        }
+
+        .wrapper a {
+            font-size: 1rem;
+        }
+    }
 </style>
 
 <link rel="stylesheet" href="{% static 'vendors/bootstrap/css/bootstrap.min.css' %}" media="all">
@@ -110,7 +150,7 @@ body {
 <div class="wrapper">
     <div class="logo p-5 rounded-pill" style="text-align: center; background-color: #03A9F4;">
         <a href="{% url 'main_home_view' %}">
-            <img src="{% static 'images/img/logo-no-background.png' %}" alt="Comapny LOGO">
+            <img src="{% static 'images/img/logo-no-background.png' %}" alt="Company LOGO">
         </a>
     </div>
     <form class="p-3 mt-3 reg_form" method="POST" action="{% url 'login' %}">
@@ -133,7 +173,6 @@ body {
         <a href="#" class="forgot_pass_btn">{% trans "Forget password?" %}</a>{% trans "or" %} <a href="{% url 'register' %}">{% trans "Register" %}</a>
     </div>
 </div>
-
 
 <script src="{% static 'vendors/bootstrap/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'vendors/jquery/jquery.js' %}"></script>
@@ -177,3 +216,7 @@ body {
         }
     })
 </script>
+
+
+
+

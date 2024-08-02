@@ -50,7 +50,7 @@
                      </div>
                      <div class="site-logo text-center">
                         <p class="site-title">
-                           <a href="index.html">
+                           <a href="{% url 'main_home_view' %}">
                               <img src="assets/images/site-logo.png" alt="Logo">
                            </a>
                         </p>
@@ -96,16 +96,16 @@
                         <nav id="navigation" class="navigation">
                            <ul>
                               <li class="menu-active">
-                                 <a href="index.html">Home</a>
+                                 <a href="{% url 'main_home_view' %}">Home</a>
                               </li>
                               <li>
-                                 <a href="about.html">about us</a>
+                                 <a href="{% url 'main_about' %}">about us</a>
                               </li>
                               <li>
-                                 <a href="destination.html">destination</a>
+                                 <a href="{% url 'main_destination' %}">destination</a>
                               </li>
                               <li class="menu-item-has-children">
-                                 <a href="index.html">packages</a>
+                                 <a href="{% url 'main_home_view' %}">packages</a>
                                  <ul>
                                     <li>
                                        <a href="package.html">Packages</a>
@@ -128,7 +128,7 @@
                                  </ul>
                               </li>
                               <li class="menu-item-has-children">
-                                 <a href="index.html">Pages</a>
+                                 <a href="{% url 'main_home_view' %}">Pages</a>
                                  <ul>
                                     <li>
                                        <a href="service.html">Service</a>
@@ -239,7 +239,7 @@
                         <div class="col-lg-3 col-sm-6">
                            <aside class="widget widget_text">
                               <div class="footer-logo">
-                                 <a href="index.html"><img src="assets/images/site-logo.png" alt=""></a>
+                                 <a href="{% url 'main_home_view' %}"><img src="assets/images/site-logo.png" alt=""></a>
                               </div>
                               <div class="textwidget widget-text">
                                  Urna ratione ante harum provident, eleifend, vulputate molestiae proin fringilla, praesentium magna conubia at perferendis, pretium, aenean aut ultrices.

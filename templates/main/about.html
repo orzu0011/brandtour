@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load static %}
 {% block body %}
     <!-- Menu Sidebar Section Start -->
@@ -11,7 +12,7 @@
             </div>
             <div class="menu-sidebar-content">
                 <div class="menu-sidebar-logo">
-                    <a href="index.html"><img src="{% static 'images/logo/nav-logo.png' %}" alt="logo"/></a>
+                    <a href="{% url 'main_home_view' %}"><img src="{% static 'images/logo/nav-logo.png' %}" alt="logo"/></a>
                 </div>
                 <div class="mobile-nav-menu"></div>
                 <div class="menu-sidebar-content">
@@ -48,7 +49,7 @@
                         </div>
                         <div class="breadcrumb-list">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="{% url 'main_home_view' %}">Home</a></li>
                                 <li class="active"><a href="#">About us</a></li>
                             </ul>
                         </div>
@@ -93,7 +94,7 @@
                                 </div>
                             </div>
                             <div class="meta-wrapper">
-                                <a href="about.html" class="theme-btn">Learn more</a>
+                                <a href="{% url 'main_about' %}" class="theme-btn">Learn more</a>
                                 <div class="meta-user">
                                     <a href="#" class="image-inner">
                                         <img src="{% static 'images/meta-user/meta-user-1.jpg' %}" alt="User">
@@ -305,493 +306,115 @@
         </div>
     </div>
     <!-- location Image Card Area End -->
-
-    <!-- Testimonial Slider Area Start -->
-    <div class="testimonial-slider-area style-2 background-light-gray">
-        <div class="container">
-            <div class="section-title">
-                <div class="sec-content">
-                    <span class="short-title">Testimonial</span>
-                    <h2 class="title">What traveler says</h2>
-                    <img class="bottom-shape" src="{% static 'images/shape/bottom-bar.png' %}" alt="Bottom Shape">
-                </div>
-            </div>
+    <div class="container" style="text-align: center; max-width: 600px; margin: 0 auto; padding: 30px; border: none; border-radius: 25px; background: #2B4D8D;">
+        <h1 style="margin-bottom: 20px; font-size: 28px; color: #ffffff;">Leave a Testimonial</h1>
+        <div class="rating" style="font-size: 22px; margin-bottom: 15px; color: #003366;">
+            <span id="rating">0</span>/5
         </div>
-        <div class="testimonial-marquee-wrapper style-2">
-            <div class=" brand-marquee-wrapper first-marquee-wrapper">
-                <!-- Single Card Start --> 
-                <div class="testimonial-card-two">
-                    <div class="user-meta-info">
-                        <div class="user-info-inner">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/testiomonial-slider/user-1.png' %}" alt="User">
-                            </div>
-                            <div class="content">
-                                <h5 class="user-name">Sabrina Meyla</h5>
-                                <p class="title">Indonesian tourists</p>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <div class="ratting-inner">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>   
-                                <span class="counter">3.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desc-inner">
-                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
-                    </div>
-                </div>
-                <!-- Single Card End -->
-                <!-- Single Card Start -->
-                <div class="testimonial-card-two">
-                    <div class="user-meta-info">
-                        <div class="user-info-inner">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/testiomonial-slider/user-2.png' %}" alt="User">
-                            </div>
-                            <div class="content">
-                                <h5 class="user-name">Darell Seward</h5>
-                                <p class="title">Indonesian tourists</p>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <div class="ratting-inner">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>   
-                                <span class="counter">3.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desc-inner">
-                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
-                    </div>
-                </div>
-                <!-- Single Card End -->
-                <!-- Single Card Start -->
-                <div class="testimonial-card-two">
-                    <div class="user-meta-info">
-                        <div class="user-info-inner">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/testiomonial-slider/user-3.png' %}" alt="User">
-                            </div>
-                            <div class="content">
-                                <h5 class="user-name">Camron Will</h5>
-                                <p class="title">Indonesian tourists</p>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <div class="ratting-inner">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>   
-                                <span class="counter">3.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desc-inner">
-                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
-                    </div>
-                </div>
-                <!-- Single Card End -->
-                <!-- Single Card Start -->
-                <div class="testimonial-card-two">
-                    <div class="user-meta-info">
-                        <div class="user-info-inner">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/testiomonial-slider/user-1.png' %}" alt="User">
-                            </div>
-                            <div class="content">
-                                <h5 class="user-name">Sabrina Meyla</h5>
-                                <p class="title">Indonesian tourists</p>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <div class="ratting-inner">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>   
-                                <span class="counter">3.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desc-inner">
-                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
-                    </div>
-                </div>
-                <!-- Single Card End -->
-                <!-- Single Card Start -->
-                <div class="testimonial-card-two">
-                    <div class="user-meta-info">
-                        <div class="user-info-inner">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/testiomonial-slider/user-2.png' %}" alt="User">
-                            </div>
-                            <div class="content">
-                                <h5 class="user-name">Darell Seward</h5>
-                                <p class="title">Indonesian tourists</p>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <div class="ratting-inner">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>   
-                                <span class="counter">3.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desc-inner">
-                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
-                    </div>
-                </div>
-                <!-- Single Card End -->
-                <!-- Single Card Start -->
-                <div class="testimonial-card-two">
-                    <div class="user-meta-info">
-                        <div class="user-info-inner">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/testiomonial-slider/user-3.png' %}" alt="User">
-                            </div>
-                            <div class="content">
-                                <h5 class="user-name">Camron Will</h5>
-                                <p class="title">Indonesian tourists</p>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <div class="ratting-inner">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>   
-                                <span class="counter">3.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desc-inner">
-                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
-                    </div>
-                </div>
-                <!-- Single Card End -->
-                <!-- Single Card Start -->
-                <div class="testimonial-card-two">
-                    <div class="user-meta-info">
-                        <div class="user-info-inner">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/testiomonial-slider/user-1.png' %}" alt="User">
-                            </div>
-                            <div class="content">
-                                <h5 class="user-name">Sabrina Meyla</h5>
-                                <p class="title">Indonesian tourists</p>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <div class="ratting-inner">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>   
-                                <span class="counter">3.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desc-inner">
-                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
-                    </div>
-                </div>
-                <!-- Single Card End -->
-                <!-- Single Card Start -->
-                <div class="testimonial-card-two">
-                    <div class="user-meta-info">
-                        <div class="user-info-inner">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/testiomonial-slider/user-2.png' %}" alt="User">
-                            </div>
-                            <div class="content">
-                                <h5 class="user-name">Darell Seward</h5>
-                                <p class="title">Indonesian tourists</p>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <div class="ratting-inner">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>   
-                                <span class="counter">3.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desc-inner">
-                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
-                    </div>
-                </div>
-                <!-- Single Card End -->
-                <!-- Single Card Start -->
-                <div class="testimonial-card-two">
-                    <div class="user-meta-info">
-                        <div class="user-info-inner">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/testiomonial-slider/user-3.png' %}" alt="User">
-                            </div>
-                            <div class="content">
-                                <h5 class="user-name">Camron Will</h5>
-                                <p class="title">Indonesian tourists</p>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <div class="ratting-inner">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>   
-                                <span class="counter">3.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desc-inner">
-                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
-                    </div>
-                </div>
-                <!-- Single Card End -->
+        <form method="post">
+            {% csrf_token %}
+            <div class="stars" id="stars" style="font-size: 36px; color: #ff5722; margin-bottom: 20px;"  required>
+                <span class="star" data-value="1" style="cursor: pointer;">&#9733;</span>
+                <span class="star" data-value="2" style="cursor: pointer;">&#9733;</span>
+                <span class="star" data-value="3" style="cursor: pointer;">&#9733;</span>
+                <span class="star" data-value="4" style="cursor: pointer;">&#9733;</span>
+                <span class="star" data-value="5" style="cursor: pointer;">&#9733;</span>
             </div>
-            <div class=" brand-marquee-wrapper second-marquee-wrapper">
-                <!-- Single Card Start -->
-                <div class="testimonial-card-two">
-                    <div class="user-meta-info">
-                        <div class="user-info-inner">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/testiomonial-slider/user-3.png' %}" alt="User">
-                            </div>
-                            <div class="content">
-                                <h5 class="user-name">Camron Will</h5>
-                                <p class="title">Indonesian tourists</p>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <div class="ratting-inner">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>   
-                                <span class="counter">3.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desc-inner">
-                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
-                    </div>
-                </div>
-                <!-- Single Card End -->
-                <!-- Single Card Start -->
-                <div class="testimonial-card-two">
-                    <div class="user-meta-info">
-                        <div class="user-info-inner">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/testiomonial-slider/user-4.png' %}" alt="User">
-                            </div>
-                            <div class="content">
-                                <h5 class="user-name">Annette Black</h5>
-                                <p class="title">Indonesian tourists</p>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <div class="ratting-inner">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>   
-                                <span class="counter">3.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desc-inner">
-                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
-                    </div>
-                </div>
-                <!-- Single Card End -->
-                <!-- Single Card Start -->
-                <div class="testimonial-card-two">
-                    <div class="user-meta-info">
-                        <div class="user-info-inner">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/testiomonial-slider/user-5.png' %}" alt="User">
-                            </div>
-                            <div class="content">
-                                <h5 class="user-name">Savan Nguyen</h5>
-                                <p class="title">Indonesian tourists</p>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <div class="ratting-inner">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>   
-                                <span class="counter">3.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desc-inner">
-                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
-                    </div>
-                </div>
-                <!-- Single Card End -->
-                <!-- Single Card Start -->
-                <div class="testimonial-card-two">
-                    <div class="user-meta-info">
-                        <div class="user-info-inner">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/testiomonial-slider/user-3.png' %}" alt="User">
-                            </div>
-                            <div class="content">
-                                <h5 class="user-name">Camron Will</h5>
-                                <p class="title">Indonesian tourists</p>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <div class="ratting-inner">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>   
-                                <span class="counter">3.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desc-inner">
-                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
-                    </div>
-                </div>
-                <!-- Single Card End -->
-                <!-- Single Card Start -->
-                <div class="testimonial-card-two">
-                    <div class="user-meta-info">
-                        <div class="user-info-inner">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/testiomonial-slider/user-4.png' %}" alt="User">
-                            </div>
-                            <div class="content">
-                                <h5 class="user-name">Annette Black</h5>
-                                <p class="title">Indonesian tourists</p>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <div class="ratting-inner">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>   
-                                <span class="counter">3.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desc-inner">
-                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
-                    </div>
-                </div>
-                <!-- Single Card End -->
-                <!-- Single Card Start -->
-                <div class="testimonial-card-two">
-                    <div class="user-meta-info">
-                        <div class="user-info-inner">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/testiomonial-slider/user-5.png' %}" alt="User">
-                            </div>
-                            <div class="content">
-                                <h5 class="user-name">Savan Nguyen</h5>
-                                <p class="title">Indonesian tourists</p>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <div class="ratting-inner">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>   
-                                <span class="counter">3.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desc-inner">
-                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
-                    </div>
-                </div>
-                <!-- Single Card End -->
-                <!-- Single Card Start -->
-                <div class="testimonial-card-two">
-                    <div class="user-meta-info">
-                        <div class="user-info-inner">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/testiomonial-slider/user-3.png' %}" alt="User">
-                            </div>
-                            <div class="content">
-                                <h5 class="user-name">Camron Will</h5>
-                                <p class="title">Indonesian tourists</p>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <div class="ratting-inner">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>   
-                                <span class="counter">3.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desc-inner">
-                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
-                    </div>
-                </div>
-                <!-- Single Card End -->
-                <!-- Single Card Start -->
-                <div class="testimonial-card-two">
-                    <div class="user-meta-info">
-                        <div class="user-info-inner">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/testiomonial-slider/user-4.png' %}" alt="User">
-                            </div>
-                            <div class="content">
-                                <h5 class="user-name">Annette Black</h5>
-                                <p class="title">Indonesian tourists</p>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <div class="ratting-inner">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>   
-                                <span class="counter">3.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desc-inner">
-                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
-                    </div>
-                </div>
-                <!-- Single Card End -->
-                <!-- Single Card Start -->
-                <div class="testimonial-card-two">
-                    <div class="user-meta-info">
-                        <div class="user-info-inner">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/testiomonial-slider/user-5.png' %}" alt="User">
-                            </div>
-                            <div class="content">
-                                <h5 class="user-name">Savan Nguyen</h5>
-                                <p class="title">Indonesian tourists</p>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <div class="ratting-inner">
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>   
-                                <span class="counter">3.5</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="desc-inner">
-                        <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia conse quuntur ma</p>
-                    </div>
-                </div>
-                <!-- Single Card End -->
+            <input type="hidden" id="id_stars" name="stars" value="0">
+            <p style="margin-bottom: 10px; font-weight: bold; color: #ffffff; font-size: 18px;">Share your review:</p>
+            <textarea id="id_text" name="text" placeholder="Write your review here" rows="6" class="form-control" style="width: 100%; padding: 15px; border: none; border-radius: 10px; margin-bottom: 20px; font-size: 18px; background-color: #ffffff; color: #003366;"></textarea>
+            <button id="submit" type="submit" class="btn btn-primary" style="padding: 12px 40px; border: 4px double black; border-radius: 25px; background-color: #ffffff; color: #003366; font-size: 19px; text-transform: capitalize; box-shadow: 0px 4px 6px rgba(0,0,0,0.1);">Submit</button>
+        </form>
+            <!-- User reviews will be displayed here -->
+        </div>
+    </div>
+        
+    <script>
+        document.querySelectorAll('.stars .star').forEach((star) => {
+            star.addEventListener('click', function() {
+                const rating = this.getAttribute('data-value');
+                document.getElementById('rating').textContent = rating;
+                document.getElementById('id_stars').value = rating;
+                document.querySelectorAll('.stars .star').forEach((s, index) => {
+                    if (index < rating) {
+                        s.style.color = '#ff5722';
+                    } else {
+                        s.style.color = '#ccc';
+                    }
+                });
+            });
+        });
+    </script>
+<!-- Testimonial Slider Area Start -->
+<div class="testimonial-slider-area style-2 background-light-gray">
+    <div class="container">
+        <div class="section-title">
+            <div class="sec-content">
+                <span class="short-title">Testimonial</span>
+                <h2 class="title">What traveler says</h2>
+                <img class="bottom-shape" src="{% static 'images/shape/bottom-bar.png' %}" alt="Bottom Shape">
             </div>
         </div>
     </div>
-    <!-- Testimonial Slider Area End -->
+    <div class="testimonial-marquee-wrapper style-2">
+        <div class="brand-marquee-wrapper first-marquee-wrapper">
+            {% for testimonial in testimonials %}
+            <!-- Single Card Start -->
+            <div class="testimonial-card-two" style="width: 490 px; height: 220px; border: 1px solid #ddd; padding: 15px; margin: 10px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); box-sizing: border-box;">
+                <div class="user-meta-info" style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <div class="user-info-inner" style="display: flex; align-items: center;">
+                        <div class="img-wrapper" style="margin-right: 10px;">
+                            <img src="{% static 'images/icon/user2.png' %}" alt="User" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                        </div>
+                        <div class="content">
+                            <h5 class="user-name" style="margin: 0; font-size: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ testimonial.user.username }}</h5>
+                        </div>
+                    </div>
+                    <div class="rating" style="margin-left: auto;">
+                        <div class="ratting-inner" style="display: flex;">
+                            <span>
+                                {% if testimonial.stars == 0 %}
+                                    <i class="fa-solid fa-star" style="color: #FFD700; font-size: 16px; margin-right: 2px;"></i>
+                                    <i class="fa-solid fa-star" style="color: #FFD700; font-size: 16px; margin-right: 2px;"></i>
+                                    <i class="fa-solid fa-star" style="color: #FFD700; font-size: 16px; margin-right: 2px;"></i>
+                                    <i class="fa-solid fa-star" style="color: #FFD700; font-size: 16px; margin-right: 2px;"></i>
+                                    <i class="fa-solid fa-star" style="color: #FFD700; font-size: 16px; margin-right: 2px;"></i>
+                                {% elif testimonial.stars == 1 %}
+                                    <i class="fa-solid fa-star" style="color: #FFD700; font-size: 16px; margin-right: 2px;"></i>
+                                {% elif testimonial.stars == 2 %}
+                                    <i class="fa-solid fa-star" style="color: #FFD700; font-size: 16px; margin-right: 2px;"></i>
+                                    <i class="fa-solid fa-star" style="color: #FFD700; font-size: 16px; margin-right: 2px;"></i>
+                                {% elif testimonial.stars == 3 %}
+                                    <i class="fa-solid fa-star" style="color: #FFD700; font-size: 16px; margin-right: 2px;"></i>
+                                    <i class="fa-solid fa-star" style="color: #FFD700; font-size: 16px; margin-right: 2px;"></i>
+                                    <i class="fa-solid fa-star" style="color: #FFD700; font-size: 16px; margin-right: 2px;"></i>
+                                {% elif testimonial.stars == 4 %}
+                                    <i class="fa-solid fa-star" style="color: #FFD700; font-size: 16px; margin-right: 2px;"></i>
+                                    <i class="fa-solid fa-star" style="color: #FFD700; font-size: 16px; margin-right: 2px;"></i>
+                                    <i class="fa-solid fa-star" style="color: #FFD700; font-size: 16px; margin-right: 2px;"></i>
+                                    <i class="fa-solid fa-star" style="color: #FFD700; font-size: 16px; margin-right: 2px;"></i>
+                                {% else %}
+                                    <i class="fa-solid fa-star" style="color: #FFD700; font-size: 16px; margin-right: 2px;"></i>
+                                    <i class="fa-solid fa-star" style="color: #FFD700; font-size: 16px; margin-right: 2px;"></i>
+                                    <i class="fa-solid fa-star" style="color: #FFD700; font-size: 16px; margin-right: 2px;"></i>
+                                    <i class="fa-solid fa-star" style="color: #FFD700; font-size: 16px; margin-right: 2px;"></i>
+                                    <i class="fa-solid fa-star" style="color: #FFD700; font-size: 16px; margin-right: 2px;"></i>
+                                {% endif %}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="desc-inner" style="max-height: 60px; overflow: hidden; text-overflow: ellipsis;">
+                    <p class="desc" style="margin: 0; font-size: 14px; line-height: 1.5;">{{ testimonial.text }}</p>
+                </div>
+            </div>
+            <!-- Single Card End -->
+            {% endfor %}
+        </div>
+    </div>
+    
+    </div>
+</div>
+<!-- Testimonial Slider Area End -->
 
     {% endblock body %}

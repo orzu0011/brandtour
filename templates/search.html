@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <!-- Menu Sidebar Section Start -->
+    <div class="menu-sidebar-area">
+        <div class="menu-sidebar-wrapper">
+            <div class="menu-sidebar-close">
+                <button class="menu-sidebar-close-btn" id="menu_sidebar_close_btn">
+                    <i class="fal fa-times"></i>
+                </button>
+            </div>
+            <div class="menu-sidebar-content">
+                <div class="menu-sidebar-logo">
+                    <a href="index.html"><img src="{% static 'images/logo/nav-logo.png' %}" alt="logo"/></a>
+                </div>
+                <div class="mobile-nav-menu"></div>
+                <div class="menu-sidebar-content">
+                    <div class="menu-sidebar-single-widget">
+                        <h5 class="menu-sidebar-title">Contact Info</h5>
+                        <div class="header-contact-info">
+                            <span><i class="fa-solid fa-location-dot"></i>20, Bordeshi, New York, US</span>
+                            <span><a href="mailto:hello@transico.com"><i class="fa-solid fa-envelope"></i>hello@transico.com</a> </span>
+                            <span><a href="tel:+123-456-7890"><i class="fa-solid fa-phone"></i>+123-456-7890</a></span>
+                        </div>
+                        <div class="social-profile">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Menu Sidebar Section Start -->
+    <div class="body-overlay"></div>
+
+    <!-- Page Header Start !-->
+    <div class="page-breadcrumb-area page-bg" style="background-image: url({% static 'images/breadcrumb/tour.jpg' %})">
+        <!-- <div class="page-overlay"></div> -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcrumb-wrapper">
+                        <div class="page-heading">
+                            <h3 class="page-title">Get The Best Plans For Your’s</h3>
+                        </div>
+                        <div class="breadcrumb-list">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li class="active"><a href="#">Tour-package</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End !-->
+
+    <!-- Location Area Start -->
+    <div class="tour-area">
+        <div class="location-area style-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title  align-content-center justify-content-center text-center">
+                            <div class="sec-content">
+                                <h2 class="title">Find popular tours</h2>
+                                <img class="bottom-shape" src="{% static 'images/shape/bottom-bar.png' %}" alt="Bottom Shape">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="isotope-grid">
+                    <div class="row gy-4">
+                    <!--- Single Location Start !-->
+                    {% for tour in search_list %}
+                        <div class="col-lg-4 col-md-6 masonry-portfolio-item resort beach wow fadeInUp" data-wow-delay="0s">
+                            <div class="location-card style-2">
+                                <div class="image-wrapper">
+                                    <a href="tour-details.html" class="image-inner">
+                                        <img src="{{tour.photo.url}}" alt="Location Image">
+                                    </a>
+                                    <div class="favourite-icon">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="content-wrapper">
+                                    <div class="content-inner">
+                                        <h5 class="price"><span class="counter">${{tour.calc_disc}}</span></h5>
+                                        <h3 class="content-title"><a href="{% url 'tour_tour_detail' tour.id %}">{{tour.title}}</a></h3>
+                                        <div class="time-zone">
+                                            <div class="time-zone-inner">
+                                               <i class="fa-solid fa-location-dot"></i>
+                                                <p class="title">{{tour.country}}</p>
+                                            </div>
+                                            <div class="time-zone-inner">
+                                                <i class="fa-solid fa-clock"></i>
+                                                <p class="title">{{tour.duration}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    <!--- Single Location End !-->
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Location Area End -->
+{% endblock content %}
+  

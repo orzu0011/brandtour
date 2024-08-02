@@ -1,47 +1,9 @@
 {% extends "base.html" %}
-
 {% load static %}
 
 {% block body %}
-
-    <!-- Menu Sidebar Section Start -->
-    <div class="menu-sidebar-area">
-        <div class="menu-sidebar-wrapper">
-            <div class="menu-sidebar-close">
-                <button class="menu-sidebar-close-btn" id="menu_sidebar_close_btn">
-                    <i class="fal fa-times"></i>
-                </button>
-            </div>
-            <div class="menu-sidebar-content">
-                <div class="menu-sidebar-logo">
-                    <a href="index.html"><img src="images/logo/nav-logo.png" alt="logo"/></a>
-                </div>
-                <div class="mobile-nav-menu"></div>
-                <div class="menu-sidebar-content">
-                    <div class="menu-sidebar-single-widget">
-                        <h5 class="menu-sidebar-title">Contact Info</h5>
-                        <div class="header-contact-info">
-                            <span><i class="fa-solid fa-location-dot"></i>20, Bordeshi, New York, US</span>
-                            <span><a href="mailto:hello@transico.com"><i class="fa-solid fa-envelope"></i>hello@transico.com</a> </span>
-                            <span><a href="tel:+123-456-7890"><i class="fa-solid fa-phone"></i>+123-456-7890</a></span>
-                        </div>
-                        <div class="social-profile">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Menu Sidebar Section Start -->
-    <div class="body-overlay"></div>
-
-    <!-- Page Header Start !-->
+    <!-- Page Header Start -->
     <div class="page-breadcrumb-area page-bg" style="background-image: url('images/breadcrumb/tour.jpg')">
-        <!-- <div class="page-overlay"></div> -->
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -60,7 +22,7 @@
             </div>
         </div>
     </div>
-    <!-- Page Header End !-->
+    <!-- Page Header End -->
 
     <!-- Location Area Start -->
     <div class="tour-area">
@@ -68,10 +30,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="section-title  align-content-center justify-content-center text-center">
+                        <div class="section-title align-content-center justify-content-center text-center">
                             <div class="sec-content">
                                 <h2 class="title">Find popular tours</h2>
-                                <img class="bottom-shape" src="images/shape/bottom-bar.png" alt="Bottom Shape">
                             </div>
                         </div>
                     </div>
@@ -80,23 +41,19 @@
                     <div class="col-lg-12">
                         <ul class="portfolio-filter">
                             <li class="active" data-filter="*">All</li>
-                            <li data-filter=".resort">Resort</li>
-                            <li data-filter=".mountain">Mountain Hiking</li>
-                            <li data-filter=".beach">Beach</li>
-                            <li data-filter=".forest">Forest</li>
                         </ul>
                     </div>
                 </div>
                 <div class="isotope-grid">
                     <div class="row gy-4">
-                     {% for i in tours %}
-                    <!--- Single Location Start !-->
+                        {% for i in page_obj %}
+                        <!-- Single Location Start -->
                         <div class="col-lg-4 col-md-6 masonry-portfolio-item resort beach wow fadeInUp" data-wow-delay="0s">
                             <div class="location-card style-2">
                                 <div class="image-wrapper">
-                                 <a href="tour-details.html">
-                                    <img src="{{ i.photo.url }}" alt="{{ i.title }}" style="width: 405px; height: 272px; object-fit: cover;">
-                                </a>
+                                    <a href="{% url 'tour_tour_detail' i.id %}">
+                                        <img src="{{ i.photo.url }}" alt="{{ i.title }}" style="width: 405px; height: 272px; object-fit: cover;">
+                                    </a>
                                     <div class="favourite-icon">
                                         <i class="fa-solid fa-heart"></i>
                                     </div>
@@ -104,10 +61,10 @@
                                 <div class="content-wrapper">
                                     <div class="content-inner">
                                         <h5 class="price">$<span class="counter">{{ i.calc_disc }}</span></h5>
-                                        <h3 class="content-title"><a href="tour-details.html">{{ i.title }}</a></h3>
+                                        <h3 class="content-title"><a href="{% url 'tour_tour_detail' i.id %}">{{ i.title }}</a></h3>
                                         <div class="time-zone">
                                             <div class="time-zone-inner">
-                                               <i class="fa-solid fa-location-dot"></i>
+                                                <i class="fa-solid fa-location-dot"></i>
                                                 <p class="title">{{ i.country }}</p>
                                             </div>
                                             <div class="time-zone-inner">
@@ -119,23 +76,34 @@
                                 </div>
                             </div>
                         </div>
-                        <!--- Single Location End !-->
+                        <!-- Single Location End -->
                         {% endfor %}
-                        
                     </div>    
                 </div>
+                
+                <!-- Pagination Start -->
                 <div class="basic-pagination">
                     <ul class="justify-content-center">
-                        <li><span aria-current="page" class="page-numbers current">1</span></li>
-                        <li><a class="page-numbers" href="#">2</a></li>
-                        <li><a class="page-numbers" href="#">3</a></li>
-                        <li><span class="page-numbers dots">…</span></li>
-                        <li><a class="page-numbers" href="#">5</a></li>
-                        <li><a class="next page-numbers" href="#"><i class="fa fa-arrow-right"></i></a></li>
+                        {% if page_obj.has_previous %}
+                            <li><a class="prev page-numbers" href="?page={{ page_obj.previous_page_number }}"><i class="fa fa-arrow-left"></i></a></li>
+                        {% endif %}
+                        
+                        {% for num in page_obj.paginator.page_range %}
+                            {% if page_obj.number == num %}
+                                <li><span aria-current="page" class="page-numbers current">{{ num }}</span></li>
+                            {% else %}
+                                <li><a class="page-numbers" href="?page={{ num }}">{{ num }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        
+                        {% if page_obj.has_next %}
+                            <li><a class="next page-numbers" href="?page={{ page_obj.next_page_number }}"><i class="fa fa-arrow-right"></i></a></li>
+                        {% endif %}
                     </ul>
                 </div>
+                <!-- Pagination End -->
             </div>
         </div>
     </div>
     <!-- Location Area End -->
-    {% endblock body %}
+{% endblock body %}

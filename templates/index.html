@@ -3,40 +3,6 @@
 {% load static %}
 
 {% block body %}
-    <!-- Menu Sidebar Section Start -->
-    <div class="menu-sidebar-area">
-        <div class="menu-sidebar-wrapper">
-            <div class="menu-sidebar-close">
-                <button class="menu-sidebar-close-btn" id="menu_sidebar_close_btn">
-                    <i class="fal fa-times"></i>
-                </button>
-            </div>
-            <div class="menu-sidebar-content">
-                <div class="menu-sidebar-logo">
-                    <a href="index.html"><img src="{% static 'images/logo/nav-logo.png' %}" alt="logo"/></a>
-                </div>
-                <div class="mobile-nav-menu"></div>
-                <div class="menu-sidebar-content">
-                    <div class="menu-sidebar-single-widget">
-                        <h5 class="menu-sidebar-title">Contact Info</h5>
-                        <div class="header-contact-info">
-                            <span><i class="fa-solid fa-location-dot"></i>20, Bordeshi, New York, US</span>
-                            <span><a href="mailto:hello@transico.com"><i
-                                        class="fa-solid fa-envelope"></i>hello@transico.com</a> </span>
-                            <span><a href="tel:+123-456-7890"><i class="fa-solid fa-phone"></i>+123-456-7890</a></span>
-                        </div>
-                        <div class="social-profile">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Menu Sidebar Section Start -->
 
     <!-- Banner Section Start !-->
     <div class="slider-area style-1"  style="background-image: url('images/hero-section/bg-1.jpg')">
@@ -72,21 +38,18 @@
                             <div class="col-md-7">
                                 <div class="location-filter-wrapper">
                                     <div class="location-filter-card style-1">
-                                        <form action="#">
+                                        <form method="get" action="{% url 'search_page' %}">
                                             <div class="single-item">
                                                 <label for="state" class="select-location">Location</label>
-                                                <select class="select-location-inner" id="state" name="state">
-                                                    <option value="AL">Maldivs</option>
-                                                    <option value="WY">Colombia</option>
-                                                    <option value="WY">Istanbul</option>
-                                                    <option value="WY">Morocco</option>
-                                                    <option value="WY">New york</option>
-                                                    <option value="WY">Russia </option>
+                                                <select class="select-location-inner" id="state" name="country">
+                                                    {% for i in tours %}
+                                                        <option value="{{ i.country }}">{{ i.country }}</option>
+                                                    {% endfor %}
                                                 </select>
                                             </div>
                                             <div class="single-item">
                                                 <label class="datepicker" for="datepicker">Date</label>
-                                                <input type="text" id="datepicker" value="26 Mar, Fri">
+                                                <input type="text" id="datepicker" name="start_date">
                                             </div>
                                             <div class="single-item price-range-inner">
                                                 <span class="priceLabel">Price</span>
@@ -94,9 +57,9 @@
                                                 <div class="priceSlider">
                                                     <div class="min-max-range">
                                                         <label for="min">Low price</label>
-                                                        <input type="range" min="0" max="5000" value="2000" class="range" id="min">
-                                                        <label for="min">High price</label>
-                                                        <input type="range" min="5001" max="10000" value="8000" class="range" id="max">
+                                                        <input type="range" min="0" max="5000000" class="range" id="min" name="min_price">
+                                                        tour_tour_detail                                <label for="max">High price</label>
+                                                        <input type="range" min="5000010" max="10000000" class="range" id="max" name="max_price">
                                                     </div>
                                                 </div>
                                             </div>
@@ -138,7 +101,7 @@
                     <div class="location-card style-1 wow fadeInUp" data-wow-delay="{% if forloop.first %}0s{% elif forloop.last %}1.2s{% else %}{{ forloop.counter0|divisibleby:2|yesno:"0s,.4s" }}{% endif %}">
                         <div class="image-wrapper">
                             <a href="{% url 'destination_detail' destination.id %}" class="image-inner">
-                                <img src="{{ destination.photo.url }}" alt="Location Image" style="width: 294px; height: 370px;">
+                                <img src="{{ destination.photo.url }}" alt="Location Image" style="width: 310px; height: 430px;">
                             </a>
                             <div class="rating">
                                 <div class="ratting-inner">
@@ -196,7 +159,7 @@
                                 </div>
                             </div>
                             <div class="meta-wrapper">
-                                <a href="about.html" class="theme-btn">Learn more</a>
+                                <a href="{% url 'main_about' %}" class="theme-btn">Learn more</a>
                                 <div class="meta-user">
                                     <a href="#" class="image-inner">
                                         <img src="{% static 'images/meta-user/meta-user-1.jpg' %}" alt="User">
@@ -259,7 +222,7 @@
                     <div class="location-card style-2">
                         <div class="image-wrapper">
                             <div class="image-inner">
-                                <a href="tour-details.html">
+                                <a href="{% url 'tour_tour_detail' tour.id %}">
                                     <img src="{{ tour.photo.url }}" alt="{{ tour.title }}" style="width: 405px; height: 272px; object-fit: cover;">
                                 </a>
                             </div>
@@ -274,7 +237,7 @@
                         <div class="content-wrapper">
                             <div class="content-inner">
                                 <span class="price">${{ tour.calc_disc }}</span>
-                                <h3 class="content-title"><a href="tour-details.html">{{ tour.title }}</a></h3>
+                                <h3 class="content-title"><a href="{% url 'tour_tour_detail' tour.id %}">{{ tour.title }}</a></h3>
                                 <div class="time-zone">
                                     <div class="time-zone-inner">
                                         <i class="fa-solid fa-location-dot"></i>
@@ -625,7 +588,7 @@
                 </div>
             </div>
             <div class="sec-btn justify-content-center text-center">
-                <a class="theme-btn" href="destination.html">Discover more</a>
+                <a class="theme-btn" href="{% url 'main_destination' %}">Discover more</a>
             </div>
         </div>
     </div>
