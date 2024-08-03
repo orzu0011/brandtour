@@ -12,7 +12,7 @@
             </div>
             <div class="menu-sidebar-content">
                 <div class="menu-sidebar-logo">
-                    <a href="{% url 'main_home_view' %}"><img src="{% static 'images/logo/nav-logo.png' %}" alt="logo"/></a>
+                    <a href="{% url 'main_home_view' %}"><img src="{% static 'images/logo/Frame.svg' %}" alt="logo"/></a>
                 </div>
                 <div class="mobile-nav-menu"></div>
                 <div class="menu-sidebar-content">
@@ -306,6 +306,7 @@
         </div>
     </div>
     <!-- location Image Card Area End -->
+    {% if request.user.is_authenticated %}    
     <div class="container" style="text-align: center; max-width: 600px; margin: 0 auto; padding: 30px; border: none; border-radius: 25px; background: #2B4D8D;">
         <h1 style="margin-bottom: 20px; font-size: 28px; color: #ffffff;">Leave a Testimonial</h1>
         <div class="rating" style="font-size: 22px; margin-bottom: 15px; color: #003366;">
@@ -345,6 +346,7 @@
             });
         });
     </script>
+    {% endif %}
 <!-- Testimonial Slider Area Start -->
 <div class="testimonial-slider-area style-2 background-light-gray">
     <div class="container">

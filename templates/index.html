@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load i18n %}
 {% load static %}
 
 {% block body %}
@@ -21,7 +21,7 @@
                                         <div class="slider-content">
                                             <img class="topbar-shape" src="{% static 'images/shape/highlight.png' %}" alt="Shape">
                                             <span class="slider-short-title">Tour and travels</span>
-                                            <h1 class="slider-title">Lets travel the world with us</h1>
+                                            <h1 class="slider-title">{% trans 'Lets travel the world with us' %}</h1>
                                             <img class="bottom-shape" src="{% static 'images/shape/bottom-bar.png' %}" alt="Bottom Shape">
                                             <p class="slider-short-desc">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatu</p>
                                         </div>

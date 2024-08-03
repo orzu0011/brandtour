@@ -100,11 +100,11 @@
 <link rel="stylesheet" type="text/css" href="{% static 'vendors/jquery-ui/jquery-ui.min.css' %}">
 
 <div class="wrapper">
-    <div class="logo p-5 rounded-pill" style="text-align: center; background-color: #03A9F4;">
+    <div class="logo p-5 rounded-pill" style="width: 290px; height: 150px; text-align: center; background-color: #99CCFF; display: flex; justify-content: center; align-items: center;">
         <a href="{% url 'main_home_view' %}">
-            <img src="{% static 'images/img/logo-no-background.png' %}" alt="Comapny LOGO">
+            <img src="{% static 'images/logo/Frame.svg' %}" alt="Company LOGO" style="width: 250px; height: auto;">
         </a>
-    </div>
+    </div>  
     <form class="p-3 mt-3 reg_form" method="POST" action="{% url 'register' %}">
         {% csrf_token %}
         <div class="form-field d-flex align-items-center">
