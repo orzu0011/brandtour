@@ -140,12 +140,28 @@
                 </div>
                 <div class="menu-sidebar-content">
                     <div class="menu-sidebar-logo">
-                        <a href="index.html">
-                            <img src="images/logo/Frame.svg" alt="logo" />
+                        <a href="{% url 'main_home_view' %}">
+                            <img src="{% static 'images/logo/Frame.svg' %}" alt="logo" />
                         </a>
                     </div>
                     <div class="mobile-nav-menu"></div>
                     <div class="menu-sidebar-content">
+                        {% if request.user.is_authenticated %}
+                        <div class="menu-sidebar-single-widget">
+                            <a href="{% url 'logout' %}" class="btn btn-primary w-100 mt-2">
+                                <i class='bx bx-log-out me-1'></i> Logout
+                            </a>
+                        </div>
+                        {% else %}
+                        <div class="menu-sidebar-single-widget">
+                            <a href="{% url 'login' %}" class="btn btn-primary w-100 mt-2">
+                                <i class="fas fa-sign-in-alt me-1"></i> {% trans "Login" %}
+                            </a>
+                            <a href="{% url 'register' %}" class="btn btn-secondary w-100 mt-2">
+                                <i class="fas fa-user-plus me-1"></i> {% trans "Sign Up" %}
+                            </a>
+                        </div>
+                        {% endif %}
                         <div class="menu-sidebar-single-widget">
                             <h5 class="menu-sidebar-title">Contact Info</h5>
                             <div class="header-contact-info">

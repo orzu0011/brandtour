@@ -34,41 +34,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-7">
-                                <div class="location-filter-wrapper">
-                                    <div class="location-filter-card style-1">
-                                        <form method="get" action="{% url 'search_page' %}">
-                                            <div class="single-item">
-                                                <label for="state" class="select-location">Location</label>
-                                                <select class="select-location-inner" id="state" name="country">
-                                                    {% for i in tours %}
-                                                        <option value="{{ i.country }}">{{ i.country }}</option>
-                                                    {% endfor %}
-                                                </select>
-                                            </div>
-                                            <div class="single-item">
-                                                <label class="datepicker" for="datepicker">Date</label>
-                                                <input type="text" id="datepicker" name="start_date">
-                                            </div>
-                                            <div class="single-item price-range-inner">
-                                                <span class="priceLabel">Price</span>
-                                                <span id="priceValue">$<span id="min-value"></span>-<span id="max-value"></span></span>
-                                                <div class="priceSlider">
-                                                    <div class="min-max-range">
-                                                        <label for="min">Low price</label>
-                                                        <input type="range" min="0" max="5000000" class="range" id="min" name="min_price">
-                                                        tour_tour_detail                                <label for="max">High price</label>
-                                                        <input type="range" min="5000010" max="10000000" class="range" id="max" name="max_price">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button class="style-1" type="submit"><i class="icon-search"></i></button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
