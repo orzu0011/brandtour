@@ -23,7 +23,7 @@ def my_context_processor(request):
 
 def forgot_password(request, user):
     current_site = get_current_site(request)
-    mail_subject = f"BRAND TOUR восстановление пароля"
+    mail_subject = "Password Reset"
     message = render_to_string('user/reset_password.html', {
         'domain': current_site.domain,
         'uid': urlsafe_base64_encode(force_bytes(user.pk)),
@@ -35,7 +35,6 @@ def forgot_password(request, user):
         to=[request.POST['email']],
     )
     email.send()
-
 
 class LoginView(View):
     def get(self, request):

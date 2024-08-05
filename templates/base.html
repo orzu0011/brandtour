@@ -60,9 +60,9 @@
                 <div class="row">
                     <div class="col-xl-2 col-lg-2 col-md-6 col-6 d-flex align-items-center">
                         <div class="logo">
-                            <a href="{% url 'main_home_view' %}" class="standard-logo"><img src="{% static 'images/logo/nav-logo.png' %}" alt="logo"/></a>
-                            <a href="{% url 'main_home_view' %}" class="sticky-logo"><img src="{% static 'images/logo/nav-logo.png' %}" alt="logo"/></a>
-                            <a href="{% url 'main_home_view' %}" class="retina-logo"><img src="{% static 'images/logo/nav-logo.png' %}" alt="logo"/></a>
+                            <a href="{% url 'main_home_view' %}" class="standard-logo"><img src="{% static 'images/logo/Frame.svg' %}" alt="logo"/></a>
+                            <a href="{% url 'main_home_view' %}" class="sticky-logo"><img src="{% static 'images/logo/Frame.svg' %}" alt="logo"/></a>
+                            <a href="{% url 'main_home_view' %}" class="retina-logo"><img src="{% static 'images/logo/Frame.svg' %}" alt="logo"/></a>
                         </div>
                     </div>
                     <div class="col-xl-10 col-lg-10 col-md-6 col-6 d-flex align-items-center justify-content-end">
@@ -99,12 +99,6 @@
                                         <a href="{% url 'main_contact' %}">{% trans "contact us" %}</a>
                                         </li>
                                     </li>
-                                    <li class="dropdown">
-                                        {% if request.user.is_authenticated %}
-                                            <li {% if "my-orders" in request.path %} class="menu-active" {% endif %}>
-                                                <a href="{% url 'my_orders' %}">{% trans "my orders" %}</a>
-                                            </li>
-                                        {% endif %}
                                     </li>
                                 </ul>
                             </nav>
@@ -146,12 +140,28 @@
                 </div>
                 <div class="menu-sidebar-content">
                     <div class="menu-sidebar-logo">
-                        <a href="index.html">
-                            <img src="images/logo/nav-logo.png" alt="logo" />
+                        <a href="{% url 'main_home_view' %}">
+                            <img src="{% static 'images/logo/Frame.svg' %}" alt="logo" />
                         </a>
                     </div>
                     <div class="mobile-nav-menu"></div>
                     <div class="menu-sidebar-content">
+                        {% if request.user.is_authenticated %}
+                        <div class="menu-sidebar-single-widget">
+                            <a href="{% url 'logout' %}" class="btn btn-primary w-100 mt-2">
+                                <i class='bx bx-log-out me-1'></i> Logout
+                            </a>
+                        </div>
+                        {% else %}
+                        <div class="menu-sidebar-single-widget">
+                            <a href="{% url 'login' %}" class="btn btn-primary w-100 mt-2">
+                                <i class="fas fa-sign-in-alt me-1"></i> {% trans "Login" %}
+                            </a>
+                            <a href="{% url 'register' %}" class="btn btn-secondary w-100 mt-2">
+                                <i class="fas fa-user-plus me-1"></i> {% trans "Sign Up" %}
+                            </a>
+                        </div>
+                        {% endif %}
                         <div class="menu-sidebar-single-widget">
                             <h5 class="menu-sidebar-title">Contact Info</h5>
                             <div class="header-contact-info">
