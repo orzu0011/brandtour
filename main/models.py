@@ -1,6 +1,16 @@
 from django.db import models
 
 
+class TeamMember(models.Model):
+    name = models.CharField(max_length=100)
+    position = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='team_images/')
+    display_order = models.IntegerField(default=0)
+
+    def __str__(self) -> str:
+        return f"{self.name}"
+
+
 class Contact(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)

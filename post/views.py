@@ -10,7 +10,7 @@ from django.shortcuts import HttpResponse
 class PostListView(ListView):
     model = Post
     template_name = "post/blog-archive.html"
-    paginate_by = 8
+    paginate_by = 2
     context_object_name = "posts"
 
     def get_context_data(self, **kwargs):

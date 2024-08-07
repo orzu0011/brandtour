@@ -24,8 +24,8 @@
                             <span><a href="tel:+123-456-7890"><i class="fa-solid fa-phone"></i>+123-456-7890</a></span>
                         </div>
                         <div class="social-profile">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="https://t.me/MarokandTravel"><i class="fab fa-telegram"></i></a>
+                                <a href="https://www.instagram.com/marokandtravel.uz/"><i class="fab fa-instagram"></i></a>
                             <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                             <a href="#"><i class="fa-brands fa-youtube"></i></a>
                         </div>
@@ -238,74 +238,38 @@
     </div>
     <!-- Video Modal Area  End -->
 
-     <!-- location Image Card Area Start -->
-    <div class="location-area style-2 bg-white">
-        <div class="container">
-            <div class="section-title  align-content-center justify-content-center text-center">
-                <div class="sec-content">
-                    <h2 class="title">Our amazing team</h2>
-                    <img class="bottom-shape" src="{% static 'images/shape/bottom-bar.png' %}" alt="Bottom Shape">
-                </div>
+<!-- location Image Card Area Start -->
+<div class="location-area style-2 bg-white">
+    <div class="container">
+        <div class="section-title align-content-center justify-content-center text-center">
+            <div class="sec-content">
+                <h2 class="title">Our amazing team</h2>
+                <img class="bottom-shape" src="{% static 'images/shape/bottom-bar.png' %}" alt="Bottom Shape">
             </div>
-            <div class="location-card-wrapper">
-                <div class="row gy-4">
-                    <!-- Single Card Start -->
-                    <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0s">
-                        <div class="location-image-card style-2">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/location-image-card/image-5.png' %}" alt="Place Image">
-                            </div>
-                            <div class="content-inner">
-                                <h6 class="city">Jenny Wilson</h6>
-                                <p class="duration">CEO & Founder</p>
-                            </div>
+        </div>
+        <div class="location-card-wrapper">
+            <div class="row gy-4">
+                {% for member in team_members %}
+                <!-- Single Card Start -->
+                <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="{{ forloop.counter0|add:'0.4' }}s">
+                    <div class="location-image-card style-2" style="text-align: center; padding: 30px; border: 2px solid #e5e5e5; border-radius: 20px; background-color: #fff;">
+                        <div class="img-wrapper" style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px;">
+                            <img src="{{ member.image.url }}" alt="{{ member.name }}" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;">
+                        </div>
+                        <div class="content-inner" style="text-align: center;">
+                            <h6 class="city" style="margin: 5px 0;">{{ member.name }}</h6>
+                            <p class="duration" style="margin: 5px 0;">{{ member.position }}</p>
                         </div>
                     </div>
-                    <!-- Single Card End -->
-                    <!-- Single Card Start -->
-                    <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
-                        <div class="location-image-card style-2">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/location-image-card/image-6.png' %}" alt="Place Image">
-                            </div>
-                            <div class="content-inner">
-                                <h6 class="city">Robert Mayar</h6>
-                                <p class="duration">Manager</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Card End -->
-                    <!-- Single Card Start -->
-                    <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
-                        <div class="location-image-card style-2">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/location-image-card/image-7.png' %}" alt="Place Image">
-                            </div>
-                            <div class="content-inner">
-                                <h6 class="city">Annette Black</h6>
-                                <p class="duration">Tour Manager</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Card End -->
-                    <!-- Single Card Start -->
-                    <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="1.2s">
-                        <div class="location-image-card style-2">
-                            <div class="img-wrapper">
-                                <img src="{% static 'images/location-image-card/image-8.png' %}" alt="Place Image">
-                            </div>
-                            <div class="content-inner">
-                                <h6 class="city">Bessie Cooper</h6>
-                                <p class="duration">Chief Agent</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Card End -->
                 </div>
+                <!-- Single Card End -->
+                {% endfor %}
             </div>
         </div>
     </div>
-    <!-- location Image Card Area End -->
+</div>
+<!-- location Image Card Area End -->
+
     {% if request.user.is_authenticated %}    
     <div class="container" style="text-align: center; max-width: 600px; margin: 0 auto; padding: 30px; border: none; border-radius: 25px; background: #2B4D8D;">
         <h1 style="margin-bottom: 20px; font-size: 28px; color: #ffffff;">Leave a Testimonial</h1>
@@ -362,7 +326,7 @@
         <div class="brand-marquee-wrapper first-marquee-wrapper">
             {% for testimonial in testimonials %}
             <!-- Single Card Start -->
-            <div class="testimonial-card-two" style="width: 490 px; height: 220px; border: 1px solid #ddd; padding: 15px; margin: 10px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); box-sizing: border-box;">
+            <div class="testimonial-card-two" style="width: 490 px; height: 220px; border: 5px solid #ddd; padding: 15px; margin: 10px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); box-sizing: border-box;">
                 <div class="user-meta-info" style="display: flex; align-items: center; margin-bottom: 10px;">
                     <div class="user-info-inner" style="display: flex; align-items: center;">
                         <div class="img-wrapper" style="margin-right: 10px;">
