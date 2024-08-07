@@ -7,7 +7,7 @@ from order.call_back import PaymeCallBackAPIView
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
-
+from main.views import *
 from order.views import GeneratePayLinkAPIView
 
 
@@ -42,6 +42,7 @@ urlpatterns += i18n_patterns(
     path("", include('post.urls')),
     path("", include('cart.urls')),
     path("", include('order.urls')),
+    path('set-language/', set_language, name='set_language'),
 )
 
 
