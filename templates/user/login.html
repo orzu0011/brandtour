@@ -127,10 +127,10 @@ body {
         <p class="text-danger d-none email_field_error">{% trans "Fill in Email field" %}</p>
         <p class="text-danger d-none all_fields_error">{% trans "Fill in all fields" %}</p>
         <p class="text-danger d-none login_error">{% trans "Login or Password is incorrect" %}</p>
-        <button type="button" class="btn mt-3 reg_btn">{% trans "Login" %}</button>
+        <button type="button" class="btn mt-3 reg_btn"  style="background-color: #99CCFF;">{% trans "Login" %}</button>
     </form>
-    <div class="text-center fs-6">
-        <a href="#" class="forgot_pass_btn">{% trans "Forget password?" %}</a>{% trans "or" %} <a href="{% url 'register' %}">{% trans "Register" %}</a>
+    <div class="text-center fs-10">
+        <a href="#" class="forgot_pass_btn">{% trans "Forget password?" %}</a>{% trans "  or  " %} <a href="{% url 'register' %}">{% trans "Register" %}</a>
     </div>
 </div>
 
