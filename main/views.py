@@ -102,3 +102,22 @@ class ContactView(View):
 #         }
         
 #         return render(request, "search.html", context)
+
+
+# views.py
+# main/views.py
+# main/views.py
+from django.shortcuts import redirect
+from django.utils import translation
+from django.conf import settings
+
+def set_language(request):
+    language = request.GET.get('language', 'en')
+    if language:
+        translation.activate(language)
+        response = redirect(request.META.get('HTTP_REFERER', '/'))
+        response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)
+        return response
+    else:
+        return redirect('/')
+
