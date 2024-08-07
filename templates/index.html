@@ -66,7 +66,7 @@
                     <div class="location-card style-1 wow fadeInUp" data-wow-delay="{% if forloop.first %}0s{% elif forloop.last %}1.2s{% else %}{{ forloop.counter0|divisibleby:2|yesno:"0s,.4s" }}{% endif %}">
                         <div class="image-wrapper">
                             <a href="{% url 'destination_detail' destination.id %}" class="image-inner">
-                                <img src="{{ destination.photo.url }}" alt="Location Image" style="width: 310px; height: 430px;">
+                                <img src="{{ destination.photo.url }}" alt="Location Image" style="width: 390px; height: 430px;">
                             </a>
                             <div class="rating">
                                 <div class="ratting-inner">
@@ -126,14 +126,14 @@
                             <div class="meta-wrapper">
                                 <a href="{% url 'main_about' %}" class="theme-btn">Learn more</a>
                                 <div class="meta-user">
-                                    <a href="#" class="image-inner">
-                                        <img src="{% static 'images/meta-user/meta-user-1.jpg' %}" alt="User">
+                                    <a href="#" class="image-inner" style="width: 56px; height: 56px;">
+                                        <img src="{% static 'images/icon/user-1.png' %}" alt="User">
                                     </a>
-                                    <a href="#" class="image-inner">
-                                        <img src="{% static 'images/meta-user/meta-user-2.jpg' %}" alt="User">
+                                    <a href="#" class="image-inner" style="width: 56px; height: 56px;">
+                                        <img src="{% static 'images/icon/user-2.png' %}" alt="User">
                                     </a>
-                                    <a href="#" class="image-inner">
-                                        <img src="{% static 'images/meta-user/meta-user-3.jpg' %}" alt="User">
+                                    <a href="#" class="image-inner" style="width: 56px; height: 56px;">
+                                        <img src="{% static 'images/icon/user-3.png' %}" alt="User">
                                     </a>
                                     <a href="#" class="image-inner">
                                         <i class="fa-solid fa-plus"></i>
@@ -149,13 +149,13 @@
                     <div class="col-xl-7 order-xl-2 order-1 wow fadeInRight" data-wow-delay=".4s">
                         <div class="about-us-image-wrapper-1">
                             <img class="bg-shape" src="{% static 'images/about-us-area/image-wrapper-bg-1.png' %}" alt="Shape">
-                            <div class="image-wrapper style-1">
+                            <div class="image-wrapper style-1" style="width: 290px; height: 290px;">
                                 <img src="{% static 'images/about-us-area/img-1.jpg' %}" alt=" Vacation Image">
                             </div>
-                            <div class="image-wrapper style-2">
+                            <div class="image-wrapper style-2" style="width: 180px; height: 180px;">
                                 <img src="{% static 'images/about-us-area/img-2.jpg' %}" alt=" Vacation Image">
                             </div>
-                            <div class="image-wrapper style-3">
+                            <div class="image-wrapper style-3" style="width: 350px; height: 350px;">
                                 <img src="{% static 'images/about-us-area/img-3.jpg' %}" alt=" Vacation Image">
                             </div>
                         </div>
@@ -339,38 +339,6 @@
     </div>
     <!-- Process Step Area End  -->
 
-    <!-- CTA Area Start -->
-    <div class="cta-area style-1"  style="background-image: url('images/cta-area/bg-1.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5 text-start wow fadeInLeft">
-                    <div class="section-title">
-                        <div class="sec-content">
-                            <span class="short-title">Our digital platform</span>
-                            <h2 class="title">Get 5% off on your first app booking and travel with us</h2>
-                            <img class="bottom-shape" src="{% static 'images/shape/bottom-bar.png' %}" alt="Bottom Shape">
-                        </div>
-                        <div class="sec-desc">
-                            <p class="desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ma</p>
-                        </div>
-                        <div class="sec-btn">
-                            <a href="#"><img src="{% static 'images/brand-logo/google-play.png' %}" alt="Google Play"></a>
-                            <a href="#"><img src="{% static 'images/brand-logo/app-store.png' %}" alt="App Store"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-7 text-end wow fadeInRight">
-                    <div class="image-wrapper">
-                        <img class="wave-shape" src="{% static 'images/shape/wave-black.png' %}" alt="Shape">
-                        <img class="top-circle" src="{% static 'images/shape/circle-1.png' %}" alt="Shape">
-                        <img class="bottom-circle" src="{% static 'images/shape/circle-2.png' %}" alt="Shape"> 
-                        <img class="side-img" src="{% static 'images/cta-area/side-img-1.png' %}" alt="Phone VIew">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- CTA Area End -->
 
     <!-- Testimonial Slider Area Start -->
     <div class="testimonial-slider-area style-1">
@@ -380,7 +348,7 @@
                     <div class="testimonial-slider-image-wrapper">
                         <div class="single-img-wrapper style-1">
                             <div class="img-inner">
-                                <div class="image">
+                                <div class="image" style="width: 300px; height: 300px;">
                                     <img src="{% static 'images/testimonial/user-1.png' %}" alt="User Image">
                                 </div>
                                 <div class="content">
@@ -390,7 +358,7 @@
                         </div>
                         <div class="single-img-wrapper style-2">
                             <div class="img-inner">
-                                <div class="image">
+                                <div class="image" style="width: 130px; height: 130px;">
                                     <img src="{% static 'images/testimonial/user-3.png' %}" alt="User Image">
                                 </div>
                                 <div class="content">
@@ -400,7 +368,7 @@
                         </div>
                         <div class="single-img-wrapper style-3">
                             <div class="img-inner">
-                                <div class="image">
+                                <div class="image" style="width: 200px; height: 200px;">
                                     <img src="{% static 'images/testimonial/user-2.png' %}" alt="User Image">
                                 </div>
                                 <div class="content style-2">
@@ -440,42 +408,11 @@
                             <!-- Single Slider Content End -->
                         </div>  
                         <div class="testimonial-user-slider">
-                            <div class="testimonial-user-wrapper ">
-                                <!-- Single User Wrapper Start -->
-                                <div  class="single-user">
-                                    <img src="{% static 'images/testimonial/user-4.png' %}" alt="user"/>
-                                </div>
-                                <!-- Single User Wrapper End -->
-
-                                <!-- Single User Wrapper Start -->
-                                <div class="single-user">
-                                    <img src="{% static 'images/testimonial/user-5.png' %}" alt="user"/>
-                                </div>
-                                <!-- Single User Wrapper End -->
-
-                                <!-- Single User Wrapper Start -->
-                                <div class="single-user">
-                                    <img src="{% static 'images/testimonial/user-6.png' %}" alt="user"/>
-                                </div>
-                                <!-- Single User Wrapper End -->
-
-                                <!-- Single User Wrapper Start -->
-                                <div class="single-user">
-                                    <img src="{% static 'images/testimonial/user-7.png' %}" alt="user"/>
-                                </div>
-                                <!-- Single User Wrapper End -->
-
-                                <!-- Single User Wrapper Start -->
-                                <div  class="single-user">
-                                    <img src="{% static 'images/testimonial/user-8.png' %}" alt="user"/>
-                                </div>
-                                <!-- Single User Wrapper End -->
+                            
                             </div>
 
                             <!-- Single User Wrapper Start -->
-                            <div class="arrow-btn" id="user-slider-arrow">
-                                <i class="fa-regular fa-arrow-right"></i>
-                            </div>
+
                             <!-- Single User Wrapper End -->
                         </div>           
                     </div>
@@ -484,79 +421,5 @@
         </div>
     </div>
     <!-- Testimonial Slider Area End -->
-
-    <!-- location Image Card Area Start -->
-    <div class="location-area style-2">
-        <img class="bg-bottom-shape" src="{% static 'images/shape/bottom-shape.png' %}" alt="Shape">
-        <div class="container">
-            <div class="section-title  align-content-center justify-content-center text-center">
-                <div class="sec-content">
-                    <span class="short-title">Destination</span>
-                    <h2 class="title">Explore your nearby</h2>
-                    <img class="bottom-shape" src="{% static 'images/shape/bottom-bar.png' %}" alt="Bottom Shape">
-                </div>
-            </div>
-            <div class="location-card-wrapper">
-                <div class="row gy-4">
-                    <!-- Single Card Start -->
-                    <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0s">
-                        <div class="location-image-card">
-                            <a href="destination-details.html" class="img-wrapper">
-                                <img src="{% static 'images/location-image-card/image-1.png' %}" alt="Place Image">
-                            </a>
-                            <div class="content-inner">
-                                <h6 class="city"><a href="destination-details.html">New york</a></h6>
-                                <p class="duration">19 min drive</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Card End -->
-                    <!-- Single Card Start -->
-                    <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
-                        <div class="location-image-card">
-                            <a href="destination-details.html" class="img-wrapper">
-                                <img src="{% static 'images/location-image-card/image-2.png' %}" alt="Place Image">
-                            </a>
-                            <div class="content-inner">
-                                <h6 class="city"><a href="destination-details.html">Greece</a></h6>
-                                <p class="duration">19 min drive</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Card End -->
-                    <!-- Single Card Start -->
-                    <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
-                        <div class="location-image-card">
-                            <a href="destination-details.html" class="img-wrapper">
-                                <img src="{% static 'images/location-image-card/image-3.png' %}" alt="Place Image">
-                            </a>
-                            <div class="content-inner">
-                                <h6 class="city"><a href="destination-details.html">Morocco</a></h6>
-                                <p class="duration">19 min drive</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Card End -->
-                    <!-- Single Card Start -->
-                    <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="1.2s">
-                        <div class="location-image-card">
-                            <a href="destination-details.html" class="img-wrapper">
-                                <img src="{% static 'images/location-image-card/image-4.png' %}" alt="Place Image">
-                            </a>
-                            <div class="content-inner">
-                                <h6 class="city"><a href="destination-details.html">Colombia</a></h6>
-                                <p class="duration">19 min drive</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Card End -->
-                </div>
-            </div>
-            <div class="sec-btn justify-content-center text-center">
-                <a class="theme-btn" href="{% url 'main_destination' %}">Discover more</a>
-            </div>
-        </div>
-    </div>
-    <!-- location Image Card Area End -->
 
     {% endblock body %}

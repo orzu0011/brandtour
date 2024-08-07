@@ -54,7 +54,7 @@ msgstr "блог"
 
 #: templates/base.html:99
 msgid "contact us"
-msgstr "свяжитесь с нами"
+msgstr "связаться"
 
 #: templates/base.html:105
 msgid "my orders"
@@ -67,7 +67,7 @@ msgstr "Войти"
 
 #: templates/base.html:121
 msgid "Sign Up"
-msgstr "Зарегистрироваться"
+msgstr "Pегистрация"
 
 #: templates/base.html:252
 msgid "Follow us"

@@ -12,6 +12,13 @@ from .forms import ContactForm
 from django.shortcuts import HttpResponse
 from django.views.generic import DetailView
 from datetime import datetime
+from .models import TeamMember
+
+
+def team_view(request):
+    team_members = TeamMember.objects.all().order_by('display_order')
+    return render(request, 'main/about.html', {'team_members': team_members})
+
 
 class HomeView(View):
     def get(self, request):
@@ -47,7 +54,11 @@ class DestinationDetailView(DetailView):
 class AboutUsView(View):
     def get(self, request):
         testimonials = Testimonial.objects.all()
-        return render(request, 'main/about.html', {'testimonials': testimonials})
+        team_members = TeamMember.objects.all().order_by('display_order')
+        return render(request, 'main/about.html', {
+            'testimonials': testimonials,
+            'team_members': team_members
+        })
 
     def post(self, request):
         form = TestimonialForm(request.POST)

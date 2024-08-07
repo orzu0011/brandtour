@@ -1,7 +1,12 @@
 from tour.models import Tour, IncludeExclude, Country, Destination
 from post.models import Post
-from modeltranslation.translator import TranslationOptions, register
+from modeltranslation.translator import register, TranslationOptions
+from .models import TeamMember
 
+@register(TeamMember)
+class TeamMemberTranslationOptions(TranslationOptions):
+    fields = ('position',)  # Register the 'position' field for translation
+    
 @register(Post)
 class PostTranslationOptions(TranslationOptions):
     fields = ['title', 'body']

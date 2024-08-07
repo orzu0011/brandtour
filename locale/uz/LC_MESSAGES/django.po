@@ -52,7 +52,7 @@ msgstr "Blog"
 
 #: templates/base.html:99
 msgid "contact us"
-msgstr "Biz bilan bog'lanish"
+msgstr "Aloqa"
 
 #: templates/base.html:105
 msgid "my orders"
